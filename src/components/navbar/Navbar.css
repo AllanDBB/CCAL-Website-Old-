@@ -79,8 +79,8 @@ body {
   cursor: pointer;
 }
 
-/* Icono de menú */
-.menu-icon {
+/* Icono de menú mobile */ 
+.menu-icon { 
   display: block;
   width: 24px;
   height: 2px;
