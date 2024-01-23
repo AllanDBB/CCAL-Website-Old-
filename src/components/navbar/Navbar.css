@@ -1,0 +1,94 @@
+/* Estilos generales del cuerpo de la página */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos del Navbar */
+.navbar {
+  background-color: transparent;
+  color: #fff;
+  padding: 0.7rem 2rem; /* Espaciado alrededor del contenido del Navbar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  transition: background-color 0.3s ease; /* Transición suave para el cambio de color de fondo */
+  text-transform: uppercase; /* Transforma el texto a mayúsculas */
+}
+
+/* Contenedor del logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Estilos del logo */
+.logo {
+  width: 50px;
+  height: auto;
+  margin-right: 1rem; /* Espacio entre el logo y el texto */
+}
+
+/* Contenedor de los enlaces de navegación */
+.nav-links-container {
+  margin-left: auto; /* Hace que los enlaces se alineen a la derecha ocupando todo el espacio disponible */
+  margin-right: 30px; /* Espacio a la derecha del contenedor de enlaces */
+}
+
+/* Estilos de la lista de enlaces */
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos de cada ítem de enlace */
+.nav-item {
+  margin-right: 25px; /* Espacio entre elementos de enlace */
+  letter-spacing: 1px;
+}
+
+/* Estilos de los enlaces */
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease-in-out; /* Transición suave para el cambio de color al pasar el ratón */
+  font-size: 14px; /* Tamaño de letra reducido para los enlaces */
+}
+
+/* Estilos al pasar el ratón sobre los enlaces */
+.nav-link:hover {
+  color: #f0f0f0;
+}
+
+/* Estilos para el enlace activo */
+.active-link {
+  color: #ff0; /* Cambia este color al que prefieras para resaltar */
+}
+
+/* Botón de menú (para dispositivos móviles) */
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Icono de menú */
+.menu-icon {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #fff;
+  margin-bottom: 4px;
+}
+
+/* Cambia el color de fondo cuando el Navbar no está en la parte superior */
+.navbar.scrolled {
+  background-color: #333;
+}
