@@ -1,0 +1,56 @@
+/* Button.css */
+.btn2 {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px; /* Ajusta el tamaño del botón según tus preferencias */
+  border: 2px solid #fefefe;
+  background-color: transparent; /* Hace el botón transparente */
+  text-transform: uppercase;
+  color: #fefefe;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 14px; /* Reduzco el tamaño del texto a 16px */
+  transition: 0.3s;
+}
+
+.btn2-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn2::before,
+.btn2::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px); /* Ajusto la altura para que cubra todo el botón */
+  background-color: transparent; /* Fondo transparente */
+  transition: 0.3s ease-out;
+  transform: scaleX(0); /* Inicialmente, establece la escala X en 0 */
+}
+
+.btn2::before {
+  background-color: transparent; /* Cambia el color de la línea a blanco */
+  transform-origin: 0% 0%;
+}
+
+.btn2:hover::before {
+  transform: scaleX(1); /* Escala X completa al hacer hover */
+  transform-origin: 0% 0%;
+}
+
+.btn2:hover::after {
+  transform: scaleY(1); /* Escala Y completa al hacer hover */
+  transform-origin: 100% 100%;
+}
+
+.btn2:hover {
+  border: 2px solid transparent;
+}
+
+.spn2 {
+  position: relative;
+  z-index: 3;
+}

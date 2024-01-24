@@ -1,0 +1,151 @@
+/* Estilos generales del cuerpo de la página */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos del Navbar */
+.navbar {
+  background-color: transparent;
+  color: #fff;
+  padding: 0.7rem 2rem; /* Espaciado alrededor del contenido del Navbar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  transition: background-color 0.3s ease; /* Transición suave para el cambio de color de fondo */
+  text-transform: uppercase; /* Transforma el texto a mayúsculas */
+}
+
+/* Añade margen a la derecha del Navbar en pantallas más grandes */
+@media screen and (min-width: 769px) {
+  .navbar {
+    padding-right: 2rem; /* Ajusta el valor según tus preferencias */
+  }
+}
+
+/* Contenedor del logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Estilos del logo */
+.logo {
+  width: 50px;
+  height: auto;
+  margin-right: 1rem; /* Espacio entre el logo y el texto */
+}
+
+/* Contenedor de los enlaces de navegación */
+.nav-links-container {
+  display: flex;
+  align-items: center; /* Alinea los enlaces verticalmente con el logo y el botón */
+  margin-left: auto; /* Alinea todos los elementos a la derecha */
+}
+
+/* Estilos de la lista de enlaces */
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center; /* Alinea los enlaces verticalmente */
+}
+
+/* Estilos de cada ítem de enlace */
+.nav-item {
+  margin-right: 15px; /* Espacio entre elementos de enlace */
+  letter-spacing: 1px;
+}
+
+/* Estilos de los enlaces */
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+  font-size: 14px; /* Tamaño de letra reducido para los enlaces */
+  position: relative;
+}
+
+/* Estilos al pasar el ratón sobre los enlaces */
+.nav-link:hover::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), left 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Aplicar la animación también a los elementos <NavLink> */
+.nav-link:hover,
+.nav-link.active-link {
+  color: #fff;
+}
+
+.nav-link:hover::before,
+.nav-link.active-link::before {
+  width: 100%;
+  left: 0%;
+}
+
+/* Estilos para el botón de hamburguesa en dispositivos móviles */
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: block; /* Mostrar el botón de hamburguesa en dispositivos móviles */
+}
+
+/* Icono de menú mobile */ 
+.menu-icon { 
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #fff;
+  margin-bottom: 4px;
+}
+
+/* Media query para mostrar el menú de hamburguesa en dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .navbar {
+    display: none; /* Ocultar el Navbar en dispositivos móviles */
+  }
+
+  .menu-toggle {
+    display: block; /* Mostrar el botón de hamburguesa */
+  }
+
+
+  /* Mostrar el menú de navegación en dispositivos móviles */
+  .nav-links-container {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column; /* Alinea los enlaces verticalmente en dispositivos móviles */
+    z-index: 101; /* Asegura que el menú aparezca sobre el Navbar */
+    transition: transform 0.3s ease; /* Animación de deslizamiento */
+    transform: translateX(-100%); /* Inicialmente, ocultar el menú desplazándolo hacia la izquierda */
+  }
+
+  /* Estilos para cada ítem de enlace en dispositivos móviles */
+  .nav-item {
+    margin-right: 0; /* Eliminar el margen derecho en dispositivos móviles */
+    margin-bottom: 10px; /* Agregar un margen inferior entre los ítems en dispositivos móviles */
+  }
+
+  /* Muestra el menú cuando la clase 'show-menu' está activa */
+  .show-menu .nav-links-container {
+    transform: translateX(0); /* Muestra el menú deslizándolo hacia la derecha */
+  }
+}
