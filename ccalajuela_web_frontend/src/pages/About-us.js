@@ -22,27 +22,31 @@ const AboutUs = () => {
       </div>
 
       {/* Sección de Historia del Colegio */}
-      <div className="historia">
+      <div className="historiaTitulo">
         <h2>Nuestra Historia</h2>
         <History />
+        
+      </div>
+
+      <div className="historiaBody">
         <p>Una breve reseña de los orígenes y hitos importantes del colegio.</p>
       </div>
 
 
-      <section className="equipo-section">
+      <div className="equipo">
         <h2>Nuestro Equipo</h2>
         <p>Resumen de nuestro equipo.</p>
-      </section>
+      </div>
 
-      <section className="valores-section">
+      <div className="valores">
         <h2>Filosofia Educativa</h2>
         <p>Nuestra filosofia educativa.</p>
-      </section>
+      </div>
 
-      <section className="instalaciones-section">
+      <div className="instalaciones">
         <h2>Instalaciones</h2>
         <p>Breve reseña de nuestras instalaciones.</p>
-      </section>
+      </div>
 
 
 

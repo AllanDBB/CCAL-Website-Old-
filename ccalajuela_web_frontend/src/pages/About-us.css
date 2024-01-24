@@ -22,7 +22,7 @@ header h1 {
 .banner {
   text-align: center;
   padding: 20px;
-  background-color: #000;
+  background-color: #fff;
 }
 
 .banner img {
@@ -33,18 +33,26 @@ header h1 {
 /* Sección de Bienvenida */
 .bienvenida {
   padding: 20px;
-  background-color: #000;
+  background-color: #fff;
 }
 
 /* Historia del Colegio */
-.historia {
+.historiaTitulo {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  height: 10vh; /* Ajusta la altura según tus necesidades */
+}
+
+.historiaBody {
   padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh; /* Ajusta la altura según tus necesidades */
-  
-  
 }
 
 /* Nuestro Equipo */
