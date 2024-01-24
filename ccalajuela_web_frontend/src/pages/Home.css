@@ -3,15 +3,12 @@
 body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif; /* Use a suitable font for your design */
+  font-family: 'Arial', sans-serif;
 }
 
 .home-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
-  margin-top: 40px;
-  margin-bottom: 40px;
 }
 
 .hero-section {
@@ -26,13 +23,16 @@ body, html {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%); 
+  width: 100vw;
   height: 100%;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%);
   z-index: -1;
 }
 
+/* Commenting out the hero-image section */
+/*
 .hero-image {
   position: fixed;
   top: 0;
@@ -40,7 +40,6 @@ body, html {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-
 }
 
 .hero-image img {
@@ -50,6 +49,7 @@ body, html {
   filter: brightness(70%);
   display: none;
 }
+*/
 
 .hero-content {
   max-width: 600px;
@@ -70,7 +70,7 @@ body, html {
 .cta-button {
   padding: 12px 24px;
   font-size: 1.2em;
-  background-color: #3498db;
+  background-color: #1f4ea0;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -79,49 +79,108 @@ body, html {
 }
 
 .cta-button:hover {
-  background-color: #2980b9;
+  background-color: #04236b;
 }
 
 /* Snap Cards Section */
 
 .red {
-  background-color: #f43f5e;
+  background-color: #647cbc;
 }
 
 .blue {
-  background-color: #3b82f6;
+  background-color: #d3c584;
 }
 
 .green {
-  background-color: #22c55e;
+  background-color: #647cbc;
 }
 
 .scroll-snap-card {
-  height: 150px;
-  width: 250px;
-  -ms-scroll-snap-type: y mandatory;
-      scroll-snap-type: y mandatory;
+  height: 30vh;
+  width: 50vw;
+  scroll-snap-type: block mandatory; /* Adjusted to block mandatory */
   overflow: auto;
   border-radius: 10px;
+  margin: 0 auto; /* Center horizontally */
+  margin-bottom: 10vh;
 }
 
 .scroll-snap-card .slide {
   width: 100%;
   height: 100%;
   scroll-snap-align: start;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .scroll-snap-card .slide p {
   font-size: 1em;
   color: white;
   font-weight: 700;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px; /* Adjust as needed */
+  padding: 0 10%; /* Added padding for equal spacing on both sides */
+}
+
+.card {
+  position: relative;
+  width: calc((100% - 20%) / 3); /* Adjusted width for equal spacing and symmetry */
+  height: 200px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card:hover {
+  transform: rotate(-5deg) scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card:hover .card__content {
+  transform: translate(-50%, -50%) rotate(0deg);
+  opacity: 1;
+}
+
+.card__title {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
+}
+
+.card__description {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #777;
+  line-height: 1.4;
 }

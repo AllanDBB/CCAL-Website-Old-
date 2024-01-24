@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 import LogoSvg from '../Logo.svg';
 import Button2 from '../buttons/Button2';
@@ -11,13 +11,9 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const location = useLocation();
-
-  const isAccessPage = location.pathname === '/Acceder';
 
   return (
 
-    !isAccessPage && (
     <nav className="navbar">
       <div className="logo-container">
         <NavLink to="/">
@@ -33,7 +29,7 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/conocenos" className="nav-link" activeClassName="active-link">
+            <NavLink to="/conócenos" className="nav-link" activeClassName="active-link">
               Conócenos
             </NavLink>
           </li>
@@ -54,7 +50,7 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="nav-item">
-          <NavLink to="/Acceder" className="nav-link" activeClassName="active-link">
+          <NavLink to="/iniciar-sesión" className="nav-link" activeClassName="active-link">
           <Button2 text="Acceder"/>
           </NavLink>
         </div>
@@ -64,7 +60,7 @@ const Navbar = () => {
         <span className="menu-icon">☰</span>
       </button>
     </nav>
-    )
+    
   );
 };
 
