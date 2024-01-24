@@ -18,8 +18,16 @@ header h1 {
   margin: 10px;
 }
 
-.fondo-pagina {
+.fondo-pagina1 {
   background-image: url("./Banners/Banner\ 2.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 35vh; /* Ajusta la altura según tus necesidades */
+  /* Otros estilos necesarios para el contenido de la página */
+}
+
+.fondo-pagina2 {
+  background-image: url("./Banners/Banner\ 3.jpg");
   background-size: cover;
   background-position: center;
   height: 100vh; /* Ajusta la altura según tus necesidades */
@@ -41,6 +49,7 @@ header h1 {
 /* Sección de Bienvenida */
 .bienvenida {
   padding: 20px;
+  color: #fff;
 }
 
 /* Historia del Colegio */
@@ -49,8 +58,8 @@ header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #333;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   height: 5vh;
 }
 
@@ -62,8 +71,8 @@ header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #333;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   height: 10vh; /* Ajusta la altura según tus necesidades */
 }
 
@@ -73,8 +82,8 @@ header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:transparent;
-  color: #000;
+  background-color: rgba(50, 50, 50, 0.7);
+  color: #fff;
   height: 5vh;
 }
 
@@ -83,8 +92,8 @@ header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:transparent;
-  color: #000;
+  background-color: rgba(50, 50, 50, 0.7);
+  color: #fff;
   height: 5vh;
 }
 
@@ -94,8 +103,8 @@ header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #333;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   height: 5vh;
 }
 
@@ -104,8 +113,8 @@ header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #333;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   height: 5vh;
 }
 
@@ -115,8 +124,8 @@ header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:transparent;
-  color: #000;
+  background-color: rgba(50, 50, 50, 0.7);
+  color: #fff;
   height: 5vh;
 }
 
@@ -126,8 +135,8 @@ header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:transparent;
-  color: #000;
+  background-color: rgba(50, 50, 50, 0.7);
+  color: #fff;
   height: 5vh;
 }
 
@@ -137,8 +146,8 @@ header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #333;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   height: 5vh;
 }
 
@@ -147,8 +156,8 @@ header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #333;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   height: 5vh;
 }
 
@@ -158,8 +167,8 @@ header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:transparent;
-  color: #000;
+  background-color: rgba(50, 50, 50, 0.7);
+  color: #fff;
   height: 5vh;
 }
 
@@ -168,8 +177,8 @@ header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:transparent;
-  color: #000;
+  background-color: rgba(50, 50, 50, 0.7);
+  color: #fff;
   height: 5vh;
 }
 
@@ -179,15 +188,15 @@ header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #333;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   height: 5vh;
 }
 
 /* Pie de Página */
 footer {
-  background-color: #333;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   text-align: center;
   padding: 10px;
 }

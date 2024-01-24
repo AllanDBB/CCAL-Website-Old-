@@ -2,10 +2,10 @@
   position: relative;
   width: 120px;
   height: 140px;
-  background-image: radial-gradient(circle 30px, #fff 100%, transparent 0),
-    radial-gradient(circle 2.5px, #fff 100%, transparent 0),
-    radial-gradient(circle 2.5px, #fff 100%, transparent 0),
-    linear-gradient(#FFF 10px, transparent 0);
+  background-image: radial-gradient(circle 30px, #000 100%, transparent 0),
+    radial-gradient(circle 2.5px, #000 100%, transparent 0),
+    radial-gradient(circle 2.5px, #000 100%, transparent 0),
+    linear-gradient(#000 10px, transparent 0);
   background-position: center 125px , 78px 105px , 30px 61px, center 114px;
   background-size: 60px 60px, 10px 10px , 10px 10px , 4px 14px;
   background-repeat: no-repeat;
@@ -19,7 +19,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 1.5px solid #fff;
+  border: 1.5px solid #000;
   left: 39.58%;
   top: 55%;
   transform: translate(-25%, -27.5%) rotate(-45deg);

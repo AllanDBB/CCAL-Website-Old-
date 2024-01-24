@@ -7,14 +7,12 @@ import Team from './About-us/Equipo/Team';
 const AboutUs = () => {
   return (
     <div className="aboutUs-container">
-      {/* Sección del Banner Principal */}
+                                                                                                    {/* Sección del Banner Principal */}
 
-      <div className="fondo-pagina">
+      <div className="fondo-pagina1">
         <div className="hero-section">
           <header>
-            <h1>Bienvenido a CCAL</h1>
-            <p>Somos más que una formula.</p>
-            <button>¡Empezar Ahora!</button>
+            <h1>Conócenos</h1>
           </header>
         </div>
 
@@ -23,7 +21,10 @@ const AboutUs = () => {
           <h2>Bienvenida a Nuestra Institución</h2>
           <p>Texto introductorio sobre la institución y su misión.</p>
         </div>
+      </div>
+                                                                                                         {/* Sección de Datos */}
 
+      <div className="fondo-pagina2">
         {/* Sección de Historia del Colegio */}
         <div className="historiaTitulo">
           <h2>Nuestra Historia</h2>
@@ -33,7 +34,6 @@ const AboutUs = () => {
         <div className="historiaBody">
           <p>Una breve reseña de los orígenes y hitos importantes del colegio.</p>
         </div>
-
 
         <div className="equipoTitle">
           <h2>Nuestro Equipo</h2>
@@ -78,13 +78,21 @@ const AboutUs = () => {
           <p>Breve reseña de nuestros testimonios.</p>
         </div>
 
+      </div>
+        
+
+
+        
+
+        
+
         
 
         <div className="contacto">
           <h2>contacto</h2>
           <p>Breve reseña de nuestros contactos.</p>
         </div>    
-      </div>
+      
 
       
 
