@@ -20,10 +20,10 @@ function App() {
       <Routes>
           <Route path="/" element={<><Navbar /><Home /></>} />
           <Route path="/conócenos" element={<><Navbar /><AboutUs /></>} />
-          <Route path="/iniciar-sesión" element={<SignIn />} />
-          <Route path="/registrarse" element={<SignUp />} />
-          <Route path="/términos-condiciones" element={<TermsAndConditions />} />
-          <Route path="/olvidé-mi-contraseña" element={<ForgotPassword />} />
+          <Route path="/iniciar-sesión" element={<><Navbar /><SignIn /></>} />
+          <Route path="/registrarse" element={<><Navbar /><SignUp /></>} />
+          <Route path="/términos-condiciones" element={<><Navbar /><TermsAndConditions /></>} />
+          <Route path="/olvidé-mi-contraseña" element={<><Navbar /><ForgotPassword /></>} />
           <Route path="/restaurar-contraseña" element={<RestorePassword />} />
         </Routes>
       </div>
