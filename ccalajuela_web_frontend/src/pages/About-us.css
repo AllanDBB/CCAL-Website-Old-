@@ -42,17 +42,22 @@ header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #000;
+  background-color: #333;
   color: #fff;
-  height: 10vh; /* Ajusta la altura según tus necesidades */
+  height: 5vh;
 }
+
+
+
 
 .historiaBody {
   padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Ajusta la altura según tus necesidades */
+  background-color: #333;
+  color: #fff;
+  height: 10vh; /* Ajusta la altura según tus necesidades */
 }
 
 /* Nuestro Equipo */

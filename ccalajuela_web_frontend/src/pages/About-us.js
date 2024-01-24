@@ -1,7 +1,7 @@
 import React from 'react';
 import './About-us.css';
 import History from './About-us/History/History';
-
+import Testimonio from './About-us/Testimonios/testimonios';
 
 const AboutUs = () => {
   return (
@@ -25,7 +25,9 @@ const AboutUs = () => {
       <div className="historiaTitulo">
         <h2>Nuestra Historia</h2>
         <History />
-        
+      </div>
+
+      <div className="historiaLogo">
       </div>
 
       <div className="historiaBody">
@@ -48,6 +50,27 @@ const AboutUs = () => {
         <p>Breve reseña de nuestras instalaciones.</p>
       </div>
 
+
+      <div className="compromiso">
+        <h2>compromiso</h2>
+        <p>Breve reseña de nuestros compromisos.</p>
+      </div>
+
+      <div className="testimoniosTitle">
+        <h2>testimonios</h2>
+        <Testimonio />
+      </div>
+
+      <div className="testimoniosBody">
+        <p>Breve reseña de nuestros testimonios.</p>
+      </div>
+
+      
+
+      <div className="contacto">
+        <h2>contacto</h2>
+        <p>Breve reseña de nuestros contactos.</p>
+      </div>
 
 
       </div>
