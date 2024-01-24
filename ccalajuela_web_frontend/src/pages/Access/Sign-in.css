@@ -1,0 +1,137 @@
+.container-inicio-sesion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.formulario-inicio-sesion {
+  background-color: #ffffff;
+  padding: 60px;
+  width: 450px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.columna-flexible {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.etiqueta {
+  color: #151717;
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.contenedor-input {
+  border: 1.5px solid #ecedec;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.input-svg {
+  fill: #606060;
+}
+
+.campo-input {
+  flex-grow: 1;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.campo-input:focus {
+  outline: none;
+}
+
+.contenedor-input:focus-within {
+  border-color: #2d79f3;
+}
+
+.fila-flexible {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  
+}
+
+.contenedor-checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox {
+  margin-right: 5px;
+}
+
+.texto-enlace {
+  color: #2d79f3;
+  cursor: pointer;
+  font-weight: 500;
+  margin-left: 5px;
+}
+
+.boton-enviar {
+  background-color: #151717;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 500;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.boton-enviar:hover {
+  background-color: #252727;
+}
+
+.boton-social {
+  background-color: white;
+  border: 1px solid #ededef;
+  border-radius: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 500;
+  width: 40%; /* Ajuste para dos botones en una fila */
+  transition: border-color 0.3s;
+}
+
+.boton-social:hover {
+  border-color: #2d79f3;
+}
+
+.svg-icono {
+  fill: #606060;
+}
+
+.contenedor-boton-social {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px; 
+}
+
+.logo-ccal2{
+
+  width: 100px;
+  height: auto;
+  align-items: center;
+  margin-left: 176px;
+  margin-bottom: 20px;
+}

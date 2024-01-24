@@ -1,0 +1,40 @@
+.container-terminos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  .contenido-terminos {
+    background-color: #ffffff;
+    padding: 30px;
+    width: 80%; /* Ajusta el ancho según tus preferencias */
+    max-width: 800px; /* Evita que el contenido sea demasiado ancho en pantallas grandes */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: justify;
+  }
+  
+  .contenido-terminos h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .boton-confirmar {
+    background-color: #0d118e;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block; /* Cambio para que sea un bloque y esté al final del contenido */
+    margin: 20px auto 0; /* Centrado horizontal y margen superior */
+  }
+  
+  .boton-confirmar:hover {
+    background-color: #0c2596;
+  }
