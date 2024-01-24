@@ -18,11 +18,19 @@ header h1 {
   margin: 10px;
 }
 
+.fondo-pagina {
+  background-image: url("./Banners/Banner\ 2.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Ajusta la altura según tus necesidades */
+  /* Otros estilos necesarios para el contenido de la página */
+}
+
+
 /* Banner Principal */
 .banner {
   text-align: center;
   padding: 20px;
-  background-color: #fff;
 }
 
 .banner img {
@@ -33,7 +41,6 @@ header h1 {
 /* Sección de Bienvenida */
 .bienvenida {
   padding: 20px;
-  background-color: #fff;
 }
 
 /* Historia del Colegio */
@@ -61,33 +68,120 @@ header h1 {
 }
 
 /* Nuestro Equipo */
-.equipo {
+.equipoTitle {
   padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:transparent;
+  color: #000;
+  height: 5vh;
+}
+
+.equipoBody {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:transparent;
+  color: #000;
+  height: 5vh;
 }
 
 /* Valores y Filosofía Educativa */
-.valores {
+.valoresTitle {
   padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  height: 5vh;
+}
+
+.valoresBody {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  height: 5vh;
 }
 
 /* Instalaciones y Recursos */
-.instalaciones {
+.instalacionesTitle {
   padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:transparent;
+  color: #000;
+  height: 5vh;
+}
+
+
+.instalacionesBody {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:transparent;
+  color: #000;
+  height: 5vh;
 }
 
 /* Compromiso con la Comunidad */
-.compromiso {
+.compromisoTitle {
   padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  height: 5vh;
+}
+
+.compromisoBody {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  height: 5vh;
 }
 
 /* Testimonios y Logros de los Estudiantes */
-.testimonios {
+.testimoniosTitle {
   padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:transparent;
+  color: #000;
+  height: 5vh;
+}
+
+.testimoniosBody {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:transparent;
+  color: #000;
+  height: 5vh;
 }
 
 /* Información de Contacto */
-.contacto {
+.contactos {
   padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  height: 5vh;
 }
 
 /* Pie de Página */
