@@ -6,7 +6,7 @@ body {
 
 /* Estilos del Navbar */
 .navbar {
-  background-color: transparent;
+  background-color: black;
   color: #fff;
   padding: 0.7rem 2rem; /* Espaciado alrededor del contenido del Navbar */
   display: flex;
