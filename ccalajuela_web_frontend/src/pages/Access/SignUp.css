@@ -171,3 +171,57 @@
     margin-left: 200px;
     margin-bottom: 20px;
   }
+
+/* Large Screens */
+@media (min-width: 1560px) {
+  .formulario-registro {
+    width: 600px; /* Larger width for larger screens */
+    padding: 50px; /* More padding for larger form */
+  }
+
+  .etiqueta, .campo-input, .boton-enviar {
+    font-size: 20px; /* Larger font size for readability */
+  }
+
+  .logo-ccal {
+    margin-left: auto; /* Center the logo for larger screens */
+    margin-right: auto;
+  }
+
+  .contenedor-doble-columna {
+    gap: 30px; /* Increase gap between columns */
+  }
+
+  .columna {
+    flex-basis: 45%; /* Adjust column width */
+  }
+}
+
+/* Small Screens */
+@media (max-width: 768px) {
+  .formulario-registro {
+    width: 90%; /* Full width for small screens */
+    padding: 20px; /* Less padding on smaller devices */
+  }
+
+  .etiqueta, .campo-input, .boton-enviar {
+    font-size: 14px; /* Smaller font size for smaller screens */
+  }
+
+  .logo-ccal {
+    margin-left: 10%; /* Adjust logo position for smaller screens */
+  }
+
+  .contenedor-doble-columna {
+    flex-direction: column; /* Stack columns vertically on small screens */
+  }
+
+  .columna {
+    flex-basis: 100%; /* Full width for each column on small screens */
+  }
+
+  .boton-social {
+    width: 80%; /* Full width buttons for better mobile interaction */
+    margin-bottom: 10px; /* Add space between buttons */
+  }
+}

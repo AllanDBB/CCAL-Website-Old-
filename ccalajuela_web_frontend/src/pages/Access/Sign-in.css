@@ -16,8 +16,8 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, #3498db 10%, transparent 20%),
-              radial-gradient(circle, transparent 10%, #3498db 20%);
+  background: radial-gradient(circle, #a4d1ef 10%, transparent 20%),
+              radial-gradient(circle, transparent 10%, #a4d1ef 20%);
   background-size: 30px 30px;
   animation: moveBackground 8s linear infinite;
   z-index: -1;
@@ -152,4 +152,46 @@
   align-items: center;
   margin-left: 176px;
   margin-bottom: 20px;
+}
+
+/* Large Screens */
+@media (min-width: 1560px) {
+  .formulario-inicio-sesion {
+    width: 500px; /* Adjust the width for larger screens */
+    padding: 80px; /* More padding for a larger form */
+  }
+
+  .etiqueta, .campo-input, .boton-enviar {
+    font-size: 20px; /* Larger font size for readability */
+  }
+
+  .logo-ccal2 {
+    margin-left: auto; /* Center the logo for larger screens */
+    margin-right: auto;
+  }
+}
+
+/* Small Screens */
+@media (max-width: 768px) {
+  .formulario-inicio-sesion {
+    width: 90%; /* Full width for small screens */
+    padding: 20px; /* Less padding on smaller devices */
+  }
+
+  .etiqueta, .campo-input, .boton-enviar {
+    font-size: 14px; /* Smaller font size for smaller screens */
+  }
+
+  .logo-ccal2 {
+    margin-left: 10%; /* Adjust logo position for smaller screens */
+  }
+
+  .contenedor-boton-social {
+    flex-direction: center; /* Stack social buttons vertically */
+  }
+
+  .boton-social {
+    width: 80%; /* Full width buttons for better mobile interaction */
+    margin-bottom: 10px; /* Add space between stacked buttons */
+  }
 }

@@ -3,6 +3,7 @@ import './About-us.css';
 import History from './About-us/History/History';
 import Testimonio from './About-us/Testimonios/testimonios';
 import Team from './About-us/Equipo/Team';
+import Pika from './Pika/pika'
 
 
 const AboutUs = () => {
@@ -11,6 +12,8 @@ const AboutUs = () => {
                                                                                                     {/* Sección del Banner Principal */}
 
       <div className="fondo-pagina1">
+        
+        
         <div className="hero">
           <header>
             <h1>Conócenos</h1>
@@ -86,16 +89,17 @@ const AboutUs = () => {
         <div className="contacto">
           <h2>contacto</h2>
           <p>Breve reseña de nuestros contactos.</p>
+
+          <div className="pika">
+          <Pika />
+        </div>
         </div>    
 
+
       </div>
-        
-      
 
-        
-      
 
-      
+
 
 
       </div>

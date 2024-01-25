@@ -16,18 +16,24 @@ header {
   
 }
 
+.pika{
+  padding: 20px;
+  display: flex;
+  justify-content: first baseline;
+  align-items:first baseline;
+  height: 100;
+}
+
 header h1 {
   margin: 10px;
   font-size: 50px;
-
-
 }
 
 .fondo-pagina1 {
   background-image: url("./Banners/Banner\ 2.jpg");
   background-size: cover;
   background-position: center;
-  height: 54vh; /* Ajusta la altura según tus necesidades */
+  height: 100; /* Ajusta la altura según tus necesidades */
   /* Otros estilos necesarios para el contenido de la página */
 }
 
@@ -217,13 +223,6 @@ header h1 {
   height: 5vh;
 }
 
-/* Pie de Página */
-footer {
-  background-color: #fff;
-  color: #000;
-  text-align: center;
-  padding: 10px;
-}
 
 /* Enlaces Rápidos */
 .enlaces-rapidos {

@@ -11,6 +11,7 @@
   font-weight: 300;
   font-size: 14px; /* Reduzco el tamaño del texto a 16px */
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .btn2-link {

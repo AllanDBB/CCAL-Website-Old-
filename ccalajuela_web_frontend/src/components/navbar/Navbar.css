@@ -1,3 +1,4 @@
+/* Estilo base de la barra de navegación */
 .navbar {
   background-color: #151717;
   color: #fff;
@@ -6,50 +7,112 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Sombra para un efecto elevado */
 }
 
+/* Estilo del logo */
 .logo-container img {
   width: 50px;
 }
 
-.menu-toggle {
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  display: none;
-}
 
+/* Contenedor de enlaces */
 .nav-links-container {
   display: flex;
   align-items: center;
 }
 
+/* Lista de enlaces */
 .nav-links {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px; /* Espacio adicional entre letras */
 }
 
+/* Elementos individuales de la lista */
 .nav-item {
   margin-right: 15px;
 }
 
+/* Enlaces individuales */
 .nav-link {
   text-decoration: none;
   color: white;
   font-size: 16px;
+  padding: 8px 10px; /* Espaciado para un mejor aspecto y clicabilidad */
 }
 
+/* Eliminar efecto al pasar el mouse sobre enlaces */
+.nav-link:hover, .nav-link.active-link {
+  background-color: transparent;
+  border-radius: 0;
+}
+
+/* Botón del menú hamburguesa */
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+/* Estilos para pantallas pequeñas */
 @media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
   .nav-links-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
     display: none;
+    flex-direction: column;
+    background-color: #151717;
+    transition: all 0.3s ease; /* Transición suavizada para el menú */
+  }
+
+  .nav-links-container.expanded {
+    display: flex;
+    animation: slideDown 0.5s ease forwards; /* Animación de deslizamiento hacia abajo */
+  }
+
+  .nav-links {
+    flex-direction: column;
+  }
+
+  .nav-item {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .nav-link {
+    display: block;
+    text-align: center;
   }
 }
-/* Estilo del botón Acceder */
-.nav-item button {
-  margin-top: auto;
-  margin-bottom: auto;
+
+/* Animación de deslizamiento hacia abajo */
+@keyframes slideDown {
+  from {
+    transform: scaleY(0);
+    transform-origin: top;
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(1);
+    transform-origin: top;
+    height: auto;
+    opacity: 1;
+  }
 }
