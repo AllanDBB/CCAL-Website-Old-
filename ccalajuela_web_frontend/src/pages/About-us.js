@@ -2,6 +2,7 @@ import React, { useEffect }  from 'react';
 import './About-us.css';
 import History from './About-us/History/History';
 import Testimonio from './About-us/Testimonios/testimonios';
+import Filo from './About-us/Filosofía/filosofía'
 
 
 
@@ -63,6 +64,7 @@ const AboutUs = () => {
 
         <div className="valoresTitle">
           <h2>Filosofia Educativa</h2>
+          <Filo/>
         </div>
 
         <div className="valoresTitle">

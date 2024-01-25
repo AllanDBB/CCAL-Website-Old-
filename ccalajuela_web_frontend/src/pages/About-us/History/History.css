@@ -1,28 +1,28 @@
 .loader-history {
   position: relative;
-  width: 3vw;
-  height: 6.5vh;
-  background-image: radial-gradient(circle 1.5vh, #000 100%, transparent 0),
-    radial-gradient(circle 0.25vh, #000 100%, transparent 0),
-    radial-gradient(circle 0.25vh, #000 100%, transparent 0),
-    linear-gradient(#000 1vh, transparent 0);
-  background-position: center 6.05vh, 4.5vh 4.75vh , 0.8vh 0.8vh, center 5.25vh;
-  background-size: 3.5vh 3vh, 0.5vh 0.5vh , 0.5vh 0.5vh , 0.25vh 1vh;
+  width: 120px;
+  height: 140px;
+  background-image: radial-gradient(circle 30px, #000 100%, transparent 0),
+    radial-gradient(circle 2.5px, #000 100%, transparent 0),
+    radial-gradient(circle 2.5px, #000 100%, transparent 0),
+    linear-gradient(#000 10px, transparent 0);
+  background-position: center 125px, 72px 101px, 27px 52px, center 114px;
+  background-size: 60px 60px, 20px 20px, 20px 20px, 4px 14px;
   background-repeat: no-repeat;
   z-index: 10;
-  perspective: 20vh;
+  perspective: 250px;
 }
 
 .loader-history-before {
   content: '';
   position: absolute;
-  width: 4.5vh;
-  height: 4.5vh;
+  width: 42%;
+  height: 35%;
   border-radius: 50%;
-  border: 0.125vh solid #000;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -55%) rotate(-45deg);
+  border: 1.5px solid #000;
+  left: 39.58%;
+  top: 55%;
+  transform: translate(-25%, -27.5%) rotate(-45deg);
   border-right-color: transparent;
   box-sizing: border-box;
 }
@@ -30,11 +30,11 @@
 .loader-history-after {
   content: '';
   position: absolute;
-  height: 70%;
-  width: 70%;
+  height: 35%;
+  width: 35%;
   transform: translate(-50%, -50%) rotate(-45deg) rotateY(0deg);
   left: 50%;
-  top: 47.25%;
+  top: 63%;
   box-sizing: border-box;
   border-radius: 50%;
   overflow: hidden;
