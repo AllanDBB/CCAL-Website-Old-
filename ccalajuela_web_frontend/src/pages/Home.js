@@ -2,7 +2,6 @@ import React from 'react';
 import './Home.css';
 import Banner1 from '../pages/Banners/Banner 1.jpg'
 import Banner2 from '../pages/Banners/Banner 2.jpg'
-import Banner3 from '../pages/Banners/Banner 3.jpg'
 const Home = () => {
   return (
     <div>
@@ -54,19 +53,51 @@ const Home = () => {
             <p className="card__description">Description for Card 2</p>
           </div>
         </div>
-
-        {/* Third Card */}
-        <div className="card card3">
-        <img src={Banner3} alt="Banner3" className="card" />
-          <div className="card__content">
-            <h2 className="card__title">Card 3</h2>
-            <p className="card__description">Description for Card 3</p>
-          </div>
-        </div>
       </div>
+        {/* Redirect card */}
+        <div class="card-redirect-container">
+    <div class="card-redirect">
+      <div class="card-redirect-details">
+        <p class="text-title">Card title 1</p>
+        <p class="text-body">Here are the details of the card</p>
+      </div>
+      <button class="card-redirect-button">More info</button>
+    </div>
+
+    <div class="card-redirect">
+      <div class="card-redirect-details">
+        <p class="text-title">Card title 2</p>
+        <p class="text-body">Here are the details of the card</p>
+      </div>
+      <button class="card-redirect-button">More info</button>
+    </div>
+
+    <div class="card-redirect">
+      <div class="card-redirect-details">
+        <p class="text-title">Card title 3</p>
+        <p class="text-body">Here are the details of the card</p>
+      </div>
+      <button class="card-redirect-button">More info</button>
+    </div>
+  </div>
+
+        {/* Flip Card */}
+        <div class="Flip-card">
+  <div class="Flip-card-inner">
+    <div class="Flip-card-front">
+      <p>Front Side</p>
+    </div>
+    <div class="Flip-card-back">
+      <p>Back Side</p>
+    </div>
+  </div>
+</div>
+
 
     </div>
   );
 };
+
+
 
 export default Home;
