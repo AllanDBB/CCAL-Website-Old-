@@ -1,8 +1,8 @@
 /* Estilos Generales */
 body {
   font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
+  margin: 0vw;
+  padding: 0vh;
   
 }
 
@@ -50,7 +50,7 @@ header h1 {
   background-image: url("./Banners/Banner\ 3.jpg");
   background-size: cover;
   background-position: center;
-  height: 74vh; /* Ajusta la altura según tus necesidades */
+  height: 96vh; /* Ajusta la altura según tus necesidades */
   /* Otros estilos necesarios para el contenido de la página */
 }
 
@@ -107,8 +107,8 @@ header h1 {
 .historiaBody {
   padding: 0.78125vw;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: justify;
   background-color: #fff;
   color: #000;
   height: 10vh; /* Ajusta la altura según tus necesidades */
