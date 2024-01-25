@@ -1,14 +1,18 @@
 /* Estilo base de la barra de navegación */
 .navbar {
-  background-color: #151717;
+  background-color: transparent;
   color: #fff;
   padding: 0.7rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  position: fixed;
+  width: 97%;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Sombra para un efecto elevado */
+  top: 0;
+  transition: transform 0.3s ease;
+  transform: translateY(0);
+  
 }
 
 /* Estilo del logo */
@@ -69,6 +73,9 @@
     display: block;
   }
 
+  .navbar{
+    width: 90%;
+  }
   .nav-links-container {
     position: absolute;
     top: 100%;
@@ -116,3 +123,7 @@
     opacity: 1;
   }
 }
+
+  .hide-navbar {
+    transform: translateY(-100%); /* Desliza el navbar hacia arriba */
+  }

@@ -1,20 +1,38 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css'; // Asegúrate de que la ruta al archivo CSS sea correcta
 import LogoSvg from '../Logo.svg'; // Asegúrate de que la ruta al logo sea correcta
 import Button2 from '../buttons/Button2'; // Asegúrate de que la ruta al botón sea correcta
 
 const Navbar = () => {
-  // Estado para manejar la visibilidad del menú en pantallas pequeñas
   const [isNavExpanded, setIsNavExpanded] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
-  // Función para cerrar el menú cuando se selecciona un enlace
   const closeMenu = () => {
     setIsNavExpanded(false);
   };
 
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+
+    // Ocultar navbar cuando se desplaza hacia abajo y mostrar cuando se desplaza hacia arriba
+    setShowNavbar(currentScrollY < lastScrollY || currentScrollY <= 0);
+    setLastScrollY(currentScrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    // Limpieza de la suscripción
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
+
+
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${showNavbar ? '' : 'hide-navbar'}`}>
       <div className="logo-container">
         <NavLink to="/" exact onClick={closeMenu}>
           <img src={LogoSvg} alt="CCAL Logo" className="logo" />

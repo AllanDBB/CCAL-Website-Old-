@@ -26,6 +26,13 @@ const Contact = () => {
 
   return (
     <div className="contact-page-container">
+      
+      <div className='contact-banner'>
+        <p className='h1-title-banner'> ¡Contáctanos! </p>
+        <p className='p-title-banner'> Usted es nuestra prioridad </p>
+      </div>
+
+      <div className='contact-content'>
       <div className="contact-form-box">
       <form onSubmit={handleSubmit} className="contact-page-form">
           <h2>Envíanos un Mensaje</h2>
@@ -33,7 +40,7 @@ const Contact = () => {
           <div className="contact-input-group">
             <label htmlFor="name">Nombre:</label>
             <input
-              type="text"
+              type="text" 
               id="name"
               name="name"
               value={formData.name}
@@ -54,7 +61,7 @@ const Contact = () => {
 
           <div className="contact-input-group">
             <label htmlFor="message">Mensaje:</label>
-            <textarea
+            <textarea className='text-area-form'
               id="message"
               name="message"
               value={formData.message}
@@ -77,7 +84,7 @@ const Contact = () => {
         </div>
       </div>
 
-
+      
       <div className="contact-info-box">
         <h2>¡COMUNÍCATE CON NOSOTROS!</h2>
         <p>O aún mejor, ¡Ven a visitarnos!</p>
@@ -85,7 +92,7 @@ const Contact = () => {
           <h3>COLEGIO CIENTÍFICO DE ALAJUELA</h3>
           <p>Avenida Central, Calle 18-20, Frente a Plaza Ferias</p>
           <p>Alajuela, Costa Rica</p>
-          <p>Tel. (506) 2430-9782  (506) 2431-4405</p>
+          <p className='numbers-on-contact'>Tel. (506) 2430-9782 / (506) 2431-4405</p>
         </div>
 
         <div className="social-media-links">
@@ -109,6 +116,7 @@ const Contact = () => {
           </iframe>
         </div>
       </div>
+    </div>
     </div>
   );
 }
