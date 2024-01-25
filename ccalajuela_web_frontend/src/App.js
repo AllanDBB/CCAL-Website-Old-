@@ -11,7 +11,7 @@ import SignUp from './pages/Access/SignUp';
 import TermsAndConditions from './components/conditions/TermsAndConditions';
 import ForgotPassword from './pages/Access/ForgotPassword';
 import RestorePassword from './pages/Access/RestorePassword';
-
+import Contact from './pages/Contact/Contact';
 
 import './App.css';
 
@@ -26,6 +26,7 @@ function App() {
           <Route path="/registrarse" element={<><Navbar /><SignUp /><Footer/></>} />
           <Route path="/términos-condiciones" element={<><Navbar /><TermsAndConditions /><Footer/></>} />
           <Route path="/olvidé-mi-contraseña" element={<><Navbar /><ForgotPassword /><Footer/></>} />
+          <Route path="/contáctanos" element={<><Navbar /><Contact /><Footer/></>} />
           <Route path="/restaurar-contraseña" element={<RestorePassword />} />
         </Routes>
       </div>

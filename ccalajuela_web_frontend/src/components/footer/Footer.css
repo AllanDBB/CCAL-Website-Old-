@@ -1,3 +1,14 @@
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#root, .App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Uso de vh para asegurar el 100% de la altura del viewport */
+}
 .footer {
     background-color: #151717;
     color: white;
@@ -6,6 +17,7 @@
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.4);
+    margin-top: auto;
   }
   
   .footer-content {
