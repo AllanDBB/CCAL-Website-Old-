@@ -89,22 +89,17 @@ const AboutUs = () => {
         <div className="contacto">
           <h2>contacto</h2>
           <p>Breve reseña de nuestros contactos.</p>
+
+          <div className="pika">
+          <Pika />
+        </div>
         </div>    
+
 
       </div>
 
 
 
-      
-
-        
-      
-
-      <footer>
-        <div className="pika">
-          <Pika />
-        </div>
-      </footer>
 
 
       </div>
