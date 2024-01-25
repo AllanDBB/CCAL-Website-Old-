@@ -8,21 +8,26 @@ body {
 
 /* Encabezado */
 header {
-  background-color: #333;
+  background-color: transparent;
   color: #fff;
-  padding: 10px;
+  padding: 20px;
   text-align: center;
+  font-size: large;
+  
 }
 
 header h1 {
   margin: 10px;
+  font-size: 50px;
+
+
 }
 
 .fondo-pagina1 {
   background-image: url("./Banners/Banner\ 2.jpg");
   background-size: cover;
   background-position: center;
-  height: 35vh; /* Ajusta la altura según tus necesidades */
+  height: 54vh; /* Ajusta la altura según tus necesidades */
   /* Otros estilos necesarios para el contenido de la página */
 }
 
@@ -34,22 +39,40 @@ header h1 {
   /* Otros estilos necesarios para el contenido de la página */
 }
 
+.hero{
+  padding: 20px;
+  display: flex;
+  justify-content: last baseline;
+  align-items:last baseline;
+  background-color: rgba(50, 50, 50, 0.7);
+  color: #fff;
+  height: 40vh;
+
+}
+
 
 /* Banner Principal */
-.banner {
-  text-align: center;
-  padding: 20px;
-}
 
-.banner img {
-  max-width: 100%;
-  height: auto;
-}
 
 /* Sección de Bienvenida */
-.bienvenida {
+.bienvenidaTitle {
   padding: 20px;
+  display: flex;
+  justify-content: last baseline;
+  align-items:last baseline;
+  background-color: rgba(50, 50, 50, 0.7);
   color: #fff;
+  height: 5vh;
+}
+
+.bienvenidaBody {
+  padding: 20px;
+  display: flex;
+  justify-content: last baseline;
+  align-items:last baseline;
+  background-color: rgba(50, 50, 50, 0.7);
+  color: #fff;
+  height: 0.1vh;
 }
 
 /* Historia del Colegio */

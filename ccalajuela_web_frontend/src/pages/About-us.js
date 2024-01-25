@@ -4,23 +4,29 @@ import History from './About-us/History/History';
 import Testimonio from './About-us/Testimonios/testimonios';
 import Team from './About-us/Equipo/Team';
 
+import Pablo from './About-us/Equipo/Fichas/Pablo'
+
 const AboutUs = () => {
   return (
     <div className="aboutUs-container">
                                                                                                     {/* Sección del Banner Principal */}
 
       <div className="fondo-pagina1">
-        <div className="hero-section">
+        <div className="hero">
           <header>
             <h1>Conócenos</h1>
           </header>
         </div>
-
         
-        <div className="bienvenida">
+        <div className="bienvenidaTitle">
           <h2>Bienvenida a Nuestra Institución</h2>
+        </div>
+
+        <div className="bienvenidaBody">
           <p>Texto introductorio sobre la institución y su misión.</p>
         </div>
+
+
       </div>
                                                                                                          {/* Sección de Datos */}
 
@@ -42,6 +48,7 @@ const AboutUs = () => {
 
         <div className="equipoBody">
           <p>Resumen de nuestro equipo.</p>
+          <Pablo />
         </div>
 
         <div className="valoresTitle">
@@ -78,20 +85,16 @@ const AboutUs = () => {
           <p>Breve reseña de nuestros testimonios.</p>
         </div>
 
-      </div>
-        
-
-
-        
-
-        
-
-        
-
         <div className="contacto">
           <h2>contacto</h2>
           <p>Breve reseña de nuestros contactos.</p>
         </div>    
+
+      </div>
+        
+      
+
+        
       
 
       
