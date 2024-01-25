@@ -4,7 +4,6 @@ import History from './About-us/History/History';
 import Testimonio from './About-us/Testimonios/testimonios';
 import Team from './About-us/Equipo/Team';
 
-import Pablo from './About-us/Equipo/Fichas/Pablo'
 
 const AboutUs = () => {
   return (
@@ -48,7 +47,6 @@ const AboutUs = () => {
 
         <div className="equipoBody">
           <p>Resumen de nuestro equipo.</p>
-          <Pablo />
         </div>
 
         <div className="valoresTitle">

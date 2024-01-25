@@ -1,5 +1,5 @@
 .loader-Team {
-    transform: rotateX(70deg);
+    transform: rotate(70deg);
   }
   
   .loader .element {
