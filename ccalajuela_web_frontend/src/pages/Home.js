@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './Home.css';
 import Banner1 from '../pages/Banners/Banner 1.jpg'
 import Banner2 from '../pages/Banners/Banner 2.jpg'
 const Home = () => {
+
+  useEffect(() => {
+    document.title = "CCAL";
+  }, []);
+
   return (
     <div>
       {/* Hero Section */}

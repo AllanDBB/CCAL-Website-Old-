@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Logo from '../assets/Logo.svg'
 
 const RestorePassword = () => {
+
+  useEffect(() => {
+    document.title = "CCAL - Restaurar";
+  }, []);
+
   const [userData, setUserData] = useState({
     newPassword: '',
     confirmNewPassword: ''

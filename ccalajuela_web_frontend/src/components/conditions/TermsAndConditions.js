@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useNavigate} from 'react-router-dom';
 import './TermsAndConditions.css';
 
 const TermsAndConditions = () => {
+
+  useEffect(() => {
+    document.title = "CCAL - Términos y condiciones";
+  }, []);
+
   const navigate = useNavigate();
 
   const handleBack = () => {

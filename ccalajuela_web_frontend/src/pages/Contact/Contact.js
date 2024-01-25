@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Contact.css';
 import FaFacebook from '../assets/icons8-facebook-nuevo.svg';
 import FaInstagram from '../assets/icons8-instagram.svg';
 
 const Contact = () => {
+
+  useEffect(() => {
+    document.title = "CCAL - Contáctanos";
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',

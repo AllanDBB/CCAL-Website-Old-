@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import './ForgotPassword.css';
 import Logo from '../assets/Logo.svg';
 
 const ForgotPassword = () => {
+
+  useEffect(() => {
+    document.title = "CCAL - Olvide mi contraseña";
+  }, []);
+
   const [email, setEmail] = useState('');
 
   const handleChange = (e) => {

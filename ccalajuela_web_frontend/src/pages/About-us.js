@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect }  from 'react';
 import './About-us.css';
 import History from './About-us/History/History';
 import Testimonio from './About-us/Testimonios/testimonios';
@@ -6,6 +6,12 @@ import Testimonio from './About-us/Testimonios/testimonios';
 
 
 const AboutUs = () => {
+
+  useEffect(() => {
+    
+    document.title = "CCAL - Conócenos";
+  }, []);
+
   return (
     <div className="aboutUs-container">
                                                                                                     {/* Sección del Banner Principal */}
