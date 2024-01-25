@@ -16,6 +16,14 @@ header {
   
 }
 
+.pika{
+  padding: 20px;
+  display: flex;
+  justify-content: first baseline;
+  align-items:first baseline;
+  height: 5vh;
+}
+
 header h1 {
   margin: 10px;
   font-size: 50px;

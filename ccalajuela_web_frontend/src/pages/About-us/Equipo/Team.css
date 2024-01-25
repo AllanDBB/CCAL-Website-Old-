@@ -10,7 +10,7 @@
     width: 10rem;
     height: 0.5rem;
     margin-top: 0rem;
-    perspective: 500px;
+    perspective: 220px;
     animation: rotate 5s infinite linear;
     animation-delay: calc(var(--i) * 0.2s);
   }
