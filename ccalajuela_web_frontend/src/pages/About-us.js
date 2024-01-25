@@ -3,7 +3,6 @@ import './About-us.css';
 import History from './About-us/History/History';
 import Testimonio from './About-us/Testimonios/testimonios';
 import Team from './About-us/Equipo/Team';
-import Pika from './Pika/pika'
 
 
 const AboutUs = () => {
@@ -35,7 +34,9 @@ const AboutUs = () => {
       <div className="fondo-pagina2">
         {/* Sección de Historia del Colegio */}
         <div className="historiaTitulo">
+          <title1>
           <h2>Nuestra Historia</h2>
+          </title1>
           <History />
         </div>
 
@@ -86,19 +87,12 @@ const AboutUs = () => {
           <p>Breve reseña de nuestros testimonios.</p>
         </div>
 
-        <div className="contacto">
-          <h2>contacto</h2>
-          <p>Breve reseña de nuestros contactos.</p>
-
-          <div className="pika">
-          <Pika />
-        </div>
-        </div>    
+         
 
 
       </div>
 
-
+      
 
 
 
