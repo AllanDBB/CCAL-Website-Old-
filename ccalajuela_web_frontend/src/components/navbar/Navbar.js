@@ -1,19 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-import './Navbar.css';
-import LogoSvg from '../Logo.svg';
-import Button2 from '../buttons/Button2';
+import './Navbar.css'; // Asegúrate de que la ruta al archivo CSS sea correcta
+import LogoSvg from '../Logo.svg'; // Asegúrate de que la ruta al logo sea correcta
+import Button2 from '../buttons/Button2'; // Asegúrate de que la ruta al botón sea correcta
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-
   return (
-
     <nav className="navbar">
       <div className="logo-container">
         <NavLink to="/">
@@ -21,7 +13,7 @@ const Navbar = () => {
         </NavLink>
       </div>
 
-      <div className={`nav-links-container ${isMenuOpen ? 'show-menu' : ''}`}>
+      <div className="nav-links-container">
         <ul className="nav-links">
           <li className="nav-item">
             <NavLink to="/" exact className="nav-link" activeClassName="active-link">
@@ -48,19 +40,14 @@ const Navbar = () => {
               Contáctanos
             </NavLink>
           </li>
+          <li className="nav-item">
+            <NavLink to="/iniciar-sesión" className="nav-link" activeClassName="active-link">
+              <Button2 text="Acceder"/>
+            </NavLink>
+          </li>
         </ul>
-        <div className="nav-item">
-          <NavLink to="/iniciar-sesión" className="nav-link" activeClassName="active-link">
-          <Button2 text="Acceder"/>
-          </NavLink>
-        </div>
       </div>
-
-      <button className="menu-toggle" onClick={toggleMenu}>
-        <span className="menu-icon">☰</span>
-      </button>
     </nav>
-    
   );
 };
 
