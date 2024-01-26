@@ -105,7 +105,7 @@ const Contact = () => {
         </div>
 
         <div className="google-map-box">
-          <iframe 
+          <iframe className='iframe-class'
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.0311589500457!2d-84.22496222592396!3d10.01428489009186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0f9ceabdb63f7%3A0x3c0ff8aeada9972b!2sColegio%20Cient%C3%ADfico%20de%20Costa%20Rica%2C%20sede%20de%20Alajuela%20(UNED)!5e0!3m2!1ses-419!2scr!4v1706162341399!5m2!1ses-419!2scr"
             width="600"
             height="450"
