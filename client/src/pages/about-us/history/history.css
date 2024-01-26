@@ -1,27 +1,28 @@
 .loader-history {
   position: relative;
-  width: 120px;
-  height: 140px;
-  background-image: radial-gradient(circle 30px, #000 100%, transparent 0),
-    radial-gradient(circle 2.5px, #000 100%, transparent 0),
-    radial-gradient(circle 2.5px, #000 100%, transparent 0),
-    linear-gradient(#000 10px, transparent 0);
-  background-position: center 125px, 72px 101px, 27px 52px, center 114px;
-  background-size: 60px 60px, 20px 20px, 20px 20px, 4px 14px;
+  width: 7.5rem; /* 120px / 16px */
+  height: 8.75rem; /* 140px / 16px */
+  background-image: radial-gradient(circle 1.875rem, #000 100%, transparent 0),
+                    radial-gradient(circle 0.15625rem, #000 100%, transparent 0),
+                    radial-gradient(circle 0.15625rem, #000 100%, transparent 0),
+                    linear-gradient(#000 0.625rem, transparent 0);
+  background-position: center 7.8125rem, 4.5rem 6.3125rem, 1.6875rem 3.25rem, center 7.125rem;
+  background-size: 3.75rem 3.75rem, 1.25rem 1.25rem, 1.25rem 1.25rem, 0.25rem 0.875rem;
   background-repeat: no-repeat;
   z-index: 10;
-  perspective: 250px;
+  perspective: 15.625rem; /* 250px / 16px */
+  font-size: 32;
 }
 
 .loader-history-before {
   content: '';
   position: absolute;
-  width: 42%;
-  height: 35%;
+  width: 42%; /* No se cambia */
+  height: 35%; /* No se cambia */
   border-radius: 50%;
-  border: 1.5px solid #000;
-  left: 39.58%;
-  top: 55%;
+  border: 0.09375rem solid #000; /* 1.5px / 16px */
+  left: 39.58%; /* No se cambia */
+  top: 55%; /* No se cambia */
   transform: translate(-25%, -27.5%) rotate(-45deg);
   border-right-color: transparent;
   box-sizing: border-box;
@@ -30,27 +31,22 @@
 .loader-history-after {
   content: '';
   position: absolute;
-  height: 35%;
-  width: 35%;
+  height: 35%; /* No se cambia */
+  width: 35%; /* No se cambia */
   transform: translate(-50%, -50%) rotate(-45deg) rotateY(0deg);
-  left: 50%;
-  top: 63%;
+  left: 50%; /* No se cambia */
+  top: 63%; /* No se cambia */
   box-sizing: border-box;
   border-radius: 50%;
   overflow: hidden;
-  /* Oculta el contenido que se desborda */
   animation: rotate_4191 1.75s linear infinite;
 }
 
 .loader-history-after img {
-  width: 100%;
-  /* Ajusta el ancho según tus necesidades */
-  height: 100%;
-  /* Ajusta la altura según tus necesidades */
-  object-fit: cover;
-  /* Ajusta según tus necesidades (cover, contain, etc.) */
+  width: 100%; /* No se cambia */
+  height: 100%; /* No se cambia */
+  object-fit: cover; /* No se cambia */
 }
-
 
 @keyframes rotate_4191 {
   to {
