@@ -1,6 +1,6 @@
 /* Estilo base de la barra de navegación */
 .navbar {
-  background-color: transparent;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   color: #fff;
   padding: 0.7rem 2rem;
   display: flex;

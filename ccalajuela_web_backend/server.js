@@ -9,7 +9,7 @@ const port = process.env.PORT || 3001;
 app.use(bodyParser.json());
 
 // MongoDB URI
-const dbURI = 'mongodb+srv://ccalweb:NUPlrpr7OQZNScEc@ccalweb.kwml8n1.mongodb.net/?retryWrites=true&w=majority';
+const dbURI = 'mongodb+srv://ccalweb:NUPlrpr7OQZNScEc@ccalweb.kwml8n1zmongodb.net/?retryWrites=true&w=majority';
 
 // Conectar a MongoDB
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
