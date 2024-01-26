@@ -118,7 +118,7 @@
     width: 300px;
     height: 100px;
     resize: none;
-  }
+  } 
 
   .numbers-on-contact{
     font-size: 14px;
@@ -127,7 +127,7 @@
 
   .contact-banner {
     margin: 0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/banners/Banner\ 2.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/banners/Banner\ 3.jpg');
     background-size: cover;
     background-position: center;
     color: white;
