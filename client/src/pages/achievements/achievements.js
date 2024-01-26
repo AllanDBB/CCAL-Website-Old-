@@ -1,27 +1,75 @@
-// Achievements.js
-
-import React from "react";
+import React, { useState } from "react";
+import { VictoryBar, VictoryChart } from 'victory';
+import "./achievements.css"; // Asegúrate de que este es el camino correcto a tu archivo CSS
 
 const Achievements = () => {
+    // Datos de ejemplo para los premios
+    const allData = [
+        { year: 2020, category: 'ciencias', achievements: 5, name: "Premio A" },
+        { year: 2021, category: 'tecnología', achievements: 3, name: "Premio B" },
+        // ... más datos ...
+    ];
+
+    // Estado para la categoría seleccionada
+    const [selectedCategory, setSelectedCategory] = useState('global');
+    // Estado para el año seleccionado
+    const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
+
+    // Opciones de categorías y años para los menús desplegables
+    const categories = ["ciencias", "tecnología", "arte", "otras"];
+    const years = Array.from({length: 19}, (_, i) => 2006 + i); // Años desde 2006 a 2024
+
+    // Manejador del cambio de categoría
+    const handleCategoryChange = (event) => {
+        setSelectedCategory(event.target.value);
+    };
+
+    // Manejador del cambio de año
+    const handleYearChange = (event) => {
+        setSelectedYear(event.target.value);
+    };
+
+    // Función para obtener datos filtrados según la categoría y el año seleccionados
+    const getFilteredData = (selectedCategory, selectedYear) => {
+        if (selectedCategory === 'global') {
+            return allData; // Retorna todos los datos si la categoría es 'global'
+        }
+        return allData.filter(item => 
+            item.category === selectedCategory && item.year.toString() === selectedYear
+        );
+    };
+
+    // Obtener los datos filtrados
+    const filteredData = getFilteredData(selectedCategory, selectedYear);
+
     return (
-        <div className="achievements-page-container">
+        <div className="achievements-container">
+            {/* Banner con título y descripción */}
             <div className="achievements-banner">
-                <h1>Logros y Reconocimientos</h1>
+                <h1>Logros y reconocimientos</h1>
                 <p>Descubre nuestras destacadas contribuciones y logros.</p>
             </div>
 
-            <div className="achievements-content">
-                <div className="achievement">
-                    <h2>Primer Lugar en la Competencia Nacional de Ciencias</h2>
-                    <p>¡Celebramos nuestro éxito al obtener el primer lugar en la competencia nacional de ciencias!</p>
-                </div>
+            {/* Controles para la selección de categoría y año */}
+            <div className="selection-controls">
+                <select onChange={handleCategoryChange} value={selectedCategory}>
+                    {categories.map(category => (
+                        <option key={category} value={category}>{category}</option>
+                    ))}
+                </select>
 
-                <div className="achievement">
-                    <h2>Reconocimiento por Innovación Educativa</h2>
-                    <p>Hemos sido reconocidos por nuestra destacada contribución a la innovación educativa en el país.</p>
-                </div>
+                <select onChange={handleYearChange} value={selectedYear}>
+                    {years.map(year => (
+                        <option key={year} value={year}>{year}</option>
+                    ))}
+                </select>
+            </div>
 
-                {/* Agrega más logros según sea necesario */}
+            {/* Contenedor del gráfico */}
+            <div className="chart-container">
+                <VictoryChart>
+                    <VictoryBar data={filteredData} x="name" y="achievements" />
+                </VictoryChart>
             </div>
         </div>
     );
