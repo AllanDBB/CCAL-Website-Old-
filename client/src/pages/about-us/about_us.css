@@ -12,39 +12,44 @@ header {
   color: #fff;
   padding: 0.78125vw;
   text-align: center;
-  font-size: large;
+  font-size: 3vw;
   
 }
 
 
-
 header h1 {
-  margin: 10px;
-  font-size: 3.125rem;
+  margin: 1vw;
+  font-size: 5vw;
 }
 
 .title1{
   background-color: #fff;
   color: #000;
-  padding: 50vw;
   text-align: center;
-  font-size: large;
-  height: 100hv;
+  font-size: 2vw;
+  font-weight: bold;
+}
+
+.title2{
+  background-color: transparent;
+  color: #fff;
+  text-align: center;
+  font-size: 2vw;
+  font-weight: bold;
 }
 
 .fondo-pagina1 {
   background-image: url("../../assets/banners/Banner\ 2.jpg");
   background-size: cover;
   background-position: center;
-  height: 100hv; /* Ajusta la altura según tus necesidades */
-  /* Otros estilos necesarios para el contenido de la página */
+  height: 100hv;
 }
 
 .fondo-pagina2 {
   background-image: url("../../assets/banners/Banner\ 3.jpg");
   background-size: cover;
   background-position: center;
-  height: 96vh; /* Ajusta la altura según tus necesidades */
+  height: 108vh; /* Ajusta la altura según tus necesidades */
   /* Otros estilos necesarios para el contenido de la página */
 }
 
@@ -74,6 +79,16 @@ header h1 {
   height: 5vh;
 }
 
+.bienvenidaTitle text {
+  background-color: transparent;
+  color: #fff;
+  text-align: center;
+  font-size: 2vw;
+  font-weight: bold;
+
+}
+
+
 .bienvenidaBody {
   padding: 0.78125vw;
   display: flex;
@@ -84,7 +99,18 @@ header h1 {
   height: 0.1vh;
 }
 
+.bienvenidaBody text {
+  text-align: justify; /* Alinea el texto a la izquierda */
+  width: 35vw; /* Establece el ancho en 1vw */
+  margin-left: 5vw; /* Mueve el bloque 2vw a la derecha */
+  margin-top: 3.5vw;
+  font-size: 0.9vw;
+  font-family: "Arial";
+
+}
+
 /* Historia del Colegio */
+
 
 
 .historia{
@@ -106,10 +132,10 @@ header h1 {
 }
 
 .historiaPicture img{
-  background-image: url("../../assets/banners/Banner\ 3.jpg");
   background-size: cover;
   background-position: center;
   width: 30vw;
+
 }
 
 .historiaTitulo {
@@ -142,9 +168,9 @@ header h1 {
   text-align: justify; /* Alinea el texto a la izquierda */
   width: 35vw; /* Establece el ancho en 1vw */
   margin-left: 5vw; /* Mueve el bloque 2vw a la derecha */
-  margin-top: 2vw;
-  font-size: 1.25rem;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  margin-top: 3.5vw;
+  font-size: 0.9vw;
+  font-family: "Arial";
 
 }
 
@@ -160,10 +186,10 @@ header h1 {
 }
 
 .equipoPicture{
-  background-color: rgba(50, 50, 50, 0.7);
-  height: 29vh;
+  background-color: #fff;
+  height: 31vh;
   width: 49.7vw;
-  grid-column: 1 / 2; 
+  grid-column: 2 / 3; 
   grid-row: 1 / 3;
 }
 
@@ -176,51 +202,47 @@ header h1 {
   color: #fff;
   height: 5vh;
   width: 48.15vw;
+  grid-column: 1 / 2; 
+  grid-row: 1 / 2;
 }
 
 .equipoBody {
   padding: 0.78125vw;
-  display: flex;
-  justify-content: left;
-  align-items: left;
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: auto;
+  align-items: center;
   background-color: rgba(50, 50, 50, 0.7);
   color: #fff;
   height: 20vh;
   width: 48.15vw;
+  grid-column: 1 / 2; 
+  grid-row: 2 / 3;
 }
 
 .equipoBody text {
   text-align: justify; /* Alinea el texto a la izquierda */
   width: 30vw; /* Establece el ancho en 1vw */
   margin-left: 5vw; /* Mueve el bloque 2vw a la derecha */
-  margin-top: 2vw;
-  font-size: 1.25rem;
+  margin-top: 1vw;
+  font-size: 0.9vw;
   font-family: "Helvetica Neue", Arial, sans-serif;
-
+  grid-column: 1 / 2; 
+  grid-row: 1 / 2;
 }
 
-
-
-/* Valores y Filosofía Educativa */
-.valoresTitle {
-  padding: 0.78125vw;
-  display: flex;
-  justify-content: left;
-  align-items: left;
-  background-color: #fff;
-  color: #000;
+.equipoBody element {
+  grid-column: 2 / 3; 
+  grid-row: 1 / 2;
   height: 5vh;
-}
-
-.valoresBody {
-  padding: 0.78125vw;
-  display: flex;
-  justify-content: center;
+  display: flex;  
   align-items: center;
-  background-color: #fff;
-  color: #000;
-  height: 5vh;
+  justify-content: center;
+
+
 }
+
+
 
 /* Instalaciones y Recursos */
 .instalacionesTitle {
