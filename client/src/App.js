@@ -12,7 +12,7 @@ import TermsAndConditions from './pages/terms_conditions/termsAndConditions';
 import ForgotPassword from './pages/forgot_password/forgotPassword';
 import RestorePassword from './pages/restore_password/restorePassword';
 import Contact from './pages/contact/contact';
-
+import Achievements from './pages/achievements/achievements';
 import './App.css';
 
 function App() {
@@ -30,6 +30,7 @@ function App() {
           <Route path="/olvidé-mi-contraseña" element={<><ForgotPassword /><Footer/></>} />
           <Route path="/contáctanos" element={<><Contact /><Footer/></>} />
           <Route path="/restaurar-contraseña" element={<RestorePassword />} />
+          <Route path="/logros" element={<><Achievements/><Footer/></>} />
         </Routes>
       </div>
     </Router>
