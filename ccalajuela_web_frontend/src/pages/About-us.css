@@ -108,10 +108,18 @@ header h1 {
   padding: 0.78125vw;
   display: flex;
   justify-content: left;
-  align-items: justify;
+  align-items: left;
   background-color: #fff;
   color: #000;
-  height: 10vh; /* Ajusta la altura según tus necesidades */
+  height: 10vh; 
+}
+
+.historiaTextBox1{
+  text-align: justify;
+  color: #000;
+  width: 0.5vw;
+
+
 }
 
 
