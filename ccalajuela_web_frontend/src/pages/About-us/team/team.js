@@ -1,5 +1,5 @@
 import React from 'react';
-import './Team.css'; // Asegúrate de tener la ruta correcta al archivo CSS
+import './team.css'; // Asegúrate de tener la ruta correcta al archivo CSS
 
 const Loader = () => {
   return (

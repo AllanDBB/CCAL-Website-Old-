@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
-import './Home.css';
-import Banner1 from '../pages/Banners/Banner 1.jpg'
-import Banner2 from '../pages/Banners/Banner 2.jpg'
+import './home.css';
+import Banner1 from '../../assets/banners/Banner 1.jpg'
+import Banner2 from '../../assets/banners/Banner 2.jpg'
 const Home = () => {
 
   useEffect(() => {

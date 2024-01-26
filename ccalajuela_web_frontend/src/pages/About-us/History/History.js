@@ -1,5 +1,5 @@
 import React from 'react';
-import './History.css';  // Asegúrate de que la ruta del archivo CSS sea correcta
+import './history.css';  // Asegúrate de que la ruta del archivo CSS sea correcta
 import picture from './1200px-Earth_Western_Hemisphere_transparent_background.png'
 
 const Loader = () => {

@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import { useNavigate} from 'react-router-dom';
-import './TermsAndConditions.css';
+import './termsAndConditions.css';
 
 const TermsAndConditions = () => {
 
@@ -11,7 +11,7 @@ const TermsAndConditions = () => {
   const navigate = useNavigate();
 
   const handleBack = () => {
-    navigate(-1); // Navega a la página anterior
+    navigate(-1); 
   };
 
   return (

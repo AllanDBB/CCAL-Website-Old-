@@ -39,7 +39,7 @@ header h1 {
 }
 
 .fondo-pagina1 {
-  background-image: url("./Banners/Banner\ 2.jpg");
+  background-image: url("../../assets/banners/Banner\ 2.jpg");
   background-size: cover;
   background-position: center;
   height: 100hv; /* Ajusta la altura según tus necesidades */
@@ -47,7 +47,7 @@ header h1 {
 }
 
 .fondo-pagina2 {
-  background-image: url("./Banners/Banner\ 3.jpg");
+  background-image: url("../../assets/banners/Banner\ 3.jpg");
   background-size: cover;
   background-position: center;
   height: 96vh; /* Ajusta la altura según tus necesidades */

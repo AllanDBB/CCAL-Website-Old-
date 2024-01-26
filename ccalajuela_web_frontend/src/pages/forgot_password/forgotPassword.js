@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import './ForgotPassword.css';
-import Logo from '../assets/Logo.svg';
+import './forgotPassword.css';
+import Logo from '../../assets/logos/Logo.svg';
 
 const ForgotPassword = () => {
 

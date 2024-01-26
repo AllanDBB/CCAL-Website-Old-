@@ -3,9 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import './Sign-in.css'; 
-import GoogleLogo from '../assets/Google__G__logo.svg';
-import Logo from '../assets/Logo.svg';
+import './sign-in.css'; 
+import GoogleLogo from '../../assets/logos/Google__G__logo.svg';
+import Logo from '../../assets/logos/Logo.svg';
 
 const Access = () => {
 

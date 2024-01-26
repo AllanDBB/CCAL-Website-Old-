@@ -15,8 +15,6 @@
     align-items: center;
   }
   
-
-  
   .contact-form-box {
     background-color: #ffffff;
     padding: 50px;
@@ -127,7 +125,7 @@
 
   .contact-banner {
     margin: 0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Banners/Banner\ 2.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/banners/Banner\ 2.jpg');
     background-size: cover;
     background-position: center;
     color: white;

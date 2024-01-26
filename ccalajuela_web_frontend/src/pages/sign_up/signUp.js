@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import './SignUp.css'; 
-import GoogleLogo from '../assets/Google__G__logo.svg';
-import Logo from '../assets/Logo.svg'
+import './signUp.css'; 
+import GoogleLogo from '../../assets/logos/Google__G__logo.svg';
+import Logo from '../../assets/logos/Logo.svg'
 
 const SignUp = () => {
 
@@ -10,7 +10,6 @@ const SignUp = () => {
         document.title = "CCAL - Registrarse";
       }, []);
 
-    // Estados para manejar los datos del usuario
     const [userData, setUserData] = useState({
         name: '',
         lastnames: '',

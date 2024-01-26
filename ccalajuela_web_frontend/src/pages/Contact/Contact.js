@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import './Contact.css';
-import FaFacebook from '../assets/icons8-facebook-nuevo.svg';
-import FaInstagram from '../assets/icons8-instagram.svg';
+import './contact.css';
+import FaFacebook from '../../assets/logos/icons8-facebook-nuevo.svg';
+import FaInstagram from '../../assets/logos/icons8-instagram.svg';
 
 const Contact = () => {
 

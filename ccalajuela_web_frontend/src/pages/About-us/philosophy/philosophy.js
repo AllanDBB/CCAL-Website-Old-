@@ -1,5 +1,5 @@
 import React from 'react';
-import './filosofia.css'; // Asegúrate de ajustar el nombre del archivo de estilos
+import './philosophy.css'; // Asegúrate de ajustar el nombre del archivo de estilos
 
 const Loader = () => {
   return (

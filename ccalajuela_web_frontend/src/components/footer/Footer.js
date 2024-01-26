@@ -1,9 +1,9 @@
 import React from 'react';
-import './Footer.css'; // Asegúrate de que la ruta al archivo CSS sea correcta
+import './footer.css'; 
 
-import Facebook from '../icons8-facebook-nuevo.svg';
-import Instagram from '../icons8-instagram.svg';
-import GitHub from '../iconmonstr-github-1.svg';
+import Facebook from '../../assets/logos/icons8-facebook-nuevo.svg';
+import Instagram from '../../assets/logos/icons8-instagram.svg';
+import GitHub from '../../assets/logos/Google__G__logo.svg';
 import Pika from './Pika/pika';
 
 

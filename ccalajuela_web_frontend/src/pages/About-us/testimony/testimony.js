@@ -1,5 +1,5 @@
 import React from 'react';
-import './testimonios.css';  // Asegúrate de tener la ruta correcta al archivo CSS
+import './testimony.css';  // Asegúrate de tener la ruta correcta al archivo CSS
 
 const Typewriter = () => {
   return (

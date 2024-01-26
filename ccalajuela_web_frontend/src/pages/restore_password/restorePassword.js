@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Logo from '../assets/Logo.svg'
+import Logo from '../../assets/logos/Logo.svg'
 
 const RestorePassword = () => {
 

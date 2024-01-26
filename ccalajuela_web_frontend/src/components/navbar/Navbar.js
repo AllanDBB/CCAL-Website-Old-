@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import './Navbar.css'; // Asegúrate de que la ruta al archivo CSS sea correcta
-import LogoSvg from '../Logo.svg'; // Asegúrate de que la ruta al logo sea correcta
-import Button2 from '../buttons/Button2'; // Asegúrate de que la ruta al botón sea correcta
+import './navbar.css'; 
+import LogoSvg from '../../assets/logos/Logo.svg'; 
+import Button2 from '../buttons/button2/Button2'; 
 
 const Navbar = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
@@ -16,7 +16,6 @@ const Navbar = () => {
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
 
-    // Ocultar navbar cuando se desplaza hacia abajo y mostrar cuando se desplaza hacia arriba
     setShowNavbar(currentScrollY < lastScrollY || currentScrollY <= 0);
     setLastScrollY(currentScrollY);
   };
@@ -24,7 +23,6 @@ const Navbar = () => {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
 
-    // Limpieza de la suscripción
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -39,12 +37,10 @@ const Navbar = () => {
         </NavLink>
       </div>
 
-      {/* Botón del menú hamburguesa, visible solo en pantallas pequeñas */}
       <button className="menu-toggle" onClick={() => setIsNavExpanded(!isNavExpanded)}>
         ☰
       </button>
 
-      {/* Contenedor de enlaces, que alterna su visibilidad */}
       <div className={`nav-links-container ${isNavExpanded ? "expanded" : ""}`}>
         <ul className="nav-links">
           <li className="nav-item">

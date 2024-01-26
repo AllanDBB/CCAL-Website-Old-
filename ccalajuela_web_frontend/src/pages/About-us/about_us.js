@@ -1,8 +1,8 @@
 import React, { useEffect }  from 'react';
-import './About-us.css';
-import History from './About-us/History/History';
-import Testimonio from './About-us/Testimonios/testimonios';
-import Filo from './About-us/Filosofía/filosofía'
+import './about_us.css';
+import History from './history/history';
+import Testimonio from './testimony/testimony';
+import Filo from './philosophy/philosophy'
 
 
 
@@ -17,7 +17,6 @@ const AboutUs = () => {
 
   return (
     <div className="aboutUs-container">
-                                                                                                    {/* Sección del Banner Principal */}
 
       <div className="fondo-pagina1">
         
