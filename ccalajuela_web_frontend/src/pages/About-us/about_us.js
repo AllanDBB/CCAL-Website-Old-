@@ -40,7 +40,7 @@ const AboutUs = () => {
                                                                                                          {/* Sección de Datos */}
 
       <div className="fondo-pagina2">
-        {/* Sección de Historia del Colegio */}
+        {/* Sección de Historia del Colegioo */}
         <div className="historiaTitulo">
           <title1>
           <h2>Nuestra Historia</h2>
