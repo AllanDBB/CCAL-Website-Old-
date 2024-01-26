@@ -29,16 +29,25 @@ const AboutUs = () => {
       </div>
       <div className="fondo-pagina2">
         {/* Sección de Historia del Colegioo */}
-        <div className="historiaTitulo">
-          Nuestra Historia
-          <History />
-        </div>
 
-        <div className="historiaBody">
-          <text>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </text>
+        
+        
+        <div className="historia">
+          <div className="historiaPicture"></div>
+          <div className="historiaTitulo">
+              <h2>Nuestra Historia</h2>
+              <History />
+          </div>
+
+          <div className="historiaBody">
+            <text>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </text>
+          </div>
+
+          
         </div>
+        
 
       
 
@@ -47,7 +56,9 @@ const AboutUs = () => {
         </div>
 
         <div className="equipoBody">
-          <p>Resumen de nuestro equipo.</p>
+          <text>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          </text>
         </div>
 
         <div className="valoresTitle">
