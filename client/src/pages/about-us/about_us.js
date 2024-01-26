@@ -2,7 +2,10 @@ import React from 'react';
 import './about_us.css';
 import History from './history/history';
 import Testimonio from './testimony/testimony';
-import Filo from './philosophy/philosophy'
+import Team from './team/team'
+
+import HistoryPicture from '../../assets/banners/Banner\ 5.jpeg'
+
 
 const AboutUs = () => {
   return (
@@ -18,11 +21,11 @@ const AboutUs = () => {
         </div>
         
         <div className="bienvenidaTitle">
-          <h2>Bienvenida a Nuestra Institución</h2>
+          <text>Bienvenida a Nuestra Institución</text>
         </div>
 
         <div className="bienvenidaBody">
-          <p>Texto introductorio sobre la institución y su misión.</p>
+          <text>Texto introductorio sobre la institución y su misión.</text>
         </div>
 
 
@@ -33,9 +36,9 @@ const AboutUs = () => {
         
         
         <div className="historia">
-          <div className="historiaPicture"></div>
+          <div className="historiaPicture"><img src={HistoryPicture} alt="Descripción de la imagen" style={{ width: '45%', height: 'auto' }}/></div>
           <div className="historiaTitulo">
-              <h2>Nuestra Historia</h2>
+              <div className="title1">Nuestra Historia</div>
               <History />
           </div>
 
@@ -47,28 +50,22 @@ const AboutUs = () => {
 
           
         </div>
+
+        <div className="equipo">
+          <div className="equipoPicture"><img></img></div>
+          <div className="equipoTitle">
+          <div className="title2">Nuestro Equipo</div>
+            
+          </div>
+
+          <div className="equipoBody">
+            <text>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </text>
+            <element><Team/></element>
+          </div>
+        </div>
         
-
-      
-
-        <div className="equipoTitle">
-          <h2>Nuestro Equipo</h2>
-        </div>
-
-        <div className="equipoBody">
-          <text>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </text>
-        </div>
-
-        <div className="valoresTitle">
-          <h2>Filosofia Educativa</h2>
-          <Filo/>
-        </div>
-
-        <div className="valoresTitle">
-          <p>Nuestra filosofia educativa.</p>
-        </div>
 
         <div className="instalacionesTitle">
           <h2>Instalaciones</h2>

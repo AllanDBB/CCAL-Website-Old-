@@ -28,13 +28,13 @@ const Home = () => {
       </div>
 
       <div className="scroll-snap-card">
-        <div className="slide red">
+        <div className="slide azul">
           <p className="tip">Scroll On Me</p>
         </div>
-        <div className="slide blue">
+        <div className="slide yellow">
           <p className="tip">Scroll On Me</p>
         </div>
-        <div className="slide green">
+        <div className="slide azul2">
           <p className="tip">Scroll On Me</p>
         </div>
       </div>
@@ -59,6 +59,8 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+
         {/* Redirect card */}
         <div class="card-redirect-container">
     <div class="card-redirect">
@@ -88,16 +90,17 @@ const Home = () => {
 
         {/* Flip Card */}
         <div class="Flip-card">
-  <div class="Flip-card-inner">
-    <div class="Flip-card-front">
-      <p>Front Side</p>
-    </div>
-    <div class="Flip-card-back">
-      <p>Back Side</p>
+  <div class="Flip-card-wrapper">
+    <div class="Flip-card-inner">
+      <div class="Flip-card-front">
+        <p>Front Side</p>
+      </div>
+      <div class="Flip-card-back">
+        <p>Back Side</p>
+      </div>
     </div>
   </div>
 </div>
-
 
     </div>
   );

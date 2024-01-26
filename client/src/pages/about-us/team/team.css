@@ -1,23 +1,21 @@
-.loader-Team {
-    transform: rotate(70deg);
+.loader {
+  transform: rotateX(70deg);
+}
+
+.loader .element {
+  display: block;
+  border-left: 0.25vw solid rgb(120, 47, 255);
+  border-right: 0.25vw solid rgb(120, 47, 255);
+  border-top: dotted 0.1vw rgb(92, 5, 114);
+  width: 8vw;
+  height: 2vh;
+  margin-top: 0.5vh;
+  animation: rotate 5s infinite linear;
+  animation-delay: calc(var(--i) * 0.2s);
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateY(360deg);
   }
-  
-  .loader .element {
-    display: block;
-    border-left: 2.5px solid rgb(120, 47, 255);
-    border-right: 2.5px solid rgb(120, 47, 255);
-    border-top: dotted 2.5px rgb(92, 5, 114);
-    width: 10rem;
-    height: 0.2rem;
-    margin-top: 0rem;
-    perspective: 220px;
-    animation: rotate 5s infinite linear;
-    animation-delay: calc(var(--i) * 0.2s);
-  }
-  
-  @keyframes rotate {
-    100% {
-      transform: rotateY(360deg);
-    }
-  }
-  
+}
