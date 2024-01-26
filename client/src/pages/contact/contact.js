@@ -28,8 +28,8 @@ const Contact = () => {
     <div className="contact-page-container"> 
       
       <div className='contact-banner'>
-        <p className='h1-title-banner'> ¡Contáctanos! </p>
-        <p className='p-title-banner'> Usted es nuestra prioridad </p>
+        <p className='h1-title-banner'> Comunícate con nosotros </p>
+        <p className='p-title-banner'> Con mucho gusto te atenderemos </p>
       </div>
 
       <div className='contact-content'>
