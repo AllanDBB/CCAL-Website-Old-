@@ -27,39 +27,57 @@ const Home = () => {
         </header>
       </div>
 
-      <div className="scroll-snap-card">
-        <div className="slide azul">
-          <p className="tip">Scroll On Me</p>
-        </div>
-        <div className="slide yellow">
-          <p className="tip">Scroll On Me</p>
-        </div>
-        <div className="slide azul2">
-          <p className="tip">Scroll On Me</p>
-        </div>
-      </div>
+        <div className="scroll-snap-card-container">
+          {/* Paragraph next to the scroll card */}
+          <div className="scroll-card-paragraph">
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
 
-      {/* Card Container */}
-      <div className="card-container">
-        {/* First Card */}
-        <div className="card card1">
-        <img src={Banner1} alt="Banner1" className="card" />
-          <div className="card__content">
-            <h2 className="card__title">Card 1</h2>
-            <p className="card__description">Description for Card 1</p>
+          <div className="scroll-snap-card">
+            <div className="slide azul">
+              <p className="tip">Scroll On Me</p>
+            </div>
+            <div className="slide yellow">
+              <p className="tip">Scroll On Me</p>
+            </div>
+            <div className="slide azul2">
+              <p className="tip">Scroll On Me</p>
+            </div>
           </div>
         </div>
 
-        {/* Second Card */}
-        <div className="card card2">
-        <img src={Banner2} alt="Banner2" className="card" />
-          <div className="card__content">
-            <h2 className="card__title">Card 2</h2>
-            <p className="card__description">Description for Card 2</p>
-          </div>
-        </div>
-      </div>
+{/* Wrapper for Title and Card Container */}
+<div className="card-section-wrapper">
+  {/* Title for Card Section */}
+  <div className="card-photo-title">
+    <h1>¿SABÍAS QUE?</h1>
+  </div>
 
+  {/* Card Container */}
+  <div className="card-container">
+    {/* First Card */}
+    <div className="card card1">
+      <img src={Banner1} alt="Banner1" className="card" />
+      <div className="card__content">
+        <h2 className="card__title">Card 1</h2>
+        <p className="card__description">Description for Card 1</p>
+      </div>
+    </div>
+
+    {/* Second Card */}
+    <div className="card card2">
+      <img src={Banner2} alt="Banner2" className="card" />
+      <div className="card__content">
+        <h2 className="card__title">Card 2</h2>
+        <p className="card__description">Description for Card 2</p>
+      </div>
+    </div>
+  </div>
+</div>
 
         {/* Redirect card */}
         <div class="card-redirect-container">
