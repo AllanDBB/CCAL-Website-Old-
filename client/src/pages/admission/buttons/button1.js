@@ -10,7 +10,7 @@ const button = () => {
             <span class="circle" aria-hidden="true">
             <span class="icon arrow"></span>
             </span>
-            <span class="button-text">Learn More</span>
+            <span class="button-text">Aplica ahora</span>
         </button>
     );
 }

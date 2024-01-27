@@ -160,3 +160,41 @@
     align-items: center;
   }
 }
+
+@media screen and (max-width: 768px) {
+
+  .about-us-banner p {
+      font-size: 0.6em;
+      margin-left: 20px;
+      margin-right: 20px;
+  }
+
+  .flex-section {
+      flex-direction: column;
+  }
+
+  .section-image {
+      width: 90%;
+      margin: 0 auto;
+  }
+
+  .text-content {
+      width: 90%;
+      padding: 20px;
+      margin-top: 20px;
+  }
+
+  .white-section-alone {
+      padding: 20px;
+  }
+
+  .white-section-alone h2 {
+      font-size: 1.5em;
+  }
+
+  .white-section-alone p {
+      font-size: 1em;
+  }
+
+  /* Ajustes adicionales para otros elementos si es necesario */
+}
