@@ -400,8 +400,8 @@ height: 60vh;
     background-color: #fff;
     height: 31vh;
     width: 100vw;
-    grid-column: 1; /* Ocupa la única columna disponible */
-    grid-row: 1; /* En la primera fila */
+    grid-column: 1;
+    grid-row: 1;
     justify-content: center;
     
   }
