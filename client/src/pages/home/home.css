@@ -408,5 +408,71 @@ body, html {
   transform: rotateY(180deg);
 }
 
+@media (max-width: 768px) {
+  .sidebar {
+    width: 25vw;
+  }
 
+  .home-container {
+    padding: 0;
+  }
 
+  .hero-section {
+    height: 100vh;
+    padding: 0;
+  }
+  .hero-title {
+    font-size: 8vw;
+  }
+  .hero-description {
+    font-size: 4vw;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 4vw;
+  }
+
+  .scroll-card-paragraph {
+    max-width: 100%;
+    padding: 10px;
+  }
+  .scroll-card-paragraph p {
+    font-size: 5vw;
+  }
+
+  .scroll-snap-card-container,
+  .scroll-snap-card {
+    max-width: 100%;
+    width: 100%;
+  }
+  .scroll-snap-card {
+    height: 40vh;
+  }
+  .scroll-snap-card .slide p {
+    font-size: 6vw;
+  }
+
+  .card-container {
+    flex-direction: column;
+    margin: 10px;
+  }
+  .card {
+    width: 80vw;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .card-redirect-container {
+    flex-direction: column;
+  }
+  .card-redirect {
+    width: 90%;
+    margin-bottom: 15px;
+  }
+
+  .Flip-card {
+    width: 80vw;
+    margin: 20px auto;
+  }
+}
