@@ -59,3 +59,23 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
+.admission-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.admission-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.admission-button:hover {
+    background-color: #0056b3;
+}
