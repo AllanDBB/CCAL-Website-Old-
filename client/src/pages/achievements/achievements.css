@@ -37,8 +37,10 @@
 .white-section {
     background-color: #fff;
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 0.1px;
+    margin-top: 120px;
     min-height: 500px; /* Cambiado a min-height */
+    align-items: center;
 }
 
 .white-section-content {
