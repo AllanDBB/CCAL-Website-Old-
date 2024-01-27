@@ -494,4 +494,32 @@ body, html {
     width: 80vw;
     margin: 20px auto;
   }
+
+  .flip-card-text-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .flip-card-text {
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px; /* Espacio entre el texto y la tarjeta en dispositivos móviles */
+  }
+
+}
+
+
+.flip-card-text-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+}
+.flip-card-text {
+  max-width: 40%;
+  margin-right: 20px;
+  font-size: 1.2em; /* Tamaño de la fuente */
+  color: #333; /* Color del texto, elige uno que se adapte a tu diseño */
+  line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
+  text-align: justify; /* Alineación del texto */
 }

@@ -113,6 +113,16 @@ const Home = () => {
   </div>
 
         {/* Flip Card */}
+
+        <div className="flip-card-text-container">
+        <div className="flip-card-text">
+    <p>¿Interesado en visitar el colegio o ponerte en contacto con nosotros? Descubre más sobre nuestra institución, programas educativos y oportunidades únicas que ofrecemos. ¡Estamos aquí para ayudarte a dar el siguiente paso en tu viaje educativo!</p>
+</div>
+  <div className="Flip-card">
+    {/* Tu código de Flip Card existente aquí */}
+  </div>
+</div>
+
         <div class="Flip-card">
   <div class="Flip-card-wrapper">
     <div class="Flip-card-inner">
