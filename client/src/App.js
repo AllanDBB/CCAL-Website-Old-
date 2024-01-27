@@ -13,6 +13,8 @@ import ForgotPassword from './pages/forgot_password/forgotPassword';
 import RestorePassword from './pages/restore_password/restorePassword';
 import Contact from './pages/contact/contact';
 import Achievements from './pages/achievements/achievements';
+import Admission from './pages/admission/admission';
+
 import './App.css';
 
 function App() {
@@ -31,6 +33,8 @@ function App() {
           <Route path="/contáctanos" element={<><Contact /><Footer/></>} />
           <Route path="/restaurar-contraseña" element={<RestorePassword />} />
           <Route path="/logros" element={<><Achievements/><Footer/></>} />
+          <Route path="/admisión" element={<><Admission/><Footer/></>} />
+  
         </Routes>
       </div>
     </Router>

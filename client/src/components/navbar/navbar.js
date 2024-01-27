@@ -59,7 +59,7 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/admision" className="nav-link" activeClassName="active-link" onClick={closeMenu}>
+            <NavLink to="/admisión" className="nav-link" activeClassName="active-link" onClick={closeMenu}>
               Admisión
             </NavLink>
           </li>

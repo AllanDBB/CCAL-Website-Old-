@@ -27,7 +27,7 @@ const Achievements = () => {
             setOpenAccordion(index);
         }
     };
-
+  
 
     return (
         <div className="achievements-container">
