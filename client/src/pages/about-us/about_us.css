@@ -99,10 +99,54 @@
   height: auto;
 }
 
-/* Estilos responsivos para pantallas más pequeñas */
-@media (max-width: 768px) {
-  .flex-section, .reverse-flex {
-    flex-direction: column;
+/* Información de Contacto */
+.contactos {
+  padding: 0.78125vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  color: #000;
+  height: 5vh;
+}
+
+
+/* Enlaces Rápidos */
+.enlaces-rapidos {
+  display: flex;
+  justify-content: space-around;
+  background-color: #eee;
+  padding: 10px;
+}
+
+
+
+@media screen and (max-width: 756px) {
+
+  .fondo-pagina2 {
+    background-image: url("../../assets/banners/Banner\ 3.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 200vh; 
+  }
+
+  .equipo {
+    display: grid;
+    grid-template-columns: 1fr; /* Cambia a una sola columna */
+    grid-template-rows: auto auto; /* Dos filas automáticas */    
+    gap: 0px;
+    background-color: rgba(50, 50, 50, 0.7);
+    color: #000;
+  }
+
+  .equipoStructure{
+    background-color: #fff;
+    height: 31vh;
+    width: 100vw;
+    grid-column: 1; /* Ocupa la única columna disponible */
+    grid-row: 1; /* En la primera fila */
+    justify-content: center;
+    
   }
 
   .section-image, .text-content, .white-section-alone {
