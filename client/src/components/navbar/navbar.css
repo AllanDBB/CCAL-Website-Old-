@@ -67,6 +67,7 @@
   display: none;
 }
 
+
 /* Estilos para pantallas pequeñas */
 @media screen and (max-width: 768px) {
   .menu-toggle {
@@ -125,7 +126,7 @@
 }
 
   .hide-navbar {
-    transform: translateY(-100%); /* Desliza el navbar hacia arriba */
+    transform: translateY(-100%);   
   }
 
   body{
