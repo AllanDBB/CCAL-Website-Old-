@@ -380,6 +380,13 @@ height: 60vh;
 
 @media screen and (max-width: 756px) {
 
+  .fondo-pagina2 {
+    background-image: url("../../assets/banners/Banner\ 3.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 200vh; 
+  }
+
   .equipo {
     display: grid;
     grid-template-columns: 1fr; /* Cambia a una sola columna */
@@ -448,79 +455,78 @@ height: 60vh;
 
   .historia {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto; 
+    grid-template-columns: 1fr; /* Cambia a una sola columna */
+    grid-template-rows: auto auto auto; /* Tres filas automáticas */
     gap: 0px;
     background-color: rgba(50, 50, 50, 0.7);
     color: #000;
-    height: 60vh;
   }
-
-  .historiaText{
-    background-color: #fff;
-    height: 50vh;
-    width: 100vw;
-    grid-column: 1; 
-    grid-row: 1; 
-    justify-content: center;
-    display: grid;
-    grid-template-columns: 1fr; /* Cambia a una sola columna */
-    grid-template-rows: auto auto auto; /* Dos filas automáticas */ 
-    
-  }
-
-  .historiaPicture{
+  
+  .historiaPicture {
     color: #000;
     align-items: center;
     margin-top: 0.25vh;
     justify-content: center;
-    grid-column: 1; /* Ocupa la única columna disponible */
-    grid-row: 2; /* En la segunda fila */
+    grid-column: 1;
+    grid-row: 1; /* En la primera fila */
   }
-  .historiaTitle {
+  
+  .historiaText {
+    background-color: #fff;
+    width: 100vw;
+    grid-column: 1;
+    grid-row: 2; /* En la segunda fila */
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr; /* Cambia a una sola columna */
+    grid-template-rows: auto auto auto; /* Tres filas automáticas */
+  }
+  
+  .historiaTitulo {
     padding: 0.78125vw;
     display: flex;
     justify-content: center;
     align-items: center;
-  
-    height: 5vh;
-    width: 48.15vw;
-    margin-left: 12.5vh;
-    grid-column: 1; 
-    grid-row: 1;
+    background-color: #fff;
+    color: #000;
+    height: auto; /* Cambiado a auto para adaptarse al contenido */
+    width: 100%; /* Cambiado al 100% para ocupar todo el ancho disponible */
+    margin-left: 0; /* Eliminado el margen izquierdo */
+    grid-column: 1;
+    grid-row: 1; /* En la primera fila */
   }
-
+  
   .historiaBody {
     padding: 0.78125vw;
     display: grid;
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     align-items: center;
+    height: auto; /* Cambiado a auto para adaptarse al contenido */
+    width: 100%; /* Cambiado al 100% para ocupar todo el ancho disponible */
+    margin-left: 0; /* Eliminado el margen izquierdo */
+    grid-column: 1;
+    grid-row: 2; /* En la segunda fila */
+  }
   
-    height: 15vh;
-    width: 48.15vw;
-    margin-left: 12.5vh;
-    grid-column: 1; 
-    grid-row: 2;
-  }
-
-  .historiaBody text {
+  .text {
     text-align: justify;
-    width: 30vw;
-    margin-left: 5vw;
+    width: 100%; /* Cambiado al 100% para ocupar todo el ancho disponible */
+    margin-left: 0; /* Eliminado el margen izquierdo */
     margin-top: 1vh;
-    font-size: 1vh;
+    font-size: 2vw; /* Ajustado el tamaño de fuente */
     font-family: "Helvetica Neue", Arial, sans-serif;
-    grid-row: 1;
+    grid-row: 1; /* En la primera fila */
   }
-
-  .historiaBody element {
-    grid-row: 2; 
-    display: flex;  
+  
+  element {
+    grid-row: 2; /* En la segunda fila */
+    display: flex;
     align-items: center;
     justify-content: center;
   }
-
+  
+  
 
 
 }
