@@ -8,13 +8,13 @@ body, html {
 }
 
 .home-container {
-  max-width: 100%; /* Change to 100% to adapt to any screen width */
+  max-width: 100%;
   margin: 0 auto;
 }
 
 .hero-section {
   text-align: center;
-  padding: 15% 0 5%; /* Use percentages for padding */
+  padding: 15% 0 5%;
   position: relative;
   background: none;
   color: #ecf0f1;
@@ -32,52 +32,32 @@ body, html {
   z-index: -1;
 }
 
-/* Commenting out the hero-image section */
-/*
-.hero-image {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(70%);
-  display: none;
-}
-*/
-
 .hero-content {
-  max-width: 70%; /* Change to a percentage */
+  max-width: 70%;
   margin: 0 auto;
 }
 
 .hero-title {
-  font-size: 3vw; /* Use viewport units for font size */
-  margin-bottom: 2vh; /* Use viewport units for margin */
+  font-size: 3vw;
+  margin-bottom: 2vh;
   color: #fff;
 }
 
 .hero-description {
-  font-size: 1.2vw; /* Use viewport units for font size */
+  font-size: 1.2vw;
   color: #ecf0f1;
 }
 
 .cta-button {
-  padding: 2vh 4vw; /* Use viewport units for padding */
-  font-size: 1.2vw; /* Use viewport units for font size */
+  padding: 2vh 4vw;
+  font-size: 1.2vw;
   background-color: #1f4ea0;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 2vh;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-bottom: 10vh;
+  margin-bottom: 20vh;
 }
 
 .cta-button:hover {
@@ -85,6 +65,8 @@ body, html {
 }
 
 /* Snap Cards Section */
+
+
 
 .azul {
   background-color: #647cbc;
@@ -98,18 +80,39 @@ body, html {
   background-color: #647cbc;
 }
 
+
+/* Scroll Card Container */
+
+.scroll-card-paragraph {
+  max-width: 40%; /* Adjust the width as needed */
+  padding: 2vh; /* Adjust padding as needed */
+  box-sizing: border-box;
+  text-align: justify; /* Align text */
+  margin-left: 7vw;
+}
+
+.scroll-card-paragraph p {
+  font-size: 1.5vw; /* Adjust font size as needed */
+  color: #333; /* Adjust text color */
+  line-height: 1.6; /* Adjust line height as needed */
+}
+
+.scroll-snap-card-container {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 15vh; /* Adjusted margin for better spacing */
+  
+}
+
 .scroll-snap-card {
   height: 50vh;
   width: 30vw;
-  scroll-snap-type: block mandatory; /* Adjusted to block mandatory */
-  overflow-y: scroll; /* Enable vertical scrolling */
-  scrollbar-width: thin; /* Firefox */
-  scrollbar-color: transparent transparent; /* Firefox */
-  margin: 0 auto; /* Center horizontally */
-  margin-right: 12%;
-  margin-bottom: 10vh; /* Use viewport units for margin */
-  margin-top: 2vh; /* Use viewport units for margin */
-  border-radius: 10px;
+  scroll-snap-type: block mandatory;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  border-radius: 2vh;
+
   
   /* Webkit (Chrome, Safari) */
   &::-webkit-scrollbar {
@@ -131,12 +134,22 @@ body, html {
 }
 
 .scroll-snap-card .slide p {
-  font-size: 1vw; /* Use viewport units for font size */
+  font-size: 2vw; /* Adjusted font size for better visibility */
   color: white;
   font-weight: 700;
 }
+/* Card Section */
 
-/* card photos */ 
+.card-section-wrapper {
+  text-align: center;
+  margin-bottom: 15vh;
+  margin-top: 20vh;
+}
+
+.card-photo-title {
+  color: #000;
+  font-size: 1.5vw;
+}
 
 .card-text {
   position: absolute;
@@ -148,12 +161,12 @@ body, html {
 }
 
 .card-text h2 {
-  font-size: 2vh; /* Adjust font size as needed */
+  font-size: 2vw;
   margin: 0;
 }
 
 .card-text p {
-  font-size: 1.2vh; /* Adjust font size as needed */
+  font-size: 1.2vw;
   margin: 1vh 0 0;
 }
 
@@ -161,21 +174,21 @@ body, html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 2vh; /* Use viewport units for margin */
-  padding: 0 5vw; /* Use viewport units for padding */
+  padding-left: 10vw;
+  padding-right: 10vw;
+  padding-top: 5vh;
 }
 
 .card {
   position: relative;
-  width: calc((100% - 10vw) / 2); /* Adjusted width for equal spacing and symmetry */
-  height: 15vh; /* Use viewport units for height */
-  border-radius: 10px;
+  width: calc((100% - 10vw) / 2);
+  height: 20vh;
+  border-radius: 2vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-  margin-bottom: 5vh; /* Use viewport units for margin */
 }
 
 .card img {
@@ -196,7 +209,7 @@ body, html {
   transform: translate(-50%, -50%) rotate(-45deg);
   width: 100%;
   height: 100%;
-  padding: 2vh; /* Use viewport units for padding */
+  padding: 2vh;
   box-sizing: border-box;
   background-color: #fff;
   opacity: 0;
@@ -210,14 +223,14 @@ body, html {
 
 .card__title {
   margin: 0;
-  font-size: 2vh; /* Use viewport units for font size */
+  font-size: 2vh;
   color: #333;
   font-weight: 700;
 }
 
 .card__description {
-  margin: 1vh 0 0; /* Use viewport units for margin */
-  font-size: 1.2vh; /* Use viewport units for font size */
+  margin: 1vh 0 0;
+  font-size: 1.2vh;
   color: #777;
   line-height: 1.4;
 }
@@ -227,21 +240,21 @@ body, html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2vh; /* Use viewport units for padding */
+  padding: 2vh;
 }
 
 .card-redirect {
-  width: calc((100% - 12vw) / 3); /* Adjusted width for equal spacing and symmetry */
-  height: 30vh; /* Use viewport units for height */
-  border-radius: 5vw;
+  width: calc((100% - 12vw) / 3);
+  height: 30vh;
+  border-radius: 2vw;
   background: #f5f5f5;
   position: relative;
-  padding: 1.8vh 1.8vw; /* Use viewport units for padding */
+  padding: 1.8vh 1.8vw;
   border: 2px solid #c3c6ce;
   transition: 0.5s ease-out;
   overflow: visible;
-  margin-bottom: 5vh; /* Use viewport units for margin */
-  margin-right: 2vw; /* Add space between cards */
+  margin-bottom: 10vh;
+  margin-right: 2vw;
 }
 
 .card-redirect-details {
@@ -255,12 +268,12 @@ body, html {
 .card-redirect-button {
   transform: translate(-50%, 125%);
   width: 60%;
-  border-radius: 1rem;
+  border-radius: 2vh;
   border: none;
   background-color: #008bf8;
   color: #fff;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
+  font-size: 1vh;
+  padding: 0.5vh 1vh;
   position: absolute;
   left: 50%;
   bottom: 0;
@@ -275,7 +288,7 @@ body, html {
 
 /* Text */
 .text-title {
-  font-size: 1.5vw; /* Use viewport units for font size */
+  font-size: 1.5vw;
   font-weight: bold;
 }
 
@@ -289,7 +302,6 @@ body, html {
   transform: translate(-50%, 50%);
   opacity: 1;
 }
-
 
 /* FLIP CARD */
 
@@ -308,13 +320,13 @@ body, html {
   perspective: 1000px;
   margin: auto;
   margin-right: 10vw;
-  margin-bottom: 5vh;
+  margin-bottom: 10vh;
 }
 
 .Flip-card-wrapper {
   width: 100%;
   height: 100%;
-  animation: idleAnimation 3s infinite; /* Apply idle animation here */
+  animation: idleAnimation 3s infinite;
 }
 
 .Flip-card-inner {
@@ -322,16 +334,15 @@ body, html {
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
-  transition: transform 0.999s; /* Smooth transition for flipping */
+  transition: transform 0.999s;
 }
 
-/* Override idle animation and apply flip on hover */
 .Flip-card:hover .Flip-card-wrapper {
-  animation-play-state: paused; /* Pause idle animation on hover */
+  animation-play-state: paused;
 }
 
 .Flip-card:hover .Flip-card-inner {
-  transform: rotateY(180deg); /* Apply the flip transform */
+  transform: rotateY(180deg);
 }
 
 .Flip-card-front,
@@ -349,7 +360,7 @@ body, html {
   align-items: center;
   justify-content: center;
   border: 10px solid #6A2C70;
-  border-radius: 10px;
+  border-radius: 2vh;
   font-size: 2vh;
   transform: rotateY(0deg);
 }
@@ -360,8 +371,8 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 10px solid #F08A5D;
-  border-radius: 10px;
+  border: 1vh solid #F08A5D;
+  border-radius: 2vh;
   font-size: 2vh;
   transform: rotateY(180deg);
 }
