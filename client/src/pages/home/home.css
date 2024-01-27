@@ -66,6 +66,7 @@ body, html {
   font-size: 3vw;
   margin-bottom: 2vh;
   color: #fff;
+  margin-top: 4%;
 }
 
 .hero-description {
@@ -74,19 +75,21 @@ body, html {
 }
 
 .cta-button {
-  padding: 2vh 4vw;
-  font-size: 1.2vw;
+  padding: 15px 30px; /* Tamaño del botón */
+  font-size: 1.2rem; /* Tamaño de la letra */
   background-color: #1f4ea0;
   color: #fff;
   border: none;
-  border-radius: 2vh;
+  border-radius: 25px; /* Bordes redondeados más pronunciados */
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-bottom: 20vh;
+  transition: all 0.3s ease; /* Transición suave para todas las propiedades */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
 }
 
 .cta-button:hover {
   background-color: #04236b;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al pasar el ratón */
+  transform: translateY(-2px); /* Efecto de "levantar" el botón */
 }
 
 /* Snap Cards Section */
@@ -404,4 +407,6 @@ body, html {
   font-size: 2vh;
   transform: rotateY(180deg);
 }
+
+
 

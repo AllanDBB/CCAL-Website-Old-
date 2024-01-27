@@ -23,15 +23,12 @@ const Home = () => {
 
       {/* Hero Section */}
       <div className="home-container">
-        {/* Commenting out the hero image part */}
-        {/* <div className="hero-image">
-          <img src={heroImage} alt="Hero" />
-        </div> */}
+
         <header className="hero-section">
           <div className="hero-content">
-            <h1 className="hero-title">Bienvenido a CCAL</h1>
+            <h1 className="hero-title">Bienvenidos al Colegio Científico de Alajuela</h1>
             <p className="hero-description">
-              Somos más que una fórmula.
+              Institución líder en la educación media | Somos más que una fórmula
             </p>
             <button className="cta-button" onClick={scrollToContent}>¡Empezar Ahora!</button>
           </div>
