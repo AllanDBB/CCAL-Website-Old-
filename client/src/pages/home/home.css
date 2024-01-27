@@ -1,5 +1,25 @@
 /* Home.css */
 
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10vw; /* Adjust the width based on your design needs */
+  height: 100vh; /* Full height of the viewport */
+  background-repeat: repeat-y;
+  background-size: auto 20%; /* Adjust the height to 100% of the sidebar */
+  animation: scrollBackground 10s linear infinite;
+  z-index: -1; /* Ensures the sidebar is on top of other elements */
+}
+
+@keyframes scrollBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 -100%;
+  }
+}
 body, html {
   margin: 0;
   padding: 0;
@@ -88,7 +108,7 @@ body, html {
   padding: 2vh; /* Adjust padding as needed */
   box-sizing: border-box;
   text-align: justify; /* Align text */
-  margin-left: 7vw;
+  
 }
 
 .scroll-card-paragraph p {
@@ -100,8 +120,9 @@ body, html {
 .scroll-snap-card-container {
   display: flex;
   justify-content: space-between;
-  margin-right: 15vh; /* Adjusted margin for better spacing */
-  
+  max-width: 70vw; /* Set a max-width that works for your layout */
+  margin: 0 auto; /* This will center the container and keep it away from the edges */
+  padding: 0 15vw; /* You can adjust this value to increase the space on the sides */
 }
 
 .scroll-snap-card {
@@ -174,14 +195,14 @@ body, html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 10vw;
-  padding-right: 10vw;
-  padding-top: 5vh;
+  margin-left: 15vw;
+  margin-right: 15vw;
+  margin-top: 5vh;
 }
 
 .card {
   position: relative;
-  width: calc((100% - 10vw) / 2);
+  width: 30vw;
   height: 20vh;
   border-radius: 2vh;
   display: flex;
@@ -240,7 +261,8 @@ body, html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2vh;
+  margin-right: 10vw;
+  margin-left: 10vw
 }
 
 .card-redirect {
@@ -254,7 +276,8 @@ body, html {
   transition: 0.5s ease-out;
   overflow: visible;
   margin-bottom: 10vh;
-  margin-right: 2vw;
+  margin-right: 1vw;
+  margin-left: 1vw
 }
 
 .card-redirect-details {
@@ -319,7 +342,7 @@ body, html {
   height: 20vh;
   perspective: 1000px;
   margin: auto;
-  margin-right: 10vw;
+  margin-right: 15vw;
   margin-bottom: 10vh;
 }
 
