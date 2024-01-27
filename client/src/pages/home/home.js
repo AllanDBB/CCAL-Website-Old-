@@ -2,8 +2,8 @@ import React, {useEffect} from 'react';
 import './home.css';
 import Banner1 from '../../assets/banners/Banner 1.jpg'
 import Banner2 from '../../assets/banners/Banner 2.jpg'
-import Blue from '../../assets/plus/blue.png'
-import Yellow from '../../assets/plus/yellow.png'
+// import Blue from '../../assets/plus/blue.png'
+// import Yellow from '../../assets/plus/yellow.png'
 const Home = () => {
 
   useEffect(() => {
@@ -17,9 +17,9 @@ const Home = () => {
   return (
     <div>
       {/* Wavy Lines */}
-      <div className="sidebar" style={{ backgroundImage: `url(${Blue})`, left: '2vw' }}></div>
+      {/* <div className="sidebar" style={{ backgroundImage: `url(${Blue})`, left: '2vw' }}></div>
       <div className="sidebar" style={{ backgroundImage: `url(${Yellow})`, left: '4vw' }}></div>
-      <div className="sidebar" style={{ backgroundImage: `url(${Blue})`, left: '6vw' }}></div>
+      <div className="sidebar" style={{ backgroundImage: `url(${Blue})`, left: '6vw' }}></div> */}
 
       {/* Hero Section */}
       <div className="home-container">
@@ -39,9 +39,7 @@ const Home = () => {
           {/* Paragraph next to the scroll card */}
           <div className="scroll-card-paragraph">
             <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Antes de continuar, nos encantaría invitarte a conocer más sobre nosotros a través de nuestras redes sociales. En Instagram, Facebook y otras plataformas, compartimos momentos especiales, anuncios importantes y capturamos la esencia de nuestra comunidad. 
             </p>
           </div>
 
@@ -71,8 +69,8 @@ const Home = () => {
     <div className="card card1">
       <img src={Banner1} alt="Banner1" className="card" />
       <div className="card__content">
-        <h2 className="card__title">Lider en cr</h2>
-        <p className="card__description">Algo asi</p>
+        <h2 className="card__title">Un poco sobre nosotros</h2>
+        <p className="card__description">Esta institución nace en el año 2006 bajo el convenio entre el Ministerio de Educación Pública el Ministerio de Ciencia, Tecnología y Telecomunicaciones y la Universidad Estatal a Distancia, firmando como Rector el Señor Rodrigo Arias Camacho, actual jerarca de esta casa de enseñanza universitaria y gran aliado de los Colegios Científicos.</p>
       </div>
     </div>
 
@@ -80,8 +78,8 @@ const Home = () => {
     <div className="card card2">
       <img src={Banner2} alt="Banner2" className="card" />
       <div className="card__content">
-        <h2 className="card__title">x cantidad egresados</h2>
-        <p className="card__description">algo asi</p>
+        <h2 className="card__title">Actualmente tenemos +420 egresados</h2>
+        <p className="card__description">Actualmente la sede de Alajuela cuenta con un total de +420 egresados, siendo una institución educativa de excelencia académica y con visión preuniversitaria y contribuyendo en la formación de futuros profesionales de la mano de sus familias y el equipo docente y administrativo</p>
       </div>
     </div>
   </div>
@@ -91,26 +89,26 @@ const Home = () => {
         <div class="card-redirect-container">
     <div class="card-redirect">
       <div class="card-redirect-details">
-        <p class="text-title">Intro para conocernos</p>
+        <p class="text-title">¿Quieres saber más sobre nosotros?</p>
         <p class="text-body">Poner icono representativo</p>
       </div>
-      <button class="card-redirect-button">More info</button>
+      <button class="card-redirect-button">Más información</button>
     </div>
 
     <div class="card-redirect">
       <div class="card-redirect-details">
-        <p class="text-title">Dato de logros</p>
+        <p class="text-title">¿Te interesaría saber sobre nuestros logros?</p>
         <p class="text-body">Poner icono representativo</p>
       </div>
-      <button class="card-redirect-button">More info</button>
+      <button class="card-redirect-button">Más información</button>
     </div>
 
     <div class="card-redirect">
       <div class="card-redirect-details">
-        <p class="text-title">Intro proceso admision</p>
+        <p class="text-title">¿Acaso te gustaría aplicar a nuestra institución?</p>
         <p class="text-body">Poner icono representativo</p>
       </div>
-      <button class="card-redirect-button">More info</button>
+      <button class="card-redirect-button">Más información</button>
     </div>
   </div>
 

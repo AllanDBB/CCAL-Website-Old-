@@ -9,7 +9,7 @@
   background-repeat: repeat-y;
   background-size: auto 20%; /* Adjust the height to 100% of the sidebar */
   animation: scrollBackground 10s linear infinite;
-  z-index: -1; /* Ensures the sidebar is on top of other elements */
+  z-index: -1; 
 }
 
 @keyframes scrollBackground {
@@ -55,6 +55,8 @@ body, html {
   background-position: center;
   z-index: -1;
 }
+
+
 
 
 .hero-content {
@@ -124,14 +126,15 @@ body, html {
   color: #333; /* Adjust text color */
   line-height: 1.6; /* Adjust line height as needed */
 }
-
 .scroll-snap-card-container {
   display: flex;
-  justify-content: space-between;
-  max-width: 70vw; /* Set a max-width that works for your layout */
-  margin: 0 auto; /* This will center the container and keep it away from the edges */
-  padding: 0 15vw; /* You can adjust this value to increase the space on the sides */
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+
 }
+
 
 .scroll-snap-card {
   height: 50vh;
@@ -173,11 +176,11 @@ body, html {
   text-align: center;
   margin-bottom: 15vh;
   margin-top: 20vh;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
-.card-photo-title {
-  color: #000;
-  font-size: 1.5vw;
+.card-photo-title h1 {
+  font-size: 2rem; /* Tamaño de fuente base para escritorio */
 }
 
 .card-text {
@@ -201,34 +204,29 @@ body, html {
 
 .card-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: 15vw;
-  margin-right: 15vw;
-  margin-top: 5vh;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Permite que las tarjetas se ajusten en pantallas más pequeñas */
+  padding: 20px;
 }
 
 .card {
-  position: relative;
-  width: 30vw;
-  height: 20vh;
-  border-radius: 2vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative; 
+  flex-basis: 45%; /* Ajuste para que dos tarjetas quepan en una fila en pantallas grandes */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
   overflow: hidden;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  transition: transform 0.3s ease-in-out;
 }
 
 .card img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
 }
 
 .card:hover {
-  transform: rotate(-5deg) scale(1.1);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05) rotate(0deg); 
 }
 
 .card__content {
@@ -251,26 +249,25 @@ body, html {
 }
 
 .card__title {
-  margin: 0;
-  font-size: 2vh;
-  color: #333;
-  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 10px 0;
 }
 
 .card__description {
-  margin: 1vh 0 0;
-  font-size: 1.2vh;
-  color: #777;
-  line-height: 1.4;
+  font-size: 1.2rem;
+  margin-top: 100px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 /* CARD REDIRECTS */
 .card-redirect-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  margin-right: 10vw;
-  margin-left: 10vw
+  margin: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  flex-wrap: wrap;
 }
 
 .card-redirect {
@@ -310,6 +307,7 @@ body, html {
   bottom: 0;
   opacity: 0;
   transition: 0.3s ease-out;
+  font-size: 1em;
 }
 
 .text-body {
@@ -343,7 +341,7 @@ body, html {
   50% {
     transform: rotateY(-20deg);
   }
-}
+} 
 
 .Flip-card {
   width: 30vw;
@@ -413,6 +411,11 @@ body, html {
     width: 25vw;
   }
 
+  .card-photo-title h1 {
+    font-size: 1.5rem; 
+  }
+
+
   .home-container {
     padding: 0;
   }
@@ -430,15 +433,33 @@ body, html {
 
   .cta-button {
     padding: 10px 20px;
-    font-size: 4vw;
+    font-size: 3vw;
   }
 
-  .scroll-card-paragraph {
-    max-width: 100%;
-    padding: 10px;
+  .card__description {
+    font-size: 1.2rem;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: center;
   }
+
+  
+  .scroll-card-paragraph {
+    max-width: 90%;
+    margin: 0 auto; /* Asegura centrado horizontal */
+    padding: 1rem;
+  }
+  
   .scroll-card-paragraph p {
-    font-size: 5vw;
+    font-size: 1rem; /* Tamaño de letra más legible */
+    color: #333;
+    line-height: 1.6;
+  }
+  .scroll-snap-card-container {
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    flex-direction: column; /* Alinea los elementos verticalmente para móviles */
   }
 
   .scroll-snap-card-container,
@@ -454,13 +475,11 @@ body, html {
   }
 
   .card-container {
-    flex-direction: column;
-    margin: 10px;
+    padding: 10px;
   }
+
   .card {
-    width: 80vw;
-    height: auto;
-    margin-bottom: 20px;
+    flex-basis: 100%; /* Hace que cada tarjeta ocupe el ancho completo en móviles */
   }
 
   .card-redirect-container {
