@@ -1,125 +1,43 @@
 import React from 'react';
 import './about_us.css';
-import History from './history/history';
-import Testimonio from './testimony/testimony';
-import Team from './team/team'
 
-import HistoryPicture from '../../assets/banners/Banner\ 5.jpeg'
-
+import AdditionalImage1 from '../../assets/banners/Banner 2.jpg';
+import AdditionalImage2 from '../../assets/banners/Banner 8.jpg';
 
 const AboutUs = () => {
   return (
-    <div className="aboutUs-container">
-
-      <div className="fondo-pagina1">
-        
-        
-        <div className="hero">
-          <header>
-            <h1>Conócenos</h1>
-          </header>
-        </div>
-        
-        <div className="bienvenidaTitle">
-          <text>Bienvenida a Nuestra Institución</text>
-        </div>
-
-        <div className="bienvenidaBody">
-          <text>Texto introductorio sobre la institución y su misión.</text>
-        </div>
-
-
+    <div className="about-us-container">
+      <div className="about-us-banner">
+        <h1>Conócenos</h1>
+        <p>Descubre más sobre nuestra institución, nuestro equipo y la casita.</p>
       </div>
-      <div className="fondo-pagina2">
 
-
-
-
-          
-
-        <div className="equipo">
-          <div className='equipoPicture'>
-            <img src={HistoryPicture} alt="Descripción de la imagen" style={{ width: '47.25vh', height: 'auto' }}/>
-          </div>
-          <div className="equipoStructure">
-            <div className="equipoTitle">
-              <div className="title2">Nuestro Equipo</div>
-            </div>
-
-            <div className="equipoBody">
-              <text>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-              </text>
-              <element><Team/></element>
-            </div>
-
-          </div>
-          
-        </div>
-
-        <div className="historia">
-          <div className="historiaPicture"><img src={HistoryPicture} alt="Descripción de la imagen" style={{ width: '30vh', height: 'auto' }}/></div>
-
-          <div className='historiaText'>
-            <div className="historiaTitulo">
-                <div className="title1">Nuestra Historia</div>
-                
-            </div>
-
-            
-            <div className="historiaBody">
-              <element><History/></element>
-              <text>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-              </text>
-            </div>
-          
-          </div>
-        </div>
-
-
-        <div className="instalacionesTitle">
-          <h2>Instalaciones</h2>
-        </div>
-
-        <div className="instalacionesBody">
-          <text>              
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </text>
-        </div>
-
-
-        <div className="compromisoTitle">
-          <h2>Compromiso</h2>
-        </div>
-
-        <div className="compromisoBody">
-          <p>Breve reseña de nuestros compromisos.</p>
-        </div>
-
-        <div className="testimoniosTitle">
-          <h2>Testimonios</h2>
-          <Testimonio />
-        </div>
-
-        <div className="testimoniosBody">
-          <p>Breve reseña de nuestros testimonios.</p>
-        </div>
-
+      <div className="section flex-section">
+        <div className="text-content">
+          <h2>Nuestra Historia</h2>
          
-
-
+          <p>El Colegio Científico de Costa Rica en Alajuela, fundado en 2006, es una institución preuniversitaria destacada por su excelencia académica. Famoso por participar en competiciones académicas nacionales e internacionales, el colegio enfatiza las áreas STEAM, integrando habilidades blandas y duras para formar estudiantes integrales. Con 370 egresados, su enfoque educativo innovador prepara a los jóvenes para impactar positivamente en la sociedad.</p>
+        </div>
+        <img src={AdditionalImage1} alt="Imagen Adicional 1" className="section-image" />
       </div>
 
-      
+      <div className="section flex-section reverse-flex">
+        <div className="text-content">
+          <h2>Nuestro Equipo</h2>
+          <div className='Team-element'>
+            
+          </div>
+          <p>Nuestro equipo está conformado por docentes con una destacada habilidad para la enseñanza y un alto grado de preparación académica. Cada miembro del personal posee una excepcional capacidad para transmitir conocimientos, fomentando un ambiente de aprendizaje enriquecedor y estimulante. Estos profesionales altamente cualificados no solo se dedican a la educación, sino que también son inspiración constante para sus alumnos, guiándolos con dedicación y un enfoque pedagógico innovador. Su compromiso con la excelencia educativa se refleja en cada clase, donde la pasión y el conocimiento se combinan para crear una experiencia de aprendizaje única e inolvidable.</p>
+        </div>
+        <img src={AdditionalImage2} alt="Imagen Adicional 2" className="section-image" />
+      </div>
 
-
-
+      <div className="white-section-alone">
+        <h2>Datos curisos de nuestra institución</h2>
+        <p>A nuestras instalaciones, nuestros estudiantes le conocen como la casita :).</p>
+      </div>
     </div>
-  
-
   );
-};
+}
 
 export default AboutUs;
-

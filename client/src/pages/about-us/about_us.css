@@ -1,532 +1,118 @@
-/* Estilos Generales */
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 0vw;
-  padding: 0vh;
-  
-}
-
-/* Encabezado */
-header {
-  background-color: transparent;
-  color: #fff;
-  padding: 0.78125vw;
+.about-us-container {
   text-align: center;
-  font-size: 3vh;
-  
 }
 
-
-header h1 {
-  margin-top: 8vw;
-  font-size: 9vh;
-
-}
-
-.title1{
-  background-color: #fff;
-  color: #000;
-  text-align: center;
-  font-size: 3.2vh;
-  font-weight: bold;
-}
-
-.title2{
-  background-color: transparent;
-  color: #000;
-  text-align: center;
-  font-size: 3.5vh;
-  font-weight: bold;
-}
-
-.fondo-pagina1 {
-  background-image: url("../../assets/banners/Banner\ 2.jpg");
+/* Estilos para el banner principal */
+.about-us-banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url('../../assets/banners/Banner\ 9.jpg');
   background-size: cover;
   background-position: center;
-  height: 100hv;
+  color: white;
+  padding: 100px 0;
+  width: 100%;
+  min-height: 250px;
+  font-size: 1.5em;
 }
 
-.fondo-pagina2 {
-  background-image: url("../../assets/banners/Banner\ 3.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 118vh; 
+.about-us-banner h1 {
+  margin-top: 1.2em;
+  font-size: 1.5em;
 }
 
-.hero{
-  padding: 0.78125vw;
+.about-us-banner p{
+  font-size: 0.7em;
+}
+
+
+/* Estilos para las secciones flexibles */
+.flex-section {
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items:center;
-  background-color: rgba(50, 50, 50, 0.7);
-  color: #fff;
-  height: 25vh;
-
+  margin-bottom: 40px;
+  gap: 20px;
 }
 
-
-
-/*Data settings */
-
-.dataBody1 {
-display: grid;
-grid-template-columns: 1fr 1fr; 
-grid-template-rows: auto auto; 
-height: 60vh;
-
+.reverse-flex {
+  flex-direction: row-reverse;
 }
 
-.dataAdjust1 {
+.section-image {
+  width: 45%;
+  height: auto;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.text-content {
   background-color: #fff;
-  grid-column: 2/3;
-  grid-row: 1/3;
-}
-
-
-/* Sección de Bienvenida */
-.bienvenidaTitle {
-  padding: 0.78125vw;
+  padding: 30px;
+  width: 45%;
+  text-align: left;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items:center ;
-  background-color: rgba(50, 50, 50, 0.7);
-  color: #fff;
-  height:0.5vh;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
-.bienvenidaTitle text {
-  background-color: transparent;
-  color: #fff;
-  text-align: top;
-  font-size: 5vh;
-  font-weight: bold;
-
+.text-content h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
 }
 
-
-
-
-.bienvenidaBody {
-  padding: 0.78125vw;
-  display: flex;
-  justify-content: center;
-  align-items:center;
-  background-color: rgba(50, 50, 50, 0.7);
-  color: #fff;
-  height: 15vh;
+.text-content p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #555;
+  margin-top: 15px;
 }
 
-.bienvenidaBody text {
-  text-align: center; /* Alinea el texto a la izquierda */
-  width: 35vw; /* Establece el ancho en 1vw */
-  margin-top: 0.01vw;
-  font-size: 0.9vw;
-  font-family: "Arial";
-}
-
-/* Historia del Colegio */
-
-
-
-.historia{
-  display: grid;
-  grid-template-columns: 1fr 1fr; 
-  grid-template-rows: auto auto; 
-  height: 29vh;
-}
-
-.historiaPicture{
-  background-color: rgba(50, 50, 50, 0.7);
-  height: 29vh;
-  width: 49.7vw;
-  grid-column: 2 / 3; 
-  grid-row: 1 / 3;
-  display: flex;
-  justify-content: center;
-  align-items:center;
-}
-
-.historiaPicture img{
-  background-size: cover;
-  background-position: center;
-  width: 30vw;
-}
-
-.historiaText{
-  grid-column: 1 / 2; 
-  grid-row: 1 / 3;
-  height: 5vh;
-  display: grid;  
-  grid-template-columns: 1fr 1fr; 
-}
-
-.historiaTitulo {
-  padding: 0.78125vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Estilos para la sección blanca adicional */
+.white-section-alone {
   background-color: #fff;
-  color: #000;
-  height: 3.05vh;
-  width: 48.15vw;
-  grid-row: 1 / 2;
+  padding: 40px;
+  margin-top: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
-
-
-.historiaBody {
-  padding: 0.78125vw;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background-color: #fff;
-  color: #000;
-  height: 20vh; 
-  width: 48.15vw;
-  grid-row: 2 / 3;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.historiaBody text {
-  text-align: justify;
-  width: 20vw; 
-  margin-left: 1vw; 
-  margin-top: 2.5vh;
-  font-size: 1.5vh;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  grid-column: 2 / 3; 
-}
-
-.historiaBody element {
-  grid-column: 1 / 2; 
-  display: flex;  
-  align-items: center;
-  justify-content: center;
-}
-
-
-/* Nuestro Equipo */
-.equipo{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0px;
-  background-color: rgba(50, 50, 50, 0.7);
-  color: #000;
-  grid-column: 1/3;
-  grid-row: 2/3;
-}
-
-.equipoStructure{
-  background-color: #fff;
-  height: 31vh;
-  width: 49.7vw;
-  grid-column: 2 / 3; 
-  grid-row: 1 / 3;
-}
-
-.equipoPicture{
-  color: #000;
-  align-items: center;
-  margin-top: 0.25vh;
-  justify-content: center;
-}
-
-
-.equipoTitle {
-  padding: 0.78125vw;
+/* Estilos para las columnas de texto */
+.text-content.two-columns {
   display: flex;
-  justify-content: center;
-  align-items: center;
-
-  height: 5vh;
-  width: 48.15vw;
-  grid-column: 1 / 2; 
-  grid-row: 1 / 2;
+  justify-content: space-between;
+  align-items: center; /* Asegura la alineación vertical */
 }
 
-.equipoBody {
-  padding: 0.78125vw;
-  display: grid;
-  grid-template-columns: 1fr 1fr; 
-  grid-template-rows: auto;
-  align-items: center;
-
-  height: 20vh;
-  width: 48.15vw;
-  grid-column: 1 / 2; 
-  grid-row: 2 / 3;
-}
-
-.equipoBody text {
-  text-align: justify;
-  width: 30vw; /* Establece el ancho en 1vw */
-  margin-left: 5vw; /* Mueve el bloque 2vw a la derecha */
-  margin-top: 1vh;
-  font-size: 1.5vh;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  grid-column: 1 / 2; 
-  grid-row: 1 / 2;
-}
-
-.equipoBody element {
-  grid-column: 2 / 3; 
-  grid-row: 1 / 2;
-  height: 5vh;
-  display: flex;  
-  align-items: center;
-  justify-content: center;
-}
-
-
-
-/* Instalaciones y Recursos */
-.instalacionesTitle {
-  padding: 0.78125vw;
+.text-column {
+  width: 48%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-  color: #000;
-  height: 5vh;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-
-.instalacionesBody {
-  padding: 0.78125vw;
-  display: grid;
-  grid-template-columns: 1fr 1fr; 
-  grid-template-rows: auto;
-  background-color: #fff;
-  color: #000;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  height: 15vh;
+.Team-element, .History-element {
+  width: auto;
+  height: auto;
 }
 
-.instalacionesBody text{
-  font-size: 1.5vh;
-  margin-left: 10vw;  
-  text-align: justify;
-  width: 25vw;
-  grid-column: 1 / 2; 
-  grid-row: 1 / 2;
-}
-
-
-
-/* Compromiso con la Comunidad */
-.compromisoTitle {
-  padding: 0.78125vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(50, 50, 50, 0.7);
-  color: #fff;
-  height: 5vh;
-}
-
-.compromisoBody {
-  padding: 0.78125vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(50, 50, 50, 0.7);
-  color: #fff;
-  height: 5vh;
-}
-
-/* Testimonios y Logros de los Estudiantes */
-.testimoniosTitle {
-  padding: 0.78125vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-  color: #000;
-  height: 5vh;
-}
-
-.testimoniosBody {
-  padding: 0.78125vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-  color: #000;
-  height: 5vh;
-}
-
-/* Información de Contacto */
-.contactos {
-  padding: 0.78125vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-  color: #000;
-  height: 5vh;
-}
-
-
-/* Enlaces Rápidos */
-.enlaces-rapidos {
-  display: flex;
-  justify-content: space-around;
-  background-color: #eee;
-  padding: 10px;
-}
-
-
-
-@media screen and (max-width: 756px) {
-
-  .fondo-pagina2 {
-    background-image: url("../../assets/banners/Banner\ 3.jpg");
-    background-size: cover;
-    background-position: center;
-    height: 200vh; 
+/* Estilos responsivos para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .flex-section, .reverse-flex {
+    flex-direction: column;
   }
 
-  .equipo {
-    display: grid;
-    grid-template-columns: 1fr; /* Cambia a una sola columna */
-    grid-template-rows: auto auto; /* Dos filas automáticas */    
-    gap: 0px;
-    background-color: rgba(50, 50, 50, 0.7);
-    color: #000;
+  .section-image, .text-content, .white-section-alone {
+    width: 90%;
+    margin: 20px auto;
   }
 
-  .equipoStructure{
-    background-color: #fff;
-    height: 31vh;
-    width: 100vw;
-    grid-column: 1; /* Ocupa la única columna disponible */
-    grid-row: 1; /* En la primera fila */
-    justify-content: center;
-    
-  }
-
-  .equipoPicture{
-    color: #000;
+  .text-content.two-columns, .text-column {
+    flex-direction: column;
+    width: 100%;
     align-items: center;
-    margin-top: 0.25vh;
-    justify-content: center;
-    grid-column: 1; /* Ocupa la única columna disponible */
-    grid-row: 2; /* En la segunda fila */
   }
-  .equipoTitle {
-    padding: 0.78125vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-    height: 5vh;
-    width: 48.15vw;
-    margin-left: 12.5vh;
-    grid-column: 1 / 2; 
-    grid-row: 1 / 2;
-  }
-
-  .equipoBody {
-    padding: 0.78125vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-    grid-template-rows: auto;
-    align-items: center;
-  
-    height: 20vh;
-    width: 48.15vw;
-    margin-left: 12.5vh;
-    grid-column: 1 / 2; 
-    grid-row: 2 / 3;
-  }
-
-  .equipoBody text {
-    text-align: justify; /* Alinea el texto a la izquierda */
-    width: 50vw; /* Establece el ancho en 1vw */
-    margin-left: 0vw; /* Mueve el bloque 2vw a la derecha */
-    margin-top: 1vh;
-    font-size: 1vh;
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    grid-column: 1 / 2; 
-    grid-row: 1 / 2;
-  }
-  /* Historia del Colegio */
-
-  .historia {
-    display: grid;
-    grid-template-columns: 1fr; /* Cambia a una sola columna */
-    grid-template-rows: auto auto auto; /* Tres filas automáticas */
-    gap: 0px;
-    background-color: rgba(50, 50, 50, 0.7);
-    color: #000;
-  }
-  
-  .historiaPicture {
-    color: #000;
-    align-items: center;
-    margin-top: 0.25vh;
-    justify-content: center;
-    grid-column: 1;
-    grid-row: 1; /* En la primera fila */
-  }
-  
-  .historiaText {
-    background-color: #fff;
-    width: 100vw;
-    grid-column: 1;
-    grid-row: 2; /* En la segunda fila */
-    justify-content: center;
-    display: grid;
-    grid-template-columns: 1fr; /* Cambia a una sola columna */
-    grid-template-rows: auto auto auto; /* Tres filas automáticas */
-  }
-  
-  .historiaTitulo {
-    padding: 0.78125vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    color: #000;
-    height: auto; /* Cambiado a auto para adaptarse al contenido */
-    width: 100%; /* Cambiado al 100% para ocupar todo el ancho disponible */
-    margin-left: 0; /* Eliminado el margen izquierdo */
-    grid-column: 1;
-    grid-row: 1; /* En la primera fila */
-  }
-  
-  .historiaBody {
-    padding: 0.78125vw;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    align-items: center;
-    height: auto; /* Cambiado a auto para adaptarse al contenido */
-    width: 100%; /* Cambiado al 100% para ocupar todo el ancho disponible */
-    margin-left: 0; /* Eliminado el margen izquierdo */
-    grid-column: 1;
-    grid-row: 2; /* En la segunda fila */
-  }
-  
-  .text {
-    text-align: justify;
-    width: 100%; /* Cambiado al 100% para ocupar todo el ancho disponible */
-    margin-left: 0; /* Eliminado el margen izquierdo */
-    margin-top: 1vh;
-    font-size: 2vw; /* Ajustado el tamaño de fuente */
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    grid-row: 1; /* En la primera fila */
-  }
-  
-  element {
-    grid-row: 2; /* En la segunda fila */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  
-
-
 }
