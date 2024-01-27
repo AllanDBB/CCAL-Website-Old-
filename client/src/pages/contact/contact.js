@@ -25,11 +25,11 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact-page-container">
+    <div className="contact-page-container"> 
       
       <div className='contact-banner'>
-        <p className='h1-title-banner'> ¡Contáctanos! </p>
-        <p className='p-title-banner'> Usted es nuestra prioridad </p>
+        <p className='h1-title-banner'> Comunícate con nosotros </p>
+        <p className='p-title-banner'> Con mucho gusto te atenderemos </p>
       </div>
 
       <div className='contact-content'>
@@ -74,13 +74,8 @@ const Contact = () => {
 
         <div className="opening-hours-box">
           <h3>Horario de Atención</h3>
-          <p><strong>Lunes:</strong> 07:00 - 17:00</p>
-          <p><strong>Martes:</strong> 07:00 - 17:00</p>
-          <p><strong>Miércoles:</strong> 07:00 - 17:00</p>
-          <p><strong>Jueves:</strong> 07:00 - 17:00</p>
-          <p><strong>Viernes:</strong> 07:00 - 17:00</p>
-          <p><strong>Sábado:</strong> CERRADO</p>
-          <p><strong>Domingo:</strong> CERRADO</p>
+          <p><strong>L-V</strong> 07:00 - 17:00</p>
+          <p><strong>S-D:</strong> CERRADO</p>
         </div>
       </div>
 
