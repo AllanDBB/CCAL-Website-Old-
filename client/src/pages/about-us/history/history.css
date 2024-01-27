@@ -11,7 +11,6 @@
   background-repeat: no-repeat;
   z-index: 10;
   perspective: 15.625rem; /* 250px / 16px */
-  font-size: 32;
 }
 
 .loader-history-before {

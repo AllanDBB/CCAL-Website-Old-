@@ -50,7 +50,7 @@ header h1 {
   background-image: url("../../assets/banners/Banner\ 3.jpg");
   background-size: cover;
   background-position: center;
-  height: 108vh; 
+  height: 118vh; 
 }
 
 .hero{
@@ -190,10 +190,10 @@ height: 60vh;
 
 .historiaBody text {
   text-align: justify;
-  width: 15vw; 
-  margin-left: 2vw; 
-  margin-top: 5vh;
-  font-size: 1vh;
+  width: 20vw; 
+  margin-left: 1vw; 
+  margin-top: 2.5vh;
+  font-size: 1.5vh;
   font-family: "Helvetica Neue", Arial, sans-serif;
   grid-column: 2 / 3; 
 }
@@ -204,8 +204,6 @@ height: 60vh;
   align-items: center;
   justify-content: center;
 }
-
-
 
 
 /* Nuestro Equipo */
@@ -234,76 +232,6 @@ height: 60vh;
   justify-content: center;
 }
 
-@media screen and (max-width: 1000px) {
-  .equipo {
-    display: grid;
-    grid-template-columns: 1fr; /* Cambia a una sola columna */
-    grid-template-rows: auto auto; /* Dos filas automáticas */    
-    gap: 0px;
-    background-color: rgba(50, 50, 50, 0.7);
-    color: #000;
-  }
-
-  .equipoStructure{
-    background-color: #fff;
-    height: 31vh;
-    width: 100vw;
-    grid-column: 1; /* Ocupa la única columna disponible */
-    grid-row: 1; /* En la primera fila */
-    justify-content: center;
-    
-  }
-
-  .equipoPicture{
-    color: #000;
-    align-items: center;
-    margin-top: 0.25vh;
-    justify-content: center;
-    grid-column: 1; /* Ocupa la única columna disponible */
-    grid-row: 2; /* En la segunda fila */
-  }
-  .equipoTitle {
-    padding: 0.78125vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-    height: 5vh;
-    width: 48.15vw;
-    margin-left: 12.5vh;
-    grid-column: 1 / 2; 
-    grid-row: 1 / 2;
-  }
-
-  .equipoBody {
-    padding: 0.78125vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-    grid-template-rows: auto;
-    align-items: center;
-  
-    height: 20vh;
-    width: 48.15vw;
-    margin-left: 12.5vh;
-    grid-column: 1 / 2; 
-    grid-row: 2 / 3;
-  }
-
-  .equipoBody text {
-    text-align: justify; /* Alinea el texto a la izquierda */
-    width: 30vw; /* Establece el ancho en 1vw */
-    margin-left: 5vw; /* Mueve el bloque 2vw a la derecha */
-    margin-top: 1vh;
-    font-size: 1vh;
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    grid-column: 1 / 2; 
-    grid-row: 1 / 2;
-  }
-}
-
-
-
-
 
 .equipoTitle {
   padding: 0.78125vw;
@@ -331,11 +259,11 @@ height: 60vh;
 }
 
 .equipoBody text {
-  text-align: justify; /* Alinea el texto a la izquierda */
+  text-align: justify;
   width: 30vw; /* Establece el ancho en 1vw */
   margin-left: 5vw; /* Mueve el bloque 2vw a la derecha */
   margin-top: 1vh;
-  font-size: 1vh;
+  font-size: 1.5vh;
   font-family: "Helvetica Neue", Arial, sans-serif;
   grid-column: 1 / 2; 
   grid-row: 1 / 2;
@@ -348,8 +276,6 @@ height: 60vh;
   display: flex;  
   align-items: center;
   justify-content: center;
-
-
 }
 
 
@@ -368,13 +294,25 @@ height: 60vh;
 
 .instalacionesBody {
   padding: 0.78125vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: auto;
   background-color: #fff;
   color: #000;
-  height: 5vh;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  height: 15vh;
 }
+
+.instalacionesBody text{
+  font-size: 1.5vh;
+  margin-left: 10vw;  
+  text-align: justify;
+  width: 25vw;
+  grid-column: 1 / 2; 
+  grid-row: 1 / 2;
+}
+
+
 
 /* Compromiso con la Comunidad */
 .compromisoTitle {
@@ -440,3 +378,149 @@ height: 60vh;
 
 
 
+@media screen and (max-width: 756px) {
+
+  .equipo {
+    display: grid;
+    grid-template-columns: 1fr; /* Cambia a una sola columna */
+    grid-template-rows: auto auto; /* Dos filas automáticas */    
+    gap: 0px;
+    background-color: rgba(50, 50, 50, 0.7);
+    color: #000;
+  }
+
+  .equipoStructure{
+    background-color: #fff;
+    height: 31vh;
+    width: 100vw;
+    grid-column: 1; /* Ocupa la única columna disponible */
+    grid-row: 1; /* En la primera fila */
+    justify-content: center;
+    
+  }
+
+  .equipoPicture{
+    color: #000;
+    align-items: center;
+    margin-top: 0.25vh;
+    justify-content: center;
+    grid-column: 1; /* Ocupa la única columna disponible */
+    grid-row: 2; /* En la segunda fila */
+  }
+  .equipoTitle {
+    padding: 0.78125vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    height: 5vh;
+    width: 48.15vw;
+    margin-left: 12.5vh;
+    grid-column: 1 / 2; 
+    grid-row: 1 / 2;
+  }
+
+  .equipoBody {
+    padding: 0.78125vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: auto;
+    align-items: center;
+  
+    height: 20vh;
+    width: 48.15vw;
+    margin-left: 12.5vh;
+    grid-column: 1 / 2; 
+    grid-row: 2 / 3;
+  }
+
+  .equipoBody text {
+    text-align: justify; /* Alinea el texto a la izquierda */
+    width: 50vw; /* Establece el ancho en 1vw */
+    margin-left: 0vw; /* Mueve el bloque 2vw a la derecha */
+    margin-top: 1vh;
+    font-size: 1vh;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    grid-column: 1 / 2; 
+    grid-row: 1 / 2;
+  }
+  /* Historia del Colegio */
+
+  .historia {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto; 
+    gap: 0px;
+    background-color: rgba(50, 50, 50, 0.7);
+    color: #000;
+    height: 60vh;
+  }
+
+  .historiaText{
+    background-color: #fff;
+    height: 50vh;
+    width: 100vw;
+    grid-column: 1; 
+    grid-row: 1; 
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr; /* Cambia a una sola columna */
+    grid-template-rows: auto auto auto; /* Dos filas automáticas */ 
+    
+  }
+
+  .historiaPicture{
+    color: #000;
+    align-items: center;
+    margin-top: 0.25vh;
+    justify-content: center;
+    grid-column: 1; /* Ocupa la única columna disponible */
+    grid-row: 2; /* En la segunda fila */
+  }
+  .historiaTitle {
+    padding: 0.78125vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    height: 5vh;
+    width: 48.15vw;
+    margin-left: 12.5vh;
+    grid-column: 1; 
+    grid-row: 1;
+  }
+
+  .historiaBody {
+    padding: 0.78125vw;
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto auto;
+    align-items: center;
+  
+    height: 15vh;
+    width: 48.15vw;
+    margin-left: 12.5vh;
+    grid-column: 1; 
+    grid-row: 2;
+  }
+
+  .historiaBody text {
+    text-align: justify;
+    width: 30vw;
+    margin-left: 5vw;
+    margin-top: 1vh;
+    font-size: 1vh;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    grid-row: 1;
+  }
+
+  .historiaBody element {
+    grid-row: 2; 
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+  }
+
+
+
+}
