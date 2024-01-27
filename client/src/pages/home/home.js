@@ -10,6 +10,10 @@ const Home = () => {
     document.title = "CCAL";
   }, []);
 
+  const scrollToContent = () => {
+    document.querySelector('.scroll-snap-card-container').scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div>
       {/* Wavy Lines */}
@@ -29,7 +33,7 @@ const Home = () => {
             <p className="hero-description">
               Somos más que una fórmula.
             </p>
-            <button className="cta-button">¡Empezar Ahora!</button>
+            <button className="cta-button" onClick={scrollToContent}>¡Empezar Ahora!</button>
           </div>
         </header>
       </div>

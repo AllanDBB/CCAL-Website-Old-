@@ -38,10 +38,12 @@ const Achievements = () => {
 
             <div className="section white-section">
                 <div className="white-section-content">
+                    <div className="padding-white-aja">
                     <img src={Trophy} alt="Trofeo" className="trophy-photo"/>
                     <h2>Éxito academico</h2>
                     <p>El colegio Científico de Alajuela ha liderado la educación a lo largo de diferentes años,</p>
                     <p>Obteniendo diferentes reconocimientos en olimpiadas, eventos y competencias a nivel nacional e internacional.</p>
+                    </div>
                 </div>
             </div>
 
