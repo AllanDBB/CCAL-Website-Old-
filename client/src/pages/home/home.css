@@ -1,0 +1,525 @@
+/* Home.css */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10vw; /* Adjust the width based on your design needs */
+  height: 100vh; /* Full height of the viewport */
+  background-repeat: repeat-y;
+  background-size: auto 20%; /* Adjust the height to 100% of the sidebar */
+  animation: scrollBackground 10s linear infinite;
+  z-index: -1; 
+}
+
+@keyframes scrollBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 -100%;
+  }
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden; 
+}
+
+.home-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.hero-section {
+  text-align: center;
+  position: relative;
+  background: none;
+  color: #ecf0f1;
+  height: 100vh; /* Esto hará que ocupe toda la altura de la pantalla */
+  display: flex;
+  align-items: center; /* Centra el contenido verticalmente */
+  justify-content: center; /* Centra el contenido horizontalmente */
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%), url('../../assets/banners/Banner 1.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+
+
+
+.hero-content {
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 3vw;
+  margin-bottom: 2vh;
+  color: #fff;
+  margin-top: 4%;
+}
+
+.hero-description {
+  font-size: 1.2vw;
+  color: #ecf0f1;
+}
+
+.cta-button {
+  padding: 15px 30px; /* Tamaño del botón */
+  font-size: 1.2rem; /* Tamaño de la letra */
+  background-color: #1f4ea0;
+  color: #fff;
+  border: none;
+  border-radius: 25px; /* Bordes redondeados más pronunciados */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Transición suave para todas las propiedades */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.cta-button:hover {
+  background-color: #04236b;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al pasar el ratón */
+  transform: translateY(-2px); /* Efecto de "levantar" el botón */
+}
+
+/* Snap Cards Section */
+
+
+
+.azul {
+  background-color: #647cbc;
+}
+
+.yellow {
+  background-color: #d3c584;
+}
+
+.azul2 {
+  background-color: #647cbc;
+}
+
+
+/* Scroll Card Container */
+
+.scroll-card-paragraph {
+  max-width: 40%; /* Adjust the width as needed */
+  padding: 2vh; /* Adjust padding as needed */
+  box-sizing: border-box;
+  text-align: justify; /* Align text */
+  
+}
+
+.scroll-card-paragraph p {
+  font-size: 1.5vw; /* Adjust font size as needed */
+  color: #333; /* Adjust text color */
+  line-height: 1.6; /* Adjust line height as needed */
+}
+.scroll-snap-card-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+
+}
+
+
+.scroll-snap-card {
+  height: 50vh;
+  width: 30vw;
+  scroll-snap-type: block mandatory;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  border-radius: 2vh;
+
+  
+  /* Webkit (Chrome, Safari) */
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+}
+
+.scroll-snap-card .slide {
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-snap-card .slide p {
+  font-size: 2vw; /* Adjusted font size for better visibility */
+  color: white;
+  font-weight: 700;
+}
+/* Card Section */
+
+.card-section-wrapper {
+  text-align: center;
+  margin-bottom: 15vh;
+  margin-top: 20vh;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.card-photo-title h1 {
+  font-size: 2rem; /* Tamaño de fuente base para escritorio */
+}
+
+.card-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+
+.card-text h2 {
+  font-size: 2vw;
+  margin: 0;
+}
+
+.card-text p {
+  font-size: 1.2vw;
+  margin: 1vh 0 0;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Permite que las tarjetas se ajusten en pantallas más pequeñas */
+  padding: 20px;
+}
+
+.card {
+  position: relative; 
+  flex-basis: 45%; /* Ajuste para que dos tarjetas quepan en una fila en pantallas grandes */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card:hover {
+  transform: scale(1.05) rotate(0deg); 
+}
+
+.card__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 100%;
+  height: 100%;
+  padding: 2vh;
+  box-sizing: border-box;
+  background-color: #fff;
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card:hover .card__content {
+  transform: translate(-50%, -50%) rotate(0deg);
+  opacity: 1;
+}
+
+.card__title {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.card__description {
+  font-size: 1.2rem;
+  margin-top: 100px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* CARD REDIRECTS */
+.card-redirect-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  flex-wrap: wrap;
+}
+
+.card-redirect {
+  width: calc((100% - 12vw) / 3);
+  height: 30vh;
+  border-radius: 2vw;
+  background: #f5f5f5;
+  position: relative;
+  padding: 1.8vh 1.8vw;
+  border: 2px solid #c3c6ce;
+  transition: 0.5s ease-out;
+  overflow: visible;
+  margin-bottom: 10vh;
+  margin-right: 1vw;
+  margin-left: 1vw
+}
+
+.card-redirect-details {
+  color: black;
+  height: 100%;
+  gap: 0.5em;
+  display: grid;
+  place-content: center;
+}
+
+.card-redirect-button {
+  transform: translate(-50%, 125%);
+  width: 60%;
+  border-radius: 2vh;
+  border: none;
+  background-color: #008bf8;
+  color: #fff;
+  font-size: 1vh;
+  padding: 0.5vh 1vh;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  opacity: 0;
+  transition: 0.3s ease-out;
+  font-size: 1em;
+}
+
+.text-body {
+  color: rgb(134, 134, 134);
+  font-size: 1.5vw;
+}
+
+/* Text */
+.text-title {
+  font-size: 1.5vw;
+  font-weight: bold;
+}
+
+/* Hover */
+.card-redirect:hover {
+  border-color: #008bf8;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.card-redirect:hover .card-redirect-button {
+  transform: translate(-50%, 50%);
+  opacity: 1;
+}
+
+/* FLIP CARD */
+
+@keyframes idleAnimation {
+  0%, 100% {
+    transform: rotateY(20deg);
+  }
+  50% {
+    transform: rotateY(-20deg);
+  }
+} 
+
+.Flip-card {
+  width: 30vw;
+  height: 20vh;
+  perspective: 1000px;
+  margin: auto;
+  margin-right: 15vw;
+  margin-bottom: 10vh;
+}
+
+.Flip-card-wrapper {
+  width: 100%;
+  height: 100%;
+  animation: idleAnimation 3s infinite;
+}
+
+.Flip-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.999s;
+}
+
+.Flip-card:hover .Flip-card-wrapper {
+  animation-play-state: paused;
+}
+
+.Flip-card:hover .Flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.Flip-card-front,
+.Flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.Flip-card-front {
+  background-color: #6A2C70;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 10px solid #6A2C70;
+  border-radius: 2vh;
+  font-size: 2vh;
+  transform: rotateY(0deg);
+}
+
+.Flip-card-back {
+  background-color: #F08A5D;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1vh solid #F08A5D;
+  border-radius: 2vh;
+  font-size: 2vh;
+  transform: rotateY(180deg);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 25vw;
+  }
+
+  .card-photo-title h1 {
+    font-size: 1.5rem; 
+  }
+
+
+  .home-container {
+    padding: 0;
+  }
+
+  .hero-section {
+    height: 100vh;
+    padding: 0;
+  }
+  .hero-title {
+    font-size: 8vw;
+  }
+  .hero-description {
+    font-size: 4vw;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 3vw;
+  }
+
+  .card__description {
+    font-size: 1.2rem;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  
+  .scroll-card-paragraph {
+    max-width: 90%;
+    margin: 0 auto; /* Asegura centrado horizontal */
+    padding: 1rem;
+  }
+  
+  .scroll-card-paragraph p {
+    font-size: 1rem; /* Tamaño de letra más legible */
+    color: #333;
+    line-height: 1.6;
+  }
+  .scroll-snap-card-container {
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    flex-direction: column; /* Alinea los elementos verticalmente para móviles */
+  }
+
+  .scroll-snap-card-container,
+  .scroll-snap-card {
+    max-width: 100%;
+    width: 100%;
+  }
+  .scroll-snap-card {
+    height: 40vh;
+  }
+  .scroll-snap-card .slide p {
+    font-size: 6vw;
+  }
+
+  .card-container {
+    padding: 10px;
+  }
+
+  .card {
+    flex-basis: 100%; /* Hace que cada tarjeta ocupe el ancho completo en móviles */
+  }
+
+  .card-redirect-container {
+    flex-direction: column;
+  }
+  .card-redirect {
+    width: 90%;
+    margin-bottom: 15px;
+  }
+
+  .Flip-card {
+    width: 80vw;
+    margin: 20px auto;
+  }
+
+  .flip-card-text-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .flip-card-text {
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px; /* Espacio entre el texto y la tarjeta en dispositivos móviles */
+  }
+
+}
+
+
+.flip-card-text-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+}
+.flip-card-text {
+  max-width: 40%;
+  margin-right: 20px;
+  font-size: 1.2em; /* Tamaño de la fuente */
+  color: #333; /* Color del texto, elige uno que se adapte a tu diseño */
+  line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
+  text-align: justify; /* Alineación del texto */
+}
