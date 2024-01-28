@@ -265,7 +265,7 @@ body, html {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 20px 0;
+  margin: 20px 0 rgba(238, 228, 228, 0.1);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
   flex-wrap: wrap;
 }
@@ -312,12 +312,12 @@ body, html {
 
 .text-body {
   color: rgb(134, 134, 134);
-  font-size: 1.5vw;
+  font-size: 20px;
 }
 
 /* Text */
 .text-title {
-  font-size: 1.5vw;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -355,7 +355,7 @@ body, html {
 .Flip-card-wrapper {
   width: 100%;
   height: 100%;
-  animation: idleAnimation 3s infinite;
+  animation: idleAnimation 5s infinite;
 }
 
 .Flip-card-inner {
@@ -492,34 +492,40 @@ body, html {
 
   .Flip-card {
     width: 80vw;
-    margin: 20px auto;
+    margin: 20px 20px;
   }
 
   .flip-card-text-container {
     flex-direction: column;
-    align-items: flex-start;
+    display: flex;
+    align-items: center;
+    margin: 80px;
   }
 
   .flip-card-text {
     max-width: 100%;
-    margin-right: 0;
     margin-bottom: 20px; /* Espacio entre el texto y la tarjeta en dispositivos móviles */
   }
-
 }
 
 
 .flip-card-text-container {
+  flex-direction: column;
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  margin: 20px;
+  margin: 80px;
 }
 .flip-card-text {
   max-width: 40%;
-  margin-right: 20px;
   font-size: 1.2em; /* Tamaño de la fuente */
   color: #333; /* Color del texto, elige uno que se adapte a tu diseño */
   line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
-  text-align: justify; /* Alineación del texto */
+  text-align: center; /* Alineación del texto */
 }
+
+.Flip-card {
+  width: 50vw;
+  height: 8vw;
+  margin: 20px 20px;
+}
+
