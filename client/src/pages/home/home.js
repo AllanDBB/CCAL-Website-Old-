@@ -43,24 +43,11 @@ const Home = () => {
         <div className="scroll-snap-card-container">
           {/* Paragraph next to the scroll card */}
           <div className="scroll-card-paragraph">
-            <p>
-            Antes de continuar, nos encantaría invitarte a conocer más sobre nosotros a través de nuestras redes sociales. En Instagram, Facebook y otras plataformas, compartimos momentos especiales, anuncios importantes y capturamos la esencia de nuestra comunidad. 
-            </p>
 
           </div>
-
-          <div className="scroll-snap-card">
-            <div className="slide azul">
-              <p className="tip">Post Insta 1</p>
-            </div>
-            <div className="slide yellow">
-              <p className="tip">Post Insta 2</p>
-            </div>
-            <div className="slide azul2">
-              <p className="tip">Post Insta 3</p>
-            </div>
-          </div>
+          <iframe width="744" height="419" src="https://www.youtube.com/embed/AhGhLTd7BMc" title="¡Más que una fórmula! - 15 Aniversario del CCC Alajuela" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
+
 
 {/* Wrapper for Title and Card Container */}
 <div className="card-section-wrapper">
