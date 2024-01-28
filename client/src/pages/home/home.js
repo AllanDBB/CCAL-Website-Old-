@@ -4,6 +4,7 @@ import Banner1 from '../../assets/banners/Banner 1.jpg'
 import Banner2 from '../../assets/banners/Banner 2.jpg'
 // import Blue from '../../assets/plus/blue.png'
 // import Yellow from '../../assets/plus/yellow.png'
+
 const Home = () => {
 
   useEffect(() => {
@@ -41,6 +42,7 @@ const Home = () => {
             <p>
             Antes de continuar, nos encantaría invitarte a conocer más sobre nosotros a través de nuestras redes sociales. En Instagram, Facebook y otras plataformas, compartimos momentos especiales, anuncios importantes y capturamos la esencia de nuestra comunidad. 
             </p>
+
           </div>
 
           <div className="scroll-snap-card">
@@ -86,7 +88,7 @@ const Home = () => {
 </div>
 
     {/* Redirect card */}  
-    
+
         <div class="card-redirect-container">
     <div class="card-redirect">
       <div class="card-redirect-details">
