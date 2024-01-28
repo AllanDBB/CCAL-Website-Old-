@@ -85,7 +85,8 @@ const Home = () => {
   </div>
 </div>
 
-        {/* Redirect card */}
+    {/* Redirect card */}  
+    
         <div class="card-redirect-container">
     <div class="card-redirect">
       <div class="card-redirect-details">
@@ -114,29 +115,34 @@ const Home = () => {
 
         {/* Flip Card */}
 
-        <div className="flip-card-text-container">
-        <div className="flip-card-text">
+<div className="flip-card-text-container">
+
+  <div className="flip-card-text">
     <p>¿Interesado en visitar el colegio o ponerte en contacto con nosotros? Descubre más sobre nuestra institución, programas educativos y oportunidades únicas que ofrecemos. ¡Estamos aquí para ayudarte a dar el siguiente paso en tu viaje educativo!</p>
-</div>
+  </div> 
+
   <div className="Flip-card">
-    {/* Tu código de Flip Card existente aquí */}
-  </div>
-</div>
+    <div className="Flip-card-wrapper">
+      <div className="Flip-card-inner">
 
-        <div class="Flip-card">
-  <div class="Flip-card-wrapper">
-    <div class="Flip-card-inner">
-      <div class="Flip-card-front">
-        <p>Fotito y algo mas que represente tarjeta introduccion</p>
-      </div>
-      <div class="Flip-card-back">
-        <p>Info que lleve a conocenos (poner en la izquierda indicador de que se puede girar)</p>
+        <div className="Flip-card-front">
+          <p>Fotito y algo mas que represente tarjeta introduccion</p>
+        </div>
+        <div className="Flip-card-back">
+          <p>Info que lleve a conocenos (poner en la izquierda indicador de que se puede girar)</p>
+        </div>
+
       </div>
     </div>
   </div>
+
 </div>
 
-    </div>
+
+
+
+</div>
+
   );
 };
 
