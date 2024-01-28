@@ -34,7 +34,6 @@ function App() {
           <Route path="/restaurar-contraseña" element={<RestorePassword />} />
           <Route path="/logros" element={<><Achievements/><Footer/></>} />
           <Route path="/admisión" element={<><Admission/><Footer/></>} />
-  
         </Routes>
       </div>
     </Router>
