@@ -2,6 +2,10 @@ import React, {useEffect} from 'react';
 import './home.css';
 import Banner1 from '../../assets/banners/Banner 1.jpg'
 import Banner2 from '../../assets/banners/Banner 2.jpg'
+import Admision from '../../assets/plus/Admision.png'
+import Trophy from '../../assets/plus/Trophy-home.png'
+import Conocenos from '../../assets/plus/Conocenos.png'
+import Logo from '../../assets/logos/Logo.svg'
 // import Blue from '../../assets/plus/blue.png'
 // import Yellow from '../../assets/plus/yellow.png'
 
@@ -91,34 +95,34 @@ const Home = () => {
 
         <div class="card-redirect-container">
     <div class="card-redirect">
-      <div class="card-redirect-details">
-        <p class="text-title">¿Quieres saber más sobre nosotros?</p>
-        <p class="text-body">Poner icono representativo</p>
+      <img src={Conocenos} alt="Conocenos" />
+        <div class="card-redirect-details">
+          <p class="text-title">¿Quieres saber más sobre nosotros?</p>
+        </div>
+        <button class="card-redirect-button">Más información</button>
       </div>
-      <button class="card-redirect-button">Más información</button>
-    </div>
 
     <div class="card-redirect">
-      <div class="card-redirect-details">
-        <p class="text-title">¿Te interesaría saber sobre nuestros logros?</p>
-        <p class="text-body">Poner icono representativo</p>
+    <img src={Trophy} alt="Trophy" />
+        <div class="card-redirect-details">
+          <p class="text-title">¿Te interesaría saber sobre nuestros logros?</p>
+        </div>
+        <button class="card-redirect-button">Más información</button>
       </div>
-      <button class="card-redirect-button">Más información</button>
-    </div>
 
     <div class="card-redirect">
-      <div class="card-redirect-details">
-        <p class="text-title">¿Acaso te gustaría aplicar a nuestra institución?</p>
-        <p class="text-body">Poner icono representativo</p>
+      
+      <img src={Admision} alt="Admision" />
+        <div class="card-redirect-details">
+          <p class="text-title">¿Acaso te gustaría aplicar a nuestra institución?</p>
+        </div>
+        <button class="card-redirect-button">Más información</button>
       </div>
-      <button class="card-redirect-button">Más información</button>
     </div>
-  </div>
 
         {/* Flip Card */}
 
 <div className="flip-card-text-container">
-
   <div className="flip-card-text">
     <p>¿Interesado en visitar el colegio o ponerte en contacto con nosotros? Descubre más sobre nuestra institución, programas educativos y oportunidades únicas que ofrecemos. ¡Estamos aquí para ayudarte a dar el siguiente paso en tu viaje educativo!</p>
   </div> 
@@ -126,24 +130,27 @@ const Home = () => {
   <div className="Flip-card">
     <div className="Flip-card-wrapper">
       <div className="Flip-card-inner">
-
         <div className="Flip-card-front">
-          <p>Fotito y algo mas que represente tarjeta introduccion</p>
-        </div>
-        <div className="Flip-card-back">
-          <p>Info que lleve a conocenos (poner en la izquierda indicador de que se puede girar)</p>
+          <img src={Logo} alt="Logo" />
         </div>
 
+        <div className="Flip-card-back">
+          <div className="left-content">
+            <p>CCAL</p>
+          </div>
+
+          <div className="right-content">
+          <img src={Logo} alt="Logo" />
+          <p>CCAL</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
-</div>
-
+  </div>
 
 
-
-</div>
 
   );
 };

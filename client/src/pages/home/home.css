@@ -138,7 +138,7 @@ body, html {
 
 .scroll-snap-card {
   height: 50vh;
-  width: 30vw;
+  width: 50vh;
   scroll-snap-type: block mandatory;
   overflow-y: scroll;
   scrollbar-width: thin;
@@ -212,9 +212,8 @@ body, html {
 .card {
   position: relative; 
   flex-basis: 45%; /* Ajuste para que dos tarjetas quepan en una fila en pantallas grandes */
-  border-radius: 10px;
+  border-radius: 2vw;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
 }
@@ -246,21 +245,21 @@ body, html {
 .card:hover .card__content {
   transform: translate(-50%, -50%) rotate(0deg);
   opacity: 1;
+  background-color: #647cbc;
 }
 
 .card__title {
   font-size: 1.2rem;
-  margin: 10px 0;
 }
 
 .card__description {
-  font-size: 1.2rem;
-  margin-top: 100px;
+  font-size: 0.95rem;
   margin-bottom: 10px;
   text-align: center;
 }
 
 /* CARD REDIRECTS */
+
 .card-redirect-container {
   display: flex;
   justify-content: space-around;
@@ -269,6 +268,7 @@ body, html {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
   flex-wrap: wrap;
 }
+
 
 .card-redirect {
   width: calc((100% - 12vw) / 3);
@@ -282,7 +282,16 @@ body, html {
   overflow: visible;
   margin-bottom: 10vh;
   margin-right: 1vw;
-  margin-left: 1vw
+  margin-left: 1vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+}
+
+.card-redirect img {
+  max-width: 100%; /* Ensure the image doesn't exceed the container width */
+  max-height: 40%; /* Set a max height to prevent excessive stretching */
+  margin-top: 5vh;
 }
 
 .card-redirect-details {
@@ -310,15 +319,11 @@ body, html {
   font-size: 1em;
 }
 
-.text-body {
-  color: rgb(134, 134, 134);
-  font-size: 20px;
-}
-
 /* Text */
 .text-title {
   font-size: 20px;
   font-weight: bold;
+  margin:auto;
 }
 
 /* Hover */
@@ -344,12 +349,12 @@ body, html {
 } 
 
 .Flip-card {
-  width: 30vw;
+  width: 20vw;
   height: 20vh;
   perspective: 1000px;
   margin: auto;
-  margin-right: 15vw;
-  margin-bottom: 10vh;
+  margin-bottom: 5vh;
+  margin-top: 5vh;
 }
 
 .Flip-card-wrapper {
@@ -380,31 +385,123 @@ body, html {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-}
-
-.Flip-card-front {
-  background-color: #6A2C70;
-  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 10px solid #6A2C70;
   border-radius: 2vh;
   font-size: 2vh;
   transform: rotateY(0deg);
 }
 
+
+.Flip-card-front {
+  --s: 84px;
+  --c1: #f2f2f2;
+  --c2: #cdcbcc;
+  --c3: #999999;
+  --_g: 0 120deg, #0000 0;
+
+  background: 
+    conic-gradient(
+      from 0deg at calc(500% / 6) calc(100% / 3),
+      var(--c3) var(--_g)
+    ),
+    conic-gradient(
+      from -120deg at calc(100% / 6) calc(100% / 3),
+      var(--c2) var(--_g)
+    ),
+    conic-gradient(
+      from 120deg at calc(100% / 3) calc(500% / 6),
+      var(--c1) var(--_g)
+    ),
+    conic-gradient(
+      from 120deg at calc(200% / 3) calc(500% / 6),
+      var(--c1) var(--_g)
+    ),
+    conic-gradient(
+      from -180deg at calc(100% / 3) 50%,
+      var(--c2) 60deg,
+      var(--c1) var(--_g)
+    ),
+    conic-gradient(
+      from 60deg at calc(200% / 3) 50%,
+      var(--c1) 60deg,
+      var(--c3) var(--_g)
+    ),
+    conic-gradient(
+      from -60deg at 50% calc(100% / 3),
+      var(--c1) 120deg,
+      var(--c2) 0 240deg,
+      var(--c3) 0
+    );
+  background-size: calc(var(--s) * 1.732) var(--s);
+}
+
+.Flip-card-front img {
+  width: 30%;
+  height: auto;
+  margin-left: 1vw;
+  object-fit: cover;
+}
+
 .Flip-card-back {
-  background-color: #F08A5D;
-  color: #fff;
+  background-color: #f2f2f2;
+  color: #999999;
   display: flex;
+  justify-content: space-between; /* Distribute space between left and right content */
   align-items: center;
-  justify-content: center;
-  border: 1vh solid #F08A5D;
   border-radius: 2vh;
   font-size: 2vh;
   transform: rotateY(180deg);
+  padding: 1vh; /* Add padding inside the card */
 }
+
+.left-content, .right-content {
+  position: absolute; /* Absolute positioning */
+  top: 50%; /* Start from the middle vertically */
+  transform: translateY(-50%); /* Adjust to center vertically */
+  width: 100%; /* Adjust the width as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.left-content {
+  left: 5%; /* Adjust this to move the left content horizontally */
+}
+
+.right-content {
+  right: 5%; /* Adjust this to move the right content horizontally */
+}
+
+.Flip-card-back img {
+  width: 20%;
+  height: auto;
+  object-fit: cover;
+  position: absolute;
+  top: 4vh;
+  right: 4vh;
+}
+
+.flip-card-text-container {
+  margin-top: 1.5rem; /* Adjust the top margin as needed */
+  font-family: 'Segoe UI';
+  text-align: center; /* Alineación del texto */
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+
+.flip-card-text {
+  max-width: 40%;
+  font-size: 1.2em; /* Tamaño de la fuente */
+  color: #333; /* Color del texto, elige uno que se adapte a tu diseño */
+  line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
+
+  font-family: 'Segoe UI';
+}
+
 
 @media (max-width: 768px) {
   .sidebar {
@@ -468,7 +565,9 @@ body, html {
     width: 100%;
   }
   .scroll-snap-card {
-    height: 40vh;
+    height: 50vh;
+    width: 50vh;
+    margin:auto;
   }
   .scroll-snap-card .slide p {
     font-size: 6vw;
@@ -491,7 +590,8 @@ body, html {
   }
 
   .Flip-card {
-    width: 80vw;
+    width: 50vw;
+    height: 20vh;
     margin: 20px 20px;
   }
 
@@ -506,26 +606,17 @@ body, html {
     max-width: 100%;
     margin-bottom: 20px; /* Espacio entre el texto y la tarjeta en dispositivos móviles */
   }
+  
+  
+  .Flip-card-back img {
+    width: 20%;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    top: 4vh;
+    right: 4vh;
+  }
+
 }
 
-
-.flip-card-text-container {
-  flex-direction: column;
-  display: flex;
-  align-items: center;
-  margin: 80px;
-}
-.flip-card-text {
-  max-width: 40%;
-  font-size: 1.2em; /* Tamaño de la fuente */
-  color: #333; /* Color del texto, elige uno que se adapte a tu diseño */
-  line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
-  text-align: center; /* Alineación del texto */
-}
-
-.Flip-card {
-  width: 50vw;
-  height: 8vw;
-  margin: 20px 20px;
-}
 
