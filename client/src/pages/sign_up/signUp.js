@@ -25,9 +25,9 @@ const SignUp = () => {
         console.log('Perfil de Google:', profile);
       };
     
-      const handleGoogleLoginFailure = () => {
+      const handleGoogleLoginFailure = (response) => {
         // Maneja el inicio de sesión fallido aquí
-        console.log('Inicio de sesión con Google fallido');
+        console.log('Inicio de sesión con Google fallido', response);
       };
 
     // Maneja el cambio en los campos del formulario
