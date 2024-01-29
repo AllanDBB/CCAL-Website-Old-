@@ -127,6 +127,7 @@ body, html {
   line-height: 1.6; /* Adjust line height as needed */
 }
 .scroll-snap-card-container {
+  flex-direction: column;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -138,7 +139,7 @@ body, html {
 
 .scroll-snap-card {
   height: 50vh;
-  width: 50vh;
+  width:800px;
   scroll-snap-type: block mandatory;
   overflow-y: scroll;
   scrollbar-width: thin;

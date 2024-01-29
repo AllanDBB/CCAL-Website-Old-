@@ -3,7 +3,7 @@ import './footer.css';
 
 import Facebook from '../../assets/logos/icons8-facebook-nuevo.svg';
 import Instagram from '../../assets/logos/icons8-instagram.svg';
-import GitHub from '../../assets/logos/Google__G__logo.svg';
+import GitHub from '../../assets/logos/icons8-github.svg';
 import Pika from './Pika/pika';
 
 
@@ -23,7 +23,7 @@ const Footer = () => {
             <a href="http://instagram.com/ccalajuela" className="footer-link">
               <img src={Instagram} alt='Logo de Instagram' className="social-icon"/>
             </a>
-            <a href="http://github.com/sagebox_" className="footer-link">
+            <a href="http://github.com/SageBox-CR" className="footer-link">
               <img src={GitHub} alt='Logo de GitHub' className="social-icon"/>
             </a>
           </div>
