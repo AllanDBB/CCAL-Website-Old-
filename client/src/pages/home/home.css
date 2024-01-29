@@ -350,8 +350,8 @@ body, html {
 } 
 
 .Flip-card {
-  width: 20vw;
-  height: 20vh;
+  width: 300px; /* Fixed width */
+  height: 200px; /* Fixed height */
   perspective: 1000px;
   margin: auto;
   margin-bottom: 5vh;
@@ -390,9 +390,9 @@ body, html {
   align-items: center;
   justify-content: center;
   border-radius: 2vh;
-  font-size: 2vh;
   transform: rotateY(0deg);
 }
+
 
 
 .Flip-card-front {
@@ -447,42 +447,21 @@ body, html {
 
 .Flip-card-back {
   background-color: #f2f2f2;
-  color: #999999;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Hide overflow */
   display: flex;
-  justify-content: space-between; /* Distribute space between left and right content */
-  align-items: center;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
   border-radius: 2vh;
-  font-size: 2vh;
   transform: rotateY(180deg);
-  padding: 1vh; /* Add padding inside the card */
-}
-
-.left-content, .right-content {
-  position: absolute; /* Absolute positioning */
-  top: 50%; /* Start from the middle vertically */
-  transform: translateY(-50%); /* Adjust to center vertically */
-  width: 100%; /* Adjust the width as needed */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.left-content {
-  left: 5%; /* Adjust this to move the left content horizontally */
-}
-
-.right-content {
-  right: 5%; /* Adjust this to move the right content horizontally */
 }
 
 .Flip-card-back img {
-  width: 20%;
-  height: auto;
-  object-fit: cover;
-  position: absolute;
-  top: 4vh;
-  right: 4vh;
+  width: 100%; /* Full width of the card */
+  height: 100%; /* Full height of the card */
+  object-fit: cover; /* Cover the entire area, might crop the image */
 }
 
 .flip-card-text-container {
@@ -499,7 +478,6 @@ body, html {
   font-size: 1.2em; /* Tamaño de la fuente */
   color: #333; /* Color del texto, elige uno que se adapte a tu diseño */
   line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
-
   font-family: 'Segoe UI';
 }
 
@@ -609,15 +587,49 @@ body, html {
   }
   
   
+  .Flip-card-back {
+    background-color: #f2f2f2;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Hide overflow */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    border-radius: 2vh;
+    transform: rotateY(180deg);
+  }
+  
   .Flip-card-back img {
-    width: 20%;
-    height: auto;
-    object-fit: cover;
-    position: absolute;
-    top: 4vh;
-    right: 4vh;
+    width: 100%; /* Full width of the card */
+    height: 100%; /* Full height of the card */
+    object-fit: cover; /* Cover the entire area, might crop the image */
   }
 
 }
+
+@media only screen and (max-width: 600px) {
+  .Flip-card {
+    width: 80vw; /* Adjust the width based on viewport width */
+    height: 53.33vw; /* Maintain the aspect ratio: height is 2/3 of width */
+  }
+}
+
+/* For medium devices (tablets, 600px to 768px) */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  .Flip-card {
+    width: 60vw; /* Adjust the width based on viewport width */
+    height: 40vw; /* Maintain the aspect ratio */
+  }
+}
+
+/* For large devices (desktops, 768px and up) */
+@media only screen and (min-width: 769px) {
+  .Flip-card {
+    width: 300px; /* Fixed width */
+    height: 200px; /* Fixed height */
+  }
+}
+
 
 

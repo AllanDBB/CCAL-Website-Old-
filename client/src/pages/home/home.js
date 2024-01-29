@@ -6,6 +6,7 @@ import Admision from '../../assets/plus/Admision.png'
 import Trophy from '../../assets/plus/Trophy-home.png'
 import Conocenos from '../../assets/plus/Conocenos.png'
 import Logo from '../../assets/logos/Logo.svg'
+import Bcard from '../../assets/plus/Bcard.png'
 // import Blue from '../../assets/plus/blue.png'
 // import Yellow from '../../assets/plus/yellow.png'
 
@@ -18,6 +19,7 @@ const Home = () => {
   const scrollToContent = () => {
     document.querySelector('.scroll-snap-card-container').scrollIntoView({ behavior: 'smooth' });
   };
+  
 
   return (
     <div>
@@ -122,14 +124,7 @@ const Home = () => {
         </div>
 
         <div className="Flip-card-back">
-          <div className="left-content">
-            <p>CCAL</p>
-          </div>
-
-          <div className="right-content">
-          <img src={Logo} alt="Logo" />
-          <p>CCAL</p>
-            </div>
+          <img src={Bcard} alt="BCard" />
           </div>
         </div>
       </div>
