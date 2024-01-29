@@ -7,18 +7,15 @@ const UserSchema = new mongoose.Schema({
         required: true
     },
     lastnames: {
-
         type: String,
         required: true
     },
-    email:{
-
+    email: {
         type: String,
         required: true,
         unique: true
     },
     password: {
-
         type: String,
         required: true
     },
@@ -26,7 +23,15 @@ const UserSchema = new mongoose.Schema({
         type: String,
         enum: ['administrativo', 'profesor', 'desarrollador', 'egresado', 'estudiante activo', 'usuario'],
         default: 'user'
-    }]
+    }],
+    isVerified: {
+        type: Boolean,
+        default: false
+    },
+    verificationToken: {
+        type: String,
+        required: false
+    }
 });
 
 // Pre-save hook para hashear la contraseña antes de guardar el usuario.

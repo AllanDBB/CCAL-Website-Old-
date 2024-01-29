@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import './signUp.css'; 
 import GoogleLogo from '../../assets/logos/Google__G__logo.svg';
+import axios from 'axios';
 import Logo from '../../assets/logos/Logo.svg'
 
 const SignUp = () => {
@@ -11,7 +12,7 @@ const SignUp = () => {
       }, []);
 
     const [userData, setUserData] = useState({
-        name: '',
+        username: '',
         lastnames: '',
         email: '',
         password: '',
@@ -28,9 +29,26 @@ const SignUp = () => {
     };
 
     // Maneja el envío del formulario
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Lógica para manejar el envío de datos
+
+        try{
+            const response = await axios.post('http://localhost:3001/register',{
+
+                username: userData.username,
+                lastnames: userData.lastnames,
+                email: userData.email,
+                password: userData.password,
+                confirmPassword: userData.confirmPassword
+
+            });
+
+            console.log(response.data);
+
+        } catch (error){
+
+            console.log('Hubo un error al registrar al usuario', error.response.data)
+        }
     };
 
     return (
@@ -50,8 +68,8 @@ const SignUp = () => {
                                     type="text"
                                     className="campo-input"
                                     placeholder="Ingresa tu nombre"
-                                    name="name"
-                                    value={userData.name}
+                                    name="username"
+                                    value={userData.username}
                                     onChange={handleChange}
                                 />
                             </div>
