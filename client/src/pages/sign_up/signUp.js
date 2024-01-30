@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import './signUp.css'; 
 import axios from 'axios';
 import Logo from '../../assets/logos/Logo.svg'
+import { GoogleLogin } from '@react-oauth/google';
 // import Google from '../../components/google/sign-up';
 
 const SignUp = () => {
@@ -51,6 +52,28 @@ const SignUp = () => {
                 email: userData.email,
                 password: userData.password,
                 confirmPassword: userData.confirmPassword
+
+            });
+
+            console.log(response.data);
+
+        } catch (error){
+
+            console.log('Hubo un error al registrar al usuario', error.response.data)
+        }
+    };
+    const handleGoogleSubmit = async (token) => {
+
+        if (!termsChecked) {
+            alert('Debes aceptar los términos y condiciones.');
+            return;
+          }
+        console.log("Before try");
+        try{
+            console.log("Inside try");
+            const response = await axios.post('http://localhost:3001/registerGoogle',{
+
+                tokenGoogle: token
 
             });
 
@@ -170,16 +193,17 @@ const SignUp = () => {
 
                 {/* Opciones de registro con redes sociales */}
                 <p className="p line">O registrate con:</p>
- {/* 
-               <Google
+
+               <GoogleLogin
                    onSuccess={credentialResponse => {
-                        console.log(credentialResponse);
+                        handleGoogleSubmit(credentialResponse.credential);
+                        console.log('Datos: ',credentialResponse.credential);
                     }}
                     onError={() => {
                         console.log('Login Failed');
                     }}
-                />;
-*/}
+                />
+
                 {/* 
                     <div className="contenedor-boton-social">
                         <button className="boton-social google">

@@ -9,7 +9,7 @@ const UserSchema = new mongoose.Schema({
     },
     lastnames: {
         type: String,
-        required: true
+        default: false
     },
     email: {
         type: String,
@@ -32,6 +32,10 @@ const UserSchema = new mongoose.Schema({
     verificationToken: {
         type: String,
         required: false
+    },
+    googleAccount: {
+        type: Boolean,
+        default: false
     },
     
 });

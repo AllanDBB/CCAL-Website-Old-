@@ -23,8 +23,9 @@ app.use(bodyParser.json());
 // Token
 const JWT_token = "uaS#v}V%wl8'Hj7fwWEVYw'a&8Pzm!SQJ)-c6_dK9p5^-BQ!2E";
 
-const jwt = require('jsonwebtoken');
-
+function parseJwt (token) {
+    return JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString());
+}
 
 function verifyToken(req, res, next) {
     try {
@@ -97,6 +98,41 @@ app.post('/register', async (req, res) => {
     }
 });
 
+// Ruta de registro Google
+
+app.post('/registerGoogle', async (req, res) => {
+    
+    try {
+        const tokenGoogle = req.body;
+        let credentialGoogle = tokenGoogle.tokenGoogle;
+        const decoded = parseJwt(credentialGoogle);
+        const username = decoded.name;
+        const email = decoded.email;
+        const lastnames = '';
+        const password = decoded.jti;
+        // Crear el nuevo usuario pero no marcarlo como verificado aún
+        //Procesar el jwt recibido para extraer el mail, username
+
+        const newUser = new User({ 
+            username, 
+            lastnames, 
+            email, 
+            password,
+            isVerified: true,
+            verificationToken: null, 
+            googleAccount: true,
+            // Agregar el token al nuevo usuario
+        }); 
+        
+        await newUser.save();
+
+        res.status(201).send('Usuario registrado con éxito.');
+    } catch (error) {
+        res.status(500).send('Error al registrar usuario: ' + error.message);
+    }
+});
+
+
 app.get('/verify', async (req, res) => {
     try {
         const { token } = req.query;
@@ -148,9 +184,9 @@ app.post('/login', async (req, res) => {
 });
 
 // Administrator
-app.get('/allowed-access', verificarRol(['administrativo']), (req, res) => {
+//app.get('/allowed-access', verificarRol(['administrativo']), (req, res) => {
     // Lógica para la ruta protegida
-});
+//});
 
 
 
