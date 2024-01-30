@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import './signUp.css'; 
-import GoogleLogo from '../../assets/logos/Google__G__logo.svg';
 import axios from 'axios';
 import Logo from '../../assets/logos/Logo.svg'
-import SignUpGoogle from '../../components/google/sign-up'
+// import Google from '../../components/google/sign-up';
 
 const SignUp = () => {
 
@@ -25,16 +24,6 @@ const SignUp = () => {
         password: '',
         confirmPassword: ''
     });
-
-    const handleGoogleLoginSuccess = (profile) => {
-        // Maneja el inicio de sesión exitoso aquí
-        console.log('Perfil de Google:', profile);
-      };
-    
-      const handleGoogleLoginFailure = (response) => {
-        // Maneja el inicio de sesión fallido aquí
-        console.log('Inicio de sesión con Google fallido', response);
-      };
 
     // Maneja el cambio en los campos del formulario
     const handleChange = (e) => {
@@ -181,12 +170,16 @@ const SignUp = () => {
 
                 {/* Opciones de registro con redes sociales */}
                 <p className="p line">O registrate con:</p>
-
-                <SignUpGoogle
-                    onLoginSuccess={handleGoogleLoginSuccess}
-                    onLoginFailure={handleGoogleLoginFailure}
-                 />
-
+ {/* 
+               <Google
+                   onSuccess={credentialResponse => {
+                        console.log(credentialResponse);
+                    }}
+                    onError={() => {
+                        console.log('Login Failed');
+                    }}
+                />;
+*/}
                 {/* 
                     <div className="contenedor-boton-social">
                         <button className="boton-social google">
