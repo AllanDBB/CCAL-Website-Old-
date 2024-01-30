@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import './signUp.css'; 
 import GoogleLogo from '../../assets/logos/Google__G__logo.svg';
+import axios from 'axios';
 import Logo from '../../assets/logos/Logo.svg'
+import SignUpGoogle from '../../components/google/sign-up'
 
 const SignUp = () => {
 
@@ -11,12 +13,22 @@ const SignUp = () => {
       }, []);
 
     const [userData, setUserData] = useState({
-        name: '',
+        username: '',
         lastnames: '',
         email: '',
         password: '',
         confirmPassword: ''
     });
+
+    const handleGoogleLoginSuccess = (profile) => {
+        // Maneja el inicio de sesión exitoso aquí
+        console.log('Perfil de Google:', profile);
+      };
+    
+      const handleGoogleLoginFailure = (response) => {
+        // Maneja el inicio de sesión fallido aquí
+        console.log('Inicio de sesión con Google fallido', response);
+      };
 
     // Maneja el cambio en los campos del formulario
     const handleChange = (e) => {
@@ -28,9 +40,26 @@ const SignUp = () => {
     };
 
     // Maneja el envío del formulario
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Lógica para manejar el envío de datos
+
+        try{
+            const response = await axios.post('http://localhost:3001/register',{
+
+                username: userData.username,
+                lastnames: userData.lastnames,
+                email: userData.email,
+                password: userData.password,
+                confirmPassword: userData.confirmPassword
+
+            });
+
+            console.log(response.data);
+
+        } catch (error){
+
+            console.log('Hubo un error al registrar al usuario', error.response.data)
+        }
     };
 
     return (
@@ -50,8 +79,8 @@ const SignUp = () => {
                                     type="text"
                                     className="campo-input"
                                     placeholder="Ingresa tu nombre"
-                                    name="name"
-                                    value={userData.name}
+                                    name="username"
+                                    value={userData.username}
                                     onChange={handleChange}
                                 />
                             </div>
@@ -136,11 +165,19 @@ const SignUp = () => {
 
                 {/* Opciones de registro con redes sociales */}
                 <p className="p line">O registrate con:</p>
-                <div className="contenedor-boton-social">
-                    <button className="boton-social google">
-                        <img src={GoogleLogo} alt="Google Logo"/>
-                    </button>
-                </div>
+
+                <SignUpGoogle
+                    onLoginSuccess={handleGoogleLoginSuccess}
+                    onLoginFailure={handleGoogleLoginFailure}
+                 />
+
+                {/* 
+                    <div className="contenedor-boton-social">
+                        <button className="boton-social google">
+                            <img src={GoogleLogo} alt="Google Logo"/>
+                        </button>
+                    </div>
+                */}
 
                 {/* Enlace para iniciar sesión si ya se tiene cuenta */}
                 <p className="p">

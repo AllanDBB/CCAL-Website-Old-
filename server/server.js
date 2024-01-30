@@ -9,10 +9,14 @@ const uploadAchievements = require('./src/uploadAchievements');
 const User = require('./src/models/user'); 
 const app = express();
 const port = process.env.PORT || 3001;
+const cors = require('cors');
+const sendVerificationEmail = require('./src/mailer');
 
 // Connect database.
 connectDB();
 
+// using cors.
+app.use(cors());
 // Middlewares.
 app.use(bodyParser.json());
 
@@ -36,18 +40,31 @@ app.post('/uploadAchievements', uploadAchievements.single('file'), (req, res) =>
 // Ruta de registro
 app.post('/register', async (req, res) => {
     try {
-        const { nombre, apellidos, email, password, confirmPassword } = req.body;
+        const { username, lastnames, email, password, confirmPassword } = req.body;
+        
         if (password !== confirmPassword) {
             return res.status(400).send('Las contraseñas no coinciden');
         }
+        
         const existingUser = await User.findOne({ email });
         if (existingUser) {
             return res.status(400).send('El email ya está registrado');
         }
-        const newUser = new User({ nombre, apellidos, email, password });
+        
+        // Crear el nuevo usuario pero no marcarlo como verificado aún
+        const newUser = new User({ 
+            username, 
+            lastnames, 
+            email, 
+            password,
+            isVerified: false
+        });
         await newUser.save();
 
-        res.status(201).send('Usuario registrado con éxito');
+       
+        sendVerificationEmail(email);
+
+        res.status(201).send('Usuario registrado con éxito. Por favor, verifica tu correo electrónico.');
     } catch (error) {
         res.status(500).send('Error al registrar usuario: ' + error.message);
     }
