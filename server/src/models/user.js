@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
 const UserSchema = new mongoose.Schema({
+
     username: {
         type: String,
         required: true
@@ -21,8 +22,8 @@ const UserSchema = new mongoose.Schema({
     },
     roles: [{
         type: String,
-        enum: ['administrativo', 'profesor', 'desarrollador', 'egresado', 'estudiante activo', 'usuario'],
-        default: 'user'
+        enum: ['administrativo', 'usuario'],
+        default: 'usuario'
     }],
     isVerified: {
         type: Boolean,
@@ -31,7 +32,8 @@ const UserSchema = new mongoose.Schema({
     verificationToken: {
         type: String,
         required: false
-    }
+    },
+    
 });
 
 // Pre-save hook para hashear la contraseña antes de guardar el usuario.
