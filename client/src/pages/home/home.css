@@ -462,6 +462,22 @@ body, html {
   width: 100%; /* Full width of the card */
   height: 100%; /* Full height of the card */
   object-fit: cover; /* Cover the entire area, might crop the image */
+  position: absolute; /* Absolute positioning */
+  top: 0;
+  left: 0;
+  z-index: -1; /* Move the image to the background */
+
+}
+
+.Flip-card-back-text{
+  position: absolute;
+  top: 25%;
+  right: -18%;
+  transform: translate(-50%, -50%);
+  color: #f2f2f2; /* Text color */
+  text-align: center;
+  font-family: 'Arial';
+  font-size: 120%;
 }
 
 .flip-card-text-container {
@@ -605,31 +621,30 @@ body, html {
     height: 100%; /* Full height of the card */
     object-fit: cover; /* Cover the entire area, might crop the image */
   }
-
 }
 
 @media only screen and (max-width: 600px) {
   .Flip-card {
-    width: 80vw; /* Adjust the width based on viewport width */
-    height: 53.33vw; /* Maintain the aspect ratio: height is 2/3 of width */
+    width: 300px; /* Fixed width */
+    height: 200px; /* Fixed height */
+  }
+  .Flip-card-back-text {
+    top: 24%; /* Adjust as needed for this media size */
+    right: -18%; /* Adjust as needed for this media size */
+    font-size: 120%; /* Adjust font size for this media size */
   }
 }
 
 /* For medium devices (tablets, 600px to 768px) */
 @media only screen and (min-width: 601px) and (max-width: 768px) {
   .Flip-card {
-    width: 60vw; /* Adjust the width based on viewport width */
-    height: 40vw; /* Maintain the aspect ratio */
-  }
-}
-
-/* For large devices (desktops, 768px and up) */
-@media only screen and (min-width: 769px) {
-  .Flip-card {
     width: 300px; /* Fixed width */
     height: 200px; /* Fixed height */
   }
+  .Flip-card-back-text {
+    top: 24%; /* Adjust as needed for this media size */
+    right: -18%; /* Adjust as needed for this media size */
+    font-size: 120%; /* Adjust font size for this media size */
+  }
 }
-
-
 

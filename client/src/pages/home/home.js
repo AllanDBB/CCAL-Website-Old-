@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react';
+import { NavLink } from 'react-router-dom';
 import './home.css';
 import Banner1 from '../../assets/banners/Banner 1.jpg'
 import Banner2 from '../../assets/banners/Banner 2.jpg'
@@ -11,7 +12,6 @@ import Bcard from '../../assets/plus/Bcard.png'
 // import Yellow from '../../assets/plus/yellow.png'
 
 const Home = () => {
-
   useEffect(() => {
     document.title = "CCAL";
   }, []);
@@ -88,7 +88,11 @@ const Home = () => {
         <div class="card-redirect-details">
           <p class="text-title">¿Quieres saber más sobre nosotros?</p>
         </div>
-        <button class="card-redirect-button">Más información</button>
+        <NavLink to="/conócenos" className="card-redirect-button">
+          <button class="card-redirect-button">
+            Más información
+          </button>
+        </NavLink>
       </div>
 
     <div class="card-redirect">
@@ -96,7 +100,11 @@ const Home = () => {
         <div class="card-redirect-details">
           <p class="text-title">¿Te interesaría saber sobre nuestros logros?</p>
         </div>
-        <button class="card-redirect-button">Más información</button>
+        <NavLink to="/logros" className="card-redirect-button">
+          <button class="card-redirect-button">
+            Más información
+          </button>
+        </NavLink>
       </div>
 
     <div class="card-redirect">
@@ -105,7 +113,11 @@ const Home = () => {
         <div class="card-redirect-details">
           <p class="text-title">¿Acaso te gustaría aplicar a nuestra institución?</p>
         </div>
-        <button class="card-redirect-button">Más información</button>
+        <NavLink to="/admisión" className="card-redirect-button">
+          <button class="card-redirect-button">
+            Más información
+          </button>
+        </NavLink>
       </div>
     </div>
 
@@ -124,8 +136,14 @@ const Home = () => {
         </div>
 
         <div className="Flip-card-back">
-          <img src={Bcard} alt="BCard" />
+        <img src={Bcard} alt="BCard" />
+          <div className="Flip-card-back-text">
+            <NavLink to="/contáctanos" className="Flip-card-back-text">
+              <p>¡Contáctanos!</p>
+            </NavLink>
+            
           </div>
+        </div>
         </div>
       </div>
     </div>
