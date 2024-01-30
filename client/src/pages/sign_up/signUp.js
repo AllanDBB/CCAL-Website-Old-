@@ -8,6 +8,12 @@ import SignUpGoogle from '../../components/google/sign-up'
 
 const SignUp = () => {
 
+    const [termsChecked, setTermsChecked] = useState(false);
+
+    const handleTermsCheckboxChange = (e) =>{
+        setTermsChecked(e.target.checked);
+    }
+
     useEffect(() => {
         document.title = "CCAL - Registrarse";
       }, []);
@@ -42,6 +48,11 @@ const SignUp = () => {
     // Maneja el envío del formulario
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if (!termsChecked) {
+            alert('Debes aceptar los términos y condiciones.');
+            return;
+          }
 
         try{
             const response = await axios.post('http://localhost:3001/register',{
@@ -153,7 +164,12 @@ const SignUp = () => {
                 {/* Checkbox para los Términos y Condiciones */}
                 <div className="fila-flexible">
                     <div className="contenedor-checkbox">
-                        <input type="checkbox" className="checkbox" />
+                        <input 
+                        type="checkbox" 
+                        className="checkbox" 
+                        checked={termsChecked}
+                        onChange={handleTermsCheckboxChange}
+                        />
                         <NavLink to="/términos-condiciones" className="texto-enlace"> 
                         Acepto los términos y condiciones.
                         </NavLink>

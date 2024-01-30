@@ -2,7 +2,7 @@
 // Importación de librerias.
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-
+import axios from 'axios';
 import './sign-in.css'; 
 import GoogleLogo from '../../assets/logos/Google__G__logo.svg';
 import Logo from '../../assets/logos/Logo.svg';
@@ -26,14 +26,29 @@ const Access = () => {
     });
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   // Lógica para manejar el envío de datos
-  // };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+
+    try{
+
+      const response = await axios.post('http://localhost:3001/login', {
+
+        email: userData.email,
+        password: userData.password
+
+      });
+
+      console.log(response.data);
+
+    } catch (error) {
+      console.log('Hubo un error al iniciar seseión', error.response.data)
+    }
+  };
 
   return (
     <div className="container-inicio-sesion">
-      <form className="formulario-inicio-sesion">
+      <form className="formulario-inicio-sesion" onSubmit={handleSubmit}>
 
         <div class="logo-ccal2">
           <img src={Logo} alt="Logo CCAL"/>
