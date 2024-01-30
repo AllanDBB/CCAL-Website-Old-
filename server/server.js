@@ -148,12 +148,10 @@ app.post('/login', async (req, res) => {
 });
 
 // Administrator
-app.get('/allowed-access', verificarRol(['administrativo']), (req, res) => {
-    // Lógica para la ruta protegida
+app.get('/administrativeCheck', verifyToken, (req, res) => {
+    const administrativeCheck = req.usuario.roles.includes('administrativo');
+    res.status(200).json({ administrativeCheck });
 });
-
-
-
 
 // Start the server
 app.listen(port, () => {
