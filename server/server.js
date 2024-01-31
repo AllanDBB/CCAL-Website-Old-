@@ -85,6 +85,7 @@ app.post('/register', async (req, res) => {
             email, 
             password,
             isVerified: false,
+            googleAccount: false,
             verificationToken // Agregar el token al nuevo usuario
         });
         await newUser.save();

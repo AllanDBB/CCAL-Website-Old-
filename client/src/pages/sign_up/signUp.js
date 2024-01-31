@@ -194,7 +194,8 @@ const SignUp = () => {
                 {/* Opciones de registro con redes sociales */}
                 <p className="p line">O registrate con:</p>
 
-               <GoogleLogin
+            <div className='contenedor-boton-social'>
+               <GoogleLogin className='boton-social google'
                    onSuccess={credentialResponse => {
                         handleGoogleSubmit(credentialResponse.credential);
                         console.log('Datos: ',credentialResponse.credential);
@@ -202,8 +203,8 @@ const SignUp = () => {
                     onError={() => {
                         console.log('Login Failed');
                     }}
-                />
-
+                />                
+            </div>
                 {/* 
                     <div className="contenedor-boton-social">
                         <button className="boton-social google">
