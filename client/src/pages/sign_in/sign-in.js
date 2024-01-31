@@ -28,7 +28,6 @@ const Access = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
 
     try{
 
@@ -39,10 +38,10 @@ const Access = () => {
 
       });
 
-      console.log(response.data);
+      console.log('Sesión iniciada con éxito', response.data);
 
     } catch (error) {
-      console.log('Hubo un error al iniciar seseión', error.response.data)
+      console.log('Hubo un error al iniciar sesión', error.response);
     }
   };
 

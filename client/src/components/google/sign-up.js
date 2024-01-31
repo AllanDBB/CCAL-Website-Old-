@@ -1,5 +1,6 @@
 import React from 'react';
 import SignUp from '../../pages/sign_up/signUp';
+import SignUpCss from '../../pages/sign_up/signUp.css';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
 const Google = ({ onSuccess, onError }) => {

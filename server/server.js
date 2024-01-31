@@ -170,15 +170,16 @@ app.post('/login', async (req, res) => {
         const { email, password } = req.body;
         const user = await User.findOne({ email });
         if (!user) {
-            return res.status(401).send('Email o contraseña incorrectos');
+            return res.status(401).send('Email o contraseña incorrectoos');
         }
         const isMatch = await user.comparePassword(password);
         if (!isMatch) {
-            return res.status(401).send('Email o contraseña incorrectos');
+            return res.status(401).send('Email o contraseña incorrectxs');
         }
-        const token = jwt.sign({ userId: user._id }, JWT_token , { expiresIn: '1h' });
 
+        const token = jwt.sign({ userId: user._id }, JWT_token , { expiresIn: '1h' });
         res.status(200).json({ token });
+
     } catch (error) {
         res.status(500).send('Error al iniciar sesión: ' + error.message);
     }
@@ -186,9 +187,9 @@ app.post('/login', async (req, res) => {
 
 // Administrator
 //<<<<<<< HEAD
-app.get('/allowed-access', verificarRol(['administrativo']), (req, res) => {
+//app.get('/allowed-access', verificarRol(['administrativo']), (req, res) => {
     // Lógica para la ruta protegida
-});
+//});
 
 //=======
 app.get('/administrativeCheck', verifyToken, (req, res) => {
