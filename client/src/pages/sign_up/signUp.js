@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import './signUp.css'; 
-import GoogleLogo from '../../assets/logos/Google__G__logo.svg';
 import axios from 'axios';
 import Logo from '../../assets/logos/Logo.svg'
-import SignUpGoogle from '../../components/google/sign-up'
+import { GoogleLogin } from '@react-oauth/google';
+// import Google from '../../components/google/sign-up';
 
 const SignUp = () => {
 
@@ -25,16 +25,6 @@ const SignUp = () => {
         password: '',
         confirmPassword: ''
     });
-
-    const handleGoogleLoginSuccess = (profile) => {
-        // Maneja el inicio de sesión exitoso aquí
-        console.log('Perfil de Google:', profile);
-      };
-    
-      const handleGoogleLoginFailure = (response) => {
-        // Maneja el inicio de sesión fallido aquí
-        console.log('Inicio de sesión con Google fallido', response);
-      };
 
     // Maneja el cambio en los campos del formulario
     const handleChange = (e) => {
@@ -62,6 +52,28 @@ const SignUp = () => {
                 email: userData.email,
                 password: userData.password,
                 confirmPassword: userData.confirmPassword
+
+            });
+
+            console.log(response.data);
+
+        } catch (error){
+
+            console.log('Hubo un error al registrar al usuario', error.response.data)
+        }
+    };
+    const handleGoogleSubmit = async (token) => {
+
+        if (!termsChecked) {
+            alert('Debes aceptar los términos y condiciones.');
+            return;
+          }
+        console.log("Before try");
+        try{
+            console.log("Inside try");
+            const response = await axios.post('http://localhost:3001/registerGoogle',{
+
+                tokenGoogle: token
 
             });
 
@@ -182,11 +194,17 @@ const SignUp = () => {
                 {/* Opciones de registro con redes sociales */}
                 <p className="p line">O registrate con:</p>
 
-                <SignUpGoogle
-                    onLoginSuccess={handleGoogleLoginSuccess}
-                    onLoginFailure={handleGoogleLoginFailure}
-                 />
-
+            <div className='contenedor-boton-social'>
+               <GoogleLogin className='boton-social google'
+                   onSuccess={credentialResponse => {
+                        handleGoogleSubmit(credentialResponse.credential);
+                        console.log('Datos: ',credentialResponse.credential);
+                    }}
+                    onError={() => {
+                        console.log('Login Failed');
+                    }}
+                />                
+            </div>
                 {/* 
                     <div className="contenedor-boton-social">
                         <button className="boton-social google">
