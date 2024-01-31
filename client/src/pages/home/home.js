@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import { NavLink } from 'react-router-dom';
 import './home.css';
 import Banner1 from '../../assets/banners/Banner 1.jpg'
@@ -8,30 +8,73 @@ import Trophy from '../../assets/plus/Trophy-home.png'
 import Conocenos from '../../assets/plus/Conocenos.png'
 import Logo from '../../assets/logos/Logo.svg'
 import Bcard from '../../assets/plus/Bcard.png'
-// import Blue from '../../assets/plus/blue.png'
-// import Yellow from '../../assets/plus/yellow.png'
+
+
 
 const Home = () => {
+
+  const [currentBanner, setCurrentBanner] = useState(0);
+  const [banners, setBanners] = useState([]);
+
   useEffect(() => {
-    document.title = "CCAL";
+    const importBanners = async () => {
+      try {
+        const bannerContext = require.context('../../../../server/home_banners/', false, /\.(png|jpe?g|svg)$/);
+        console.log("bannerContext:", bannerContext)
+        const bannerPaths = bannerContext.keys(); 
+        
+        console.log("bannerPaths:", bannerPaths)
+        const loadedBanners = '../../../../server/home_banners/'
+        
+        setBanners(loadedBanners);
+        console.log(banners)
+      } catch (error) {
+        console.error("Error loading banners:", error);
+      }
+    }; 
+
+    importBanners();
   }, []);
 
+  useEffect(() => {
+    document.title = "CCAL";
+    const bannerInterval = setInterval(() => {
+      setCurrentBanner(currentBanner => {
+        const nextBanner = (currentBanner + 1) % banners.length;
+        console.log("Current banner index:", nextBanner, currentBanner);
+        return nextBanner;
+      });
+    }, 10000);
+  
+    return () => clearInterval(bannerInterval);
+  }, [banners]);
   const scrollToContent = () => {
+    
     document.querySelector('.scroll-snap-card-container').scrollIntoView({ behavior: 'smooth' });
   };
   
+  useEffect(() => {
+    if (banners.length > 0) {
+      const imageUrl = banners[currentBanner];
+      document.documentElement.style.setProperty('--banner-image', `url(${imageUrl})`);
+      console.log('aja', imageUrl);
+    }
+    
+  }, [currentBanner, banners]);
+
+
+
+  //console.log('Banner: ', banners[currentBanner])
 
   return (
     <div>
-      {/* Wavy Lines */}
-      {/* <div className="sidebar" style={{ backgroundImage: `url(${Blue})`, left: '2vw' }}></div>
-      <div className="sidebar" style={{ backgroundImage: `url(${Yellow})`, left: '4vw' }}></div>
-      <div className="sidebar" style={{ backgroundImage: `url(${Blue})`, left: '6vw' }}></div> */}
 
-      {/* Hero Section */}
-      <div className="home-container">
+    <div className="home-container">
+    
+      {banners.length > 0 && (
 
         <header className="hero-section">
+  
           <div className="hero-content">
             <h1 className="hero-title">Bienvenidos al Colegio Científico de Alajuela</h1>
             <p className="hero-description">
@@ -40,6 +83,7 @@ const Home = () => {
             <button className="cta-button" onClick={scrollToContent}>¡Empezar Ahora!</button>
           </div>
         </header>
+      )}
       </div>
 
         <div className="scroll-snap-card-container">

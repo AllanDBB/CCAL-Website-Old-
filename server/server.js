@@ -186,15 +186,15 @@ app.post('/login', async (req, res) => {
 
 // Administrator
 //<<<<<<< HEAD
-app.get('/allowed-access', verificarRol(['administrativo']), (req, res) => {
+// app.get('/allowed-access', verificarRol(['administrativo']), (req, res) => {
     // Lógica para la ruta protegida
-});
+// });
 
 //=======
-app.get('/administrativeCheck', verifyToken, (req, res) => {
-    const administrativeCheck = req.usuario.roles.includes('administrativo');
-    res.status(200).json({ administrativeCheck });
-});
+// app.get('/administrativeCheck', verifyToken, (req, res) => {
+//     const administrativeCheck = req.usuario.roles.includes('administrativo');
+//     res.status(200).json({ administrativeCheck });
+// });
 
 //>>>>>>> cb696fb5ea34eb225e2bbe9b49a9213e38514c44
 
