@@ -14,6 +14,7 @@ import RestorePassword from './pages/restore_password/restorePassword';
 import Contact from './pages/contact/contact';
 import Achievements from './pages/achievements/achievements';
 import Admission from './pages/admission/admission';
+import ScrollToTop from './pages/ScrollToTop';
 
 import './App.css';
 
@@ -22,6 +23,7 @@ function App() {
 
     <Router>
       <div className="App">
+        <ScrollToTop/>
         <Navbar/>
         <Routes>
           <Route path="/" element={<><Home /><Footer/></>} />
@@ -34,7 +36,6 @@ function App() {
           <Route path="/restaurar-contraseña" element={<RestorePassword />} />
           <Route path="/logros" element={<><Achievements/><Footer/></>} />
           <Route path="/admisión" element={<><Admission/><Footer/></>} />
-  
         </Routes>
       </div>
     </Router>

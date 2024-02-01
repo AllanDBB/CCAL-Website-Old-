@@ -1,60 +1,116 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
+import { NavLink } from 'react-router-dom';
 import './home.css';
-import Banner1 from '../../assets/banners/Banner 1.jpg'
+import Banner1 from '../../assets/banners/Banner1.jpg'
 import Banner2 from '../../assets/banners/Banner 2.jpg'
-// import Blue from '../../assets/plus/blue.png'
-// import Yellow from '../../assets/plus/yellow.png'
+import Admision from '../../assets/plus/Admision.png'
+import Trophy from '../../assets/plus/Trophy-home.png'
+import Conocenos from '../../assets/plus/Conocenos.png'
+import Logo from '../../assets/logos/Logo.svg'
+import Bcard from '../../assets/plus/Bcard.png'
+
+
+
 const Home = () => {
+
+  const preloadImages = (imagePaths) => {
+    return imagePaths.map((path) => {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.onload = resolve;
+        img.src = path;
+      });
+    });
+  };
+  
+  const [currentBanner, setCurrentBanner] = useState(0);
+  const [banners, setBanners] = useState([]);
+
+  useEffect(() => {
+    const importBanners = async () => {
+      try {
+        const bannerContext = require.context('../../../../server/home_banners/', false, /\.(png|jpe?g|svg)$/);
+        const bannerPaths = bannerContext.keys().map(bannerContext);
+        await Promise.all(preloadImages(bannerPaths));
+        setBanners(bannerPaths);
+      } catch (error) {
+        console.error("Error loading banners:", error);
+      }
+    };
+  
+    importBanners();
+  }, []);
 
   useEffect(() => {
     document.title = "CCAL";
-  }, []);
-
+    const bannerInterval = setInterval(() => {
+      setCurrentBanner(currentBanner => {
+        const nextBanner = (currentBanner + 1) % banners.length;
+        console.log("Current banner index:", nextBanner, currentBanner);
+        return nextBanner;
+      });
+    }, 15000);
+  
+    return () => clearInterval(bannerInterval);
+  }, [banners]);
   const scrollToContent = () => {
+    
     document.querySelector('.scroll-snap-card-container').scrollIntoView({ behavior: 'smooth' });
   };
+  
+  useEffect(() => {
+    if (banners.length > 0) {
+      // Actualiza las variables CSS para las imágenes
+      const nextBanner = (currentBanner + 1) % banners.length;
+      
+      document.documentElement.style.setProperty('--banner-image-before', `url(${banners[currentBanner]})`);
+      document.documentElement.style.setProperty('--banner-image-after', `url(${banners[nextBanner]})`);
+  
+      // Seleccionar el elemento .hero-section
+      const heroSection = document.querySelector('.hero-section');
+      if (heroSection) {
+        // Simplemente alternar entre 'show-before' y 'show-after' cada vez
+        if (heroSection.classList.contains('show-before')) {
+          heroSection.classList.remove('show-before');
+          heroSection.classList.add('show-after');
+        } else {
+          heroSection.classList.remove('show-after');
+          heroSection.classList.add('show-before');
+        }
+      }
+    }
+  }, [currentBanner, banners]);  
+
+  //console.log('Banner: ', banners[currentBanner])
 
   return (
     <div>
-      {/* Wavy Lines */}
-      {/* <div className="sidebar" style={{ backgroundImage: `url(${Blue})`, left: '2vw' }}></div>
-      <div className="sidebar" style={{ backgroundImage: `url(${Yellow})`, left: '4vw' }}></div>
-      <div className="sidebar" style={{ backgroundImage: `url(${Blue})`, left: '6vw' }}></div> */}
 
-      {/* Hero Section */}
-      <div className="home-container">
+    <div className="home-container">
+    
+      {banners.length > 0 && (
 
         <header className="hero-section">
+        
           <div className="hero-content">
             <h1 className="hero-title">Bienvenidos al Colegio Científico de Alajuela</h1>
             <p className="hero-description">
               Institución líder en la educación media | Somos más que una fórmula
             </p>
-            <button className="cta-button" onClick={scrollToContent}>¡Empezar Ahora!</button>
+            <button className="HomeB" onClick={scrollToContent}>¡Empezar Ahora!</button>
           </div>
         </header>
+      )}
       </div>
 
         <div className="scroll-snap-card-container">
           {/* Paragraph next to the scroll card */}
           <div className="scroll-card-paragraph">
-            <p>
-            Antes de continuar, nos encantaría invitarte a conocer más sobre nosotros a través de nuestras redes sociales. En Instagram, Facebook y otras plataformas, compartimos momentos especiales, anuncios importantes y capturamos la esencia de nuestra comunidad. 
-            </p>
-          </div>
 
-          <div className="scroll-snap-card">
-            <div className="slide azul">
-              <p className="tip">Post Insta 1</p>
-            </div>
-            <div className="slide yellow">
-              <p className="tip">Post Insta 2</p>
-            </div>
-            <div className="slide azul2">
-              <p className="tip">Post Insta 3</p>
-            </div>
           </div>
+          <iframe width="744" height="419" src="https://www.youtube.com/embed/AhGhLTd7BMc" title="¡Más que una fórmula! - 15 Aniversario del CCC Alajuela" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
+
 
 {/* Wrapper for Title and Card Container */}
 <div className="card-section-wrapper">
@@ -85,58 +141,78 @@ const Home = () => {
   </div>
 </div>
 
-        {/* Redirect card */}
+    {/* Redirect card */}  
+
         <div class="card-redirect-container">
     <div class="card-redirect">
-      <div class="card-redirect-details">
-        <p class="text-title">¿Quieres saber más sobre nosotros?</p>
-        <p class="text-body">Poner icono representativo</p>
+      <img src={Conocenos} alt="Conocenos" />
+        <div class="card-redirect-details">
+          <p class="text-title">¿Quieres saber más sobre nosotros?</p>
+        </div>
+        <NavLink to="/conócenos" className="card-redirect-button">
+          <button class="card-redirect-button">
+            Más información
+          </button>
+        </NavLink>
       </div>
-      <button class="card-redirect-button">Más información</button>
-    </div>
 
     <div class="card-redirect">
-      <div class="card-redirect-details">
-        <p class="text-title">¿Te interesaría saber sobre nuestros logros?</p>
-        <p class="text-body">Poner icono representativo</p>
+    <img src={Trophy} alt="Trophy" />
+        <div class="card-redirect-details">
+          <p class="text-title">¿Te interesaría saber sobre nuestros logros?</p>
+        </div>
+        <NavLink to="/logros" className="card-redirect-button">
+          <button class="card-redirect-button">
+            Más información
+          </button>
+        </NavLink>
       </div>
-      <button class="card-redirect-button">Más información</button>
-    </div>
 
     <div class="card-redirect">
-      <div class="card-redirect-details">
-        <p class="text-title">¿Acaso te gustaría aplicar a nuestra institución?</p>
-        <p class="text-body">Poner icono representativo</p>
+      
+      <img src={Admision} alt="Admision" />
+        <div class="card-redirect-details">
+          <p class="text-title">¿Acaso te gustaría aplicar a nuestra institución?</p>
+        </div>
+        <NavLink to="/admisión" className="card-redirect-button">
+          <button class="card-redirect-button">
+            Más información
+          </button>
+        </NavLink>
       </div>
-      <button class="card-redirect-button">Más información</button>
     </div>
-  </div>
 
         {/* Flip Card */}
 
-        <div className="flip-card-text-container">
-        <div className="flip-card-text">
+<div className="flip-card-text-container">
+  <div className="flip-card-text">
     <p>¿Interesado en visitar el colegio o ponerte en contacto con nosotros? Descubre más sobre nuestra institución, programas educativos y oportunidades únicas que ofrecemos. ¡Estamos aquí para ayudarte a dar el siguiente paso en tu viaje educativo!</p>
-</div>
+  </div> 
+
   <div className="Flip-card">
-    {/* Tu código de Flip Card existente aquí */}
-  </div>
-</div>
+    <div className="Flip-card-wrapper">
+      <div className="Flip-card-inner">
+        <div className="Flip-card-front">
+          <img src={Logo} alt="Logo" />
+        </div>
 
-        <div class="Flip-card">
-  <div class="Flip-card-wrapper">
-    <div class="Flip-card-inner">
-      <div class="Flip-card-front">
-        <p>Fotito y algo mas que represente tarjeta introduccion</p>
-      </div>
-      <div class="Flip-card-back">
-        <p>Info que lleve a conocenos (poner en la izquierda indicador de que se puede girar)</p>
+        <div className="Flip-card-back">
+        <img src={Bcard} alt="BCard" />
+          <div className="Flip-card-back-text">
+            <NavLink to="/contáctanos" className="Flip-card-back-text">
+              <p>¡Contáctanos!</p>
+            </NavLink>
+            
+          </div>
+        </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+  </div>
 
-    </div>
+
+
   );
 };
 

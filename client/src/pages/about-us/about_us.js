@@ -4,6 +4,8 @@ import './about_us.css';
 import AdditionalImage1 from '../../assets/banners/Banner 2.jpg';
 import AdditionalImage2 from '../../assets/banners/Banner 8.jpg';
 
+import Funfact from './fun_facts/fun_facts2'
+
 const AboutUs = () => {
   return (
     <div className="about-us-container">
@@ -24,18 +26,20 @@ const AboutUs = () => {
       <div className="section flex-section reverse-flex">
         <div className="text-content">
           <h2>Nuestro Equipo</h2>
-          <div className='Team-element'>
-            
-          </div>
           <p>Nuestro equipo está conformado por docentes con una destacada habilidad para la enseñanza y un alto grado de preparación académica. Cada miembro del personal posee una excepcional capacidad para transmitir conocimientos, fomentando un ambiente de aprendizaje enriquecedor y estimulante. Estos profesionales altamente cualificados no solo se dedican a la educación, sino que también son inspiración constante para sus alumnos, guiándolos con dedicación y un enfoque pedagógico innovador. Su compromiso con la excelencia educativa se refleja en cada clase, donde la pasión y el conocimiento se combinan para crear una experiencia de aprendizaje única e inolvidable.</p>
         </div>
         <img src={AdditionalImage2} alt="Imagen Adicional 2" className="section-image" />
       </div>
 
-      <div className="white-section-alone">
-        <h2>Datos curisos de nuestra institución</h2>
-        <p>A nuestras instalaciones, nuestros estudiantes le conocen como la casita :).</p>
+{/*
+
+      <div className="text-content-fun-fact">
+        <div className="white-section-alone-fun-fact">
+            <text>Dato curiso del dia</text>
+            <fun-facts-container><Funfact/></fun-facts-container>
+        </div>
       </div>
+  */}
     </div>
   );
 }

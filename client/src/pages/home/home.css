@@ -1,5 +1,4 @@
 /* Home.css */
-
 .sidebar {
   position: fixed;
   top: 0;
@@ -20,11 +19,15 @@
     background-position: 0 -100%;
   }
 }
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body, html {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
-  overflow-x: hidden; 
 }
 
 .home-container {
@@ -32,9 +35,22 @@ body, html {
   margin: 0 auto;
 }
 
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 3s ease;
+}
+
+
 .hero-section {
   text-align: center;
   position: relative;
+  overflow: hidden;
   background: none;
   color: #ecf0f1;
   height: 100vh; /* Esto hará que ocupe toda la altura de la pantalla */
@@ -43,17 +59,37 @@ body, html {
   justify-content: center; /* Centra el contenido horizontalmente */
 }
 
-.hero-section::before {
+
+.hero-section::before, .hero-section::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%), url('../../assets/banners/Banner 1.jpg');
   background-size: cover;
   background-position: center;
   z-index: -1;
+  transition: opacity 0.1s ease;
+  opacity: 0;
+}
+
+.hero-section.show-before::before, .hero-section.show-after::after {
+  opacity: 1;
+}
+
+.hero-section::before {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%), var(--banner-image-before); /* imagen actual */
+  opacity: 1; /* visible */
+}
+
+.hero-section::after {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%), var(--banner-image-after); /* próxima imagen */
+  opacity: 0; /* oculto */
+}
+
+.show{
+  opacity: 1;
 }
 
 
@@ -76,22 +112,45 @@ body, html {
   color: #ecf0f1;
 }
 
-.cta-button {
-  padding: 15px 30px; /* Tamaño del botón */
-  font-size: 1.2rem; /* Tamaño de la letra */
-  background-color: #1f4ea0;
-  color: #fff;
+.HomeB {
+  padding: 1em 2em;
   border: none;
-  border-radius: 25px; /* Bordes redondeados más pronunciados */
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.3s ease; /* Transición suave para todas las propiedades */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  background-color: #f2f2f2;
+  color: #518dbc;
+  transition: all 1000ms;
+  font-size: 15px;
+  position: relative;
+  overflow: hidden;
+  outline: 2px solid #518dbc;
 }
 
-.cta-button:hover {
-  background-color: #04236b;
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al pasar el ratón */
-  transform: translateY(-2px); /* Efecto de "levantar" el botón */
+.HomeB:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+  outline: 2px solid #518dbc;
+  box-shadow: 4px 5px 17px -4px #1161ae;
+}
+
+.HomeB::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #1161ae;
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 800ms;
+}
+
+.HomeB:hover::before {
+  width: 250%;
 }
 
 /* Snap Cards Section */
@@ -127,6 +186,7 @@ body, html {
   line-height: 1.6; /* Adjust line height as needed */
 }
 .scroll-snap-card-container {
+  flex-direction: column;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -138,7 +198,7 @@ body, html {
 
 .scroll-snap-card {
   height: 50vh;
-  width: 30vw;
+  width:800px;
   scroll-snap-type: block mandatory;
   overflow-y: scroll;
   scrollbar-width: thin;
@@ -212,9 +272,8 @@ body, html {
 .card {
   position: relative; 
   flex-basis: 45%; /* Ajuste para que dos tarjetas quepan en una fila en pantallas grandes */
-  border-radius: 10px;
+  border-radius: 2vw;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
 }
@@ -246,29 +305,30 @@ body, html {
 .card:hover .card__content {
   transform: translate(-50%, -50%) rotate(0deg);
   opacity: 1;
+  background-color: #f2f2f2
 }
 
 .card__title {
   font-size: 1.2rem;
-  margin: 10px 0;
 }
 
 .card__description {
-  font-size: 1.2rem;
-  margin-top: 100px;
+  font-size: 0.95rem;
   margin-bottom: 10px;
   text-align: center;
 }
 
 /* CARD REDIRECTS */
+
 .card-redirect-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 20px 0;
+  margin: 20px 0 rgba(238, 228, 228, 0.1);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
   flex-wrap: wrap;
 }
+
 
 .card-redirect {
   width: calc((100% - 12vw) / 3);
@@ -282,7 +342,16 @@ body, html {
   overflow: visible;
   margin-bottom: 10vh;
   margin-right: 1vw;
-  margin-left: 1vw
+  margin-left: 1vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+}
+
+.card-redirect img {
+  max-width: 100%; /* Ensure the image doesn't exceed the container width */
+  max-height: 40%; /* Set a max height to prevent excessive stretching */
+  margin-top: 5vh;
 }
 
 .card-redirect-details {
@@ -310,15 +379,11 @@ body, html {
   font-size: 1em;
 }
 
-.text-body {
-  color: rgb(134, 134, 134);
-  font-size: 1.5vw;
-}
-
 /* Text */
 .text-title {
-  font-size: 1.5vw;
+  font-size: 20px;
   font-weight: bold;
+  margin:auto;
 }
 
 /* Hover */
@@ -343,19 +408,20 @@ body, html {
   }
 } 
 
+
 .Flip-card {
-  width: 30vw;
-  height: 20vh;
+  width: 300px; /* Fixed width */
+  height: 200px; /* Fixed height */
   perspective: 1000px;
   margin: auto;
-  margin-right: 15vw;
-  margin-bottom: 10vh;
+  margin-bottom: 5vh;
+  margin-top: 5vh;
 }
 
 .Flip-card-wrapper {
   width: 100%;
   height: 100%;
-  animation: idleAnimation 3s infinite;
+  animation: idleAnimation 3.5s infinite;
 }
 
 .Flip-card-inner {
@@ -380,31 +446,122 @@ body, html {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-}
-
-.Flip-card-front {
-  background-color: #6A2C70;
-  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 10px solid #6A2C70;
   border-radius: 2vh;
-  font-size: 2vh;
   transform: rotateY(0deg);
 }
 
+
+
+.Flip-card-front {
+  --s: 84px;
+  --c1: #f2f2f2;
+  --c2: #cdcbcc;
+  --c3: #999999;
+  --_g: 0 120deg, #0000 0;
+
+  background: 
+    conic-gradient(
+      from 0deg at calc(500% / 6) calc(100% / 3),
+      var(--c3) var(--_g)
+    ),
+    conic-gradient(
+      from -120deg at calc(100% / 6) calc(100% / 3),
+      var(--c2) var(--_g)
+    ),
+    conic-gradient(
+      from 120deg at calc(100% / 3) calc(500% / 6),
+      var(--c1) var(--_g)
+    ),
+    conic-gradient(
+      from 120deg at calc(200% / 3) calc(500% / 6),
+      var(--c1) var(--_g)
+    ),
+    conic-gradient(
+      from -180deg at calc(100% / 3) 50%,
+      var(--c2) 60deg,
+      var(--c1) var(--_g)
+    ),
+    conic-gradient(
+      from 60deg at calc(200% / 3) 50%,
+      var(--c1) 60deg,
+      var(--c3) var(--_g)
+    ),
+    conic-gradient(
+      from -60deg at 50% calc(100% / 3),
+      var(--c1) 120deg,
+      var(--c2) 0 240deg,
+      var(--c3) 0
+    );
+  background-size: calc(var(--s) * 1.732) var(--s);
+}
+
+.Flip-card-front img {
+  width: 30%;
+  height: auto;
+  margin-left: 1vw;
+  object-fit: cover;
+}
+
 .Flip-card-back {
-  background-color: #F08A5D;
-  color: #fff;
+  background-color: #f2f2f2;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Hide overflow */
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1vh solid #F08A5D;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
   border-radius: 2vh;
-  font-size: 2vh;
   transform: rotateY(180deg);
 }
+
+.Flip-card-back img {
+  width: 100%; /* Full width of the card */
+  height: 100%; /* Full height of the card */
+  object-fit: cover; /* Cover the entire area, might crop the image */
+  position: absolute; /* Absolute positioning */
+  top: 0;
+  left: 0;
+  z-index: -1; /* Move the image to the background */
+
+}
+
+.Flip-card-back-text{
+  position: absolute;
+  top: 25%;
+  right: -18%;
+  transform: translate(-50%, -50%);
+  color: #f2f2f2; /* Text color */
+  text-align: center;
+  font-family: 'Arial';
+  font-size: 120%;
+  transition: color 0.3s ease;
+}
+
+.Flip-card-back-text:hover {
+  color: #FFD700; /* New color on hover */
+}
+
+.flip-card-text-container {
+  margin-top: 1.5rem; /* Adjust the top margin as needed */
+  font-family: 'Segoe UI';
+  text-align: center; /* Alineación del texto */
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+
+.flip-card-text {
+  max-width: 40%;
+  font-size: 1.2em; /* Tamaño de la fuente */
+  color: #333; /* Color del texto, elige uno que se adapte a tu diseño */
+  line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
+  font-family: 'Segoe UI';
+}
+
 
 @media (max-width: 768px) {
   .sidebar {
@@ -468,7 +625,9 @@ body, html {
     width: 100%;
   }
   .scroll-snap-card {
-    height: 40vh;
+    height: 50vh;
+    width: 50vh;
+    margin:auto;
   }
   .scroll-snap-card .slide p {
     font-size: 6vw;
@@ -491,35 +650,66 @@ body, html {
   }
 
   .Flip-card {
-    width: 80vw;
-    margin: 20px auto;
+    width: 50vw;
+    height: 20vh;
+    margin: 20px 20px;
   }
 
   .flip-card-text-container {
     flex-direction: column;
-    align-items: flex-start;
+    display: flex;
+    align-items: center;
+    margin: 80px;
   }
 
   .flip-card-text {
     max-width: 100%;
-    margin-right: 0;
     margin-bottom: 20px; /* Espacio entre el texto y la tarjeta en dispositivos móviles */
   }
-
+  
+  
+  .Flip-card-back {
+    background-color: #f2f2f2;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Hide overflow */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    border-radius: 2vh;
+    transform: rotateY(180deg);
+  }
+  
+  .Flip-card-back img {
+    width: 100%; /* Full width of the card */
+    height: 100%; /* Full height of the card */
+    object-fit: cover; /* Cover the entire area, might crop the image */
+  }
 }
 
+@media only screen and (max-width: 600px) {
+  .Flip-card {
+    width: 300px; /* Fixed width */
+    height: 200px; /* Fixed height */
+  }
+  .Flip-card-back-text {
+    top: 24%; /* Adjust as needed for this media size */
+    right: -18%; /* Adjust as needed for this media size */
+    font-size: 120%; /* Adjust font size for this media size */
+  }
+}
 
-.flip-card-text-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: 20px;
+/* For medium devices (tablets, 600px to 768px) */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  .Flip-card {
+    width: 300px; /* Fixed width */
+    height: 200px; /* Fixed height */
+  }
+  .Flip-card-back-text {
+    top: 24%; /* Adjust as needed for this media size */
+    right: -18%; /* Adjust as needed for this media size */
+    font-size: 120%; /* Adjust font size for this media size */
+  }
 }
-.flip-card-text {
-  max-width: 40%;
-  margin-right: 20px;
-  font-size: 1.2em; /* Tamaño de la fuente */
-  color: #333; /* Color del texto, elige uno que se adapte a tu diseño */
-  line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
-  text-align: justify; /* Alineación del texto */
-}
+

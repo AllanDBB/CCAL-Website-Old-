@@ -1,17 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import './signUp.css'; 
-import GoogleLogo from '../../assets/logos/Google__G__logo.svg';
+import axios from 'axios';
 import Logo from '../../assets/logos/Logo.svg'
+import { GoogleLogin } from '@react-oauth/google';
+// import Google from '../../components/google/sign-up';
 
 const SignUp = () => {
+
+    const [termsChecked, setTermsChecked] = useState(false);
+
+    const handleTermsCheckboxChange = (e) =>{
+        setTermsChecked(e.target.checked);
+    }
 
     useEffect(() => {
         document.title = "CCAL - Registrarse";
       }, []);
 
     const [userData, setUserData] = useState({
-        name: '',
+        username: '',
         lastnames: '',
         email: '',
         password: '',
@@ -28,9 +36,53 @@ const SignUp = () => {
     };
 
     // Maneja el envío del formulario
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Lógica para manejar el envío de datos
+
+        if (!termsChecked) {
+            alert('Debes aceptar los términos y condiciones.');
+            return;
+          }
+
+        try{
+            const response = await axios.post('http://localhost:3001/register',{
+
+                username: userData.username,
+                lastnames: userData.lastnames,
+                email: userData.email,
+                password: userData.password,
+                confirmPassword: userData.confirmPassword
+
+            });
+
+            console.log(response.data);
+
+        } catch (error){
+
+            console.log('Hubo un error al registrar al usuario', error.response.data)
+        }
+    };
+    const handleGoogleSubmit = async (token) => {
+
+        if (!termsChecked) {
+            alert('Debes aceptar los términos y condiciones.');
+            return;
+          }
+        console.log("Before try");
+        try{
+            console.log("Inside try");
+            const response = await axios.post('http://localhost:3001/registerGoogle',{
+
+                tokenGoogle: token
+
+            });
+
+            console.log(response.data);
+
+        } catch (error){
+
+            console.log('Hubo un error al registrar al usuario', error.response.data)
+        }
     };
 
     return (
@@ -50,8 +102,8 @@ const SignUp = () => {
                                     type="text"
                                     className="campo-input"
                                     placeholder="Ingresa tu nombre"
-                                    name="name"
-                                    value={userData.name}
+                                    name="username"
+                                    value={userData.username}
                                     onChange={handleChange}
                                 />
                             </div>
@@ -124,7 +176,12 @@ const SignUp = () => {
                 {/* Checkbox para los Términos y Condiciones */}
                 <div className="fila-flexible">
                     <div className="contenedor-checkbox">
-                        <input type="checkbox" className="checkbox" />
+                        <input 
+                        type="checkbox" 
+                        className="checkbox" 
+                        checked={termsChecked}
+                        onChange={handleTermsCheckboxChange}
+                        />
                         <NavLink to="/términos-condiciones" className="texto-enlace"> 
                         Acepto los términos y condiciones.
                         </NavLink>
@@ -136,11 +193,25 @@ const SignUp = () => {
 
                 {/* Opciones de registro con redes sociales */}
                 <p className="p line">O registrate con:</p>
-                <div className="contenedor-boton-social">
-                    <button className="boton-social google">
-                        <img src={GoogleLogo} alt="Google Logo"/>
-                    </button>
-                </div>
+
+            <div className='contenedor-boton-social'>
+               <GoogleLogin className='boton-social google'
+                   onSuccess={credentialResponse => {
+                        handleGoogleSubmit(credentialResponse.credential);
+                        console.log('Datos: ',credentialResponse.credential);
+                    }}
+                    onError={() => {
+                        console.log('Login Failed');
+                    }}
+                />                
+            </div>
+                {/* 
+                    <div className="contenedor-boton-social">
+                        <button className="boton-social google">
+                            <img src={GoogleLogo} alt="Google Logo"/>
+                        </button>
+                    </div>
+                */}
 
                 {/* Enlace para iniciar sesión si ya se tiene cuenta */}
                 <p className="p">
