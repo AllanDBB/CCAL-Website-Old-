@@ -80,7 +80,7 @@ const Home = () => {
             <p className="hero-description">
               Institución líder en la educación media | Somos más que una fórmula
             </p>
-            <button className="cta-button" onClick={scrollToContent}>¡Empezar Ahora!</button>
+            <button className="HomeB" onClick={scrollToContent}>¡Empezar Ahora!</button>
           </div>
         </header>
       )}

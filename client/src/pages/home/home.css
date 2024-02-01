@@ -24,11 +24,15 @@
     background-position: 0 -100%;
   }
 }
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body, html {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
-  overflow-x: hidden; 
 }
 
 .home-container {
@@ -66,22 +70,45 @@ body, html {
   color: #ecf0f1;
 }
 
-.cta-button {
-  padding: 15px 30px; /* Tamaño del botón */
-  font-size: 1.2rem; /* Tamaño de la letra */
-  background-color: #1f4ea0;
-  color: #fff;
+.HomeB {
+  padding: 1em 2em;
   border: none;
-  border-radius: 25px; /* Bordes redondeados más pronunciados */
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.3s ease; /* Transición suave para todas las propiedades */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  background-color: #f2f2f2;
+  color: #518dbc;
+  transition: all 1000ms;
+  font-size: 15px;
+  position: relative;
+  overflow: hidden;
+  outline: 2px solid #518dbc;
 }
 
-.cta-button:hover {
-  background-color: #04236b;
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al pasar el ratón */
-  transform: translateY(-2px); /* Efecto de "levantar" el botón */
+.HomeB:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+  outline: 2px solid #518dbc;
+  box-shadow: 4px 5px 17px -4px #1161ae;
+}
+
+.HomeB::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #1161ae;
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 800ms;
+}
+
+.HomeB:hover::before {
+  width: 250%;
 }
 
 /* Snap Cards Section */
@@ -339,6 +366,7 @@ body, html {
   }
 } 
 
+
 .Flip-card {
   width: 300px; /* Fixed width */
   height: 200px; /* Fixed height */
@@ -351,7 +379,7 @@ body, html {
 .Flip-card-wrapper {
   width: 100%;
   height: 100%;
-  animation: idleAnimation 5s infinite;
+  animation: idleAnimation 3.5s infinite;
 }
 
 .Flip-card-inner {
@@ -468,6 +496,11 @@ body, html {
   text-align: center;
   font-family: 'Arial';
   font-size: 120%;
+  transition: color 0.3s ease;
+}
+
+.Flip-card-back-text:hover {
+  color: #FFD700; /* New color on hover */
 }
 
 .flip-card-text-container {
