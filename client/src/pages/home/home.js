@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { NavLink } from 'react-router-dom';
 import './home.css';
-import Banner1 from '../../assets/banners/Banner 1.jpg'
+import Banner1 from '../../assets/banners/Banner1.jpg'
 import Banner2 from '../../assets/banners/Banner 2.jpg'
 import Admision from '../../assets/plus/Admision.png'
 import Trophy from '../../assets/plus/Trophy-home.png'
@@ -13,6 +13,16 @@ import Bcard from '../../assets/plus/Bcard.png'
 
 const Home = () => {
 
+  const preloadImages = (imagePaths) => {
+    return imagePaths.map((path) => {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.onload = resolve;
+        img.src = path;
+      });
+    });
+  };
+  
   const [currentBanner, setCurrentBanner] = useState(0);
   const [banners, setBanners] = useState([]);
 
@@ -20,19 +30,14 @@ const Home = () => {
     const importBanners = async () => {
       try {
         const bannerContext = require.context('../../../../server/home_banners/', false, /\.(png|jpe?g|svg)$/);
-        console.log("bannerContext:", bannerContext)
-        const bannerPaths = bannerContext.keys(); 
-        
-        console.log("bannerPaths:", bannerPaths)
-        const loadedBanners = '../../../../server/home_banners/'
-        
-        setBanners(loadedBanners);
-        console.log(banners)
+        const bannerPaths = bannerContext.keys().map(bannerContext);
+        await Promise.all(preloadImages(bannerPaths));
+        setBanners(bannerPaths);
       } catch (error) {
         console.error("Error loading banners:", error);
       }
-    }; 
-
+    };
+  
     importBanners();
   }, []);
 
@@ -44,7 +49,7 @@ const Home = () => {
         console.log("Current banner index:", nextBanner, currentBanner);
         return nextBanner;
       });
-    }, 10000);
+    }, 15000);
   
     return () => clearInterval(bannerInterval);
   }, [banners]);
@@ -55,14 +60,26 @@ const Home = () => {
   
   useEffect(() => {
     if (banners.length > 0) {
-      const imageUrl = banners[currentBanner];
-      document.documentElement.style.setProperty('--banner-image', `url(${imageUrl})`);
-      console.log('aja', imageUrl);
+      // Actualiza las variables CSS para las imágenes
+      const nextBanner = (currentBanner + 1) % banners.length;
+      
+      document.documentElement.style.setProperty('--banner-image-before', `url(${banners[currentBanner]})`);
+      document.documentElement.style.setProperty('--banner-image-after', `url(${banners[nextBanner]})`);
+  
+      // Seleccionar el elemento .hero-section
+      const heroSection = document.querySelector('.hero-section');
+      if (heroSection) {
+        // Simplemente alternar entre 'show-before' y 'show-after' cada vez
+        if (heroSection.classList.contains('show-before')) {
+          heroSection.classList.remove('show-before');
+          heroSection.classList.add('show-after');
+        } else {
+          heroSection.classList.remove('show-after');
+          heroSection.classList.add('show-before');
+        }
+      }
     }
-    
-  }, [currentBanner, banners]);
-
-
+  }, [currentBanner, banners]);  
 
   //console.log('Banner: ', banners[currentBanner])
 
@@ -74,7 +91,7 @@ const Home = () => {
       {banners.length > 0 && (
 
         <header className="hero-section">
-  
+        
           <div className="hero-content">
             <h1 className="hero-title">Bienvenidos al Colegio Científico de Alajuela</h1>
             <p className="hero-description">
