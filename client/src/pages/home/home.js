@@ -108,8 +108,10 @@ const Home = () => {
           <div className="scroll-card-paragraph">
 
           </div>
-          <iframe width="744" height="419" src="https://www.youtube.com/embed/AhGhLTd7BMc" title="¡Más que una fórmula! - 15 Aniversario del CCC Alajuela" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
+          <div class="responsive-iframe-container">
+            <iframe width="744" height="419" src="https://www.youtube.com/embed/AhGhLTd7BMc" title="¡Más que una fórmula! - 15 Aniversario del CCC Alajuela" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          </div>
 
 
 {/* Wrapper for Title and Card Container */}
@@ -128,9 +130,8 @@ const Home = () => {
         <h2 className="card__title">Un poco sobre nosotros</h2>
         <p className="card__description">Esta institución nace en el año 2006 bajo el convenio entre el Ministerio de Educación Pública el Ministerio de Ciencia, Tecnología y Telecomunicaciones y la Universidad Estatal a Distancia, firmando como Rector el Señor Rodrigo Arias Camacho, actual jerarca de esta casa de enseñanza universitaria y gran aliado de los Colegios Científicos.</p>
       </div>
-    </div>
+    </div> 
 
-    {/* Second Card */}
     <div className="card card2">
       <img src={Banner2} alt="Banner2" className="card" />
       <div className="card__content">

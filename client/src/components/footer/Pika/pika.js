@@ -17,7 +17,7 @@ const Loader = () => {
       className={`loader-pika ${isHovered ? 'show' : ''}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-    >
+      >
       <div className="loader-before"></div>
       <div className="loader-after"></div>
     </div>
