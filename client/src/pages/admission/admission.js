@@ -24,9 +24,7 @@ const Admission = () => {
                 <div className='admissionPicture1'>
                     <img src={Picture1} alt="Descripción de la imagen" style={{ width: '50vh', height: 'auto' }}/>
                 </div>
-                <div className='admission-button-container'>
-                    <Button />
-                </div>
+
             </div>
 
             <div className='white-section2'>

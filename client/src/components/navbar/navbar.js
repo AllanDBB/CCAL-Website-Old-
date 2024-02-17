@@ -68,11 +68,13 @@ const Navbar = () => {
               Contáctanos
             </NavLink>
           </li>
+          {/*
           <li className="nav-item">
             <NavLink to="/iniciar-sesión" className="nav-link" activeClassName="active-link" onClick={closeMenu}>
               <Button2 text="Acceder" />
             </NavLink>
           </li>
+          */}
         </ul>
       </div>
     </nav>
