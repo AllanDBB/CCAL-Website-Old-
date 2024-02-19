@@ -10,8 +10,7 @@ const User = require('./src/models/user');
 const app = express();
 const port = process.env.PORT || 3001;
 const cors = require('cors');
-const sendVerificationEmail = require('./src/mailer');
-
+const { sendMail, sendVerificationEmail } = require('./src/mailer');
 // Connect database.
 connectDB();
 
@@ -185,6 +184,19 @@ app.post('/login', async (req, res) => {
     }
 });
 
+app.post('/sendMail', async(req, res) => {
+
+    try {
+        const { userName, userEmail, userMessage} = req.body;
+        
+        sendMail(userName, userEmail, userMessage);
+
+        res.status(201).send('El correo se ha enviado a tiquet correctamente');
+    } catch (error) {
+        res.status(500).send('Problema al envíar el correor ' + error.message);
+    }
+
+});
 //>>>>>>> cb696fb5ea34eb225e2bbe9b49a9213e38514c44
 
 // Start the server

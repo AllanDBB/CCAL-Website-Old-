@@ -5,7 +5,7 @@ import axios from 'axios';
 import Logo from '../../assets/logos/Logo.svg'
 import { GoogleLogin } from '@react-oauth/google';
 // import Google from '../../components/google/sign-up';
-
+ 
 const SignUp = () => {
 
     const [termsChecked, setTermsChecked] = useState(false);

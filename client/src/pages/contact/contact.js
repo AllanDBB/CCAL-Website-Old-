@@ -2,27 +2,56 @@ import React, { useEffect, useState } from 'react';
 import './contact.css';
 import FaFacebook from '../../assets/logos/icons8-facebook-nuevo.svg';
 import FaInstagram from '../../assets/logos/icons8-instagram.svg';
+import axios from 'axios';
 
 const Contact = () => {
+
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
   useEffect(() => {
     document.title = "CCAL - Contáctanos";
   }, []);
 
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    userName: '',
+    userEmail: '',
+    userMessage: '',
   });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-  };
+    try{
+        const response = await axios.post('http://localhost:3001/sendMail',{
+
+            userName: formData.userName,
+            userEmail: formData.userEmail,
+            userMessage: formData.userMessage
+
+        });
+
+        console.log(response.data);
+
+    } catch (error){
+
+        console.log('Hubo un error al enviar el correo', error.response.data)
+    }
+
+    setFormData({
+      userName: '',
+      userEmail: '',
+      userMessage: '',
+    });
+  
+    // Desactivar botón y establecer cooldown de 1 minuto
+    setIsButtonDisabled(true);
+    setTimeout(() => setIsButtonDisabled(false), 60000); // 60000 ms = 1 minuto
+
+};
+
 
   return (
     <div className="contact-page-container"> 
@@ -42,8 +71,8 @@ const Contact = () => {
             <input
               type="text" 
               id="name"
-              name="name"
-              value={formData.name}
+              name="userName"
+              value={formData.userName}
               onChange={handleChange}
             />
           </div>
@@ -53,8 +82,8 @@ const Contact = () => {
             <input
               type="email"
               id="email"
-              name="email"
-              value={formData.email}
+              name="userEmail"
+              value={formData.userEmail}
               onChange={handleChange}
             />
           </div>
@@ -63,13 +92,13 @@ const Contact = () => {
             <label htmlFor="message">Mensaje:</label>
             <textarea className='text-area-form'
               id="message"
-              name="message"
-              value={formData.message}
+              name="userMessage"
+              value={formData.userMessage}
               onChange={handleChange}
             ></textarea>
           </div>
 
-          <button type="submit" className="contact-submit-btn">Enviar Mensaje</button>
+          <button type="submit" className="contact-submit-btn" disabled={isButtonDisabled}>Enviar Mensaje</button>
         </form>
 
         <div className="opening-hours-box">
