@@ -30,7 +30,7 @@ function sendVerificationEmail(userEmail, token) {
 function sendMail(userName, userEmail, userMessage) {
     const mailOptions = {
         from: 'no-reply@ccalajuela.ed.cr',
-        to: 'adbyb.es@gmail.com',
+        to: 'consultasadmision@ccalajuela.ed.cr',
         subject: `Consulta de ${userName}`,
         html: `
             <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; padding: 20px; max-width: 600px; margin: 0 auto; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9;">
