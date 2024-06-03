@@ -4,7 +4,7 @@
 
 /* Estilos para el banner principal */
 .about-us-banner {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url('../../assets/banners/Banner\ 9.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url('../../assets/banners/Banner_9.webp');
   background-size: cover;
   background-position: center;
   color: white;
@@ -176,7 +176,7 @@
 @media screen and (max-width: 756px) {
 
   .fondo-pagina2 {
-    background-image: url("../../assets/banners/Banner\ 3.jpg");
+    background-image: url("../../assets/banners/Banner_3.webp");
     background-size: cover;
     background-position: center;
     height: 200vh; 

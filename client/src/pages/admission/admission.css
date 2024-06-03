@@ -5,7 +5,7 @@
 }
 
 .admission-banner {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url('../../assets/banners/Banner 10.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url('../../assets/banners/Banner_10.webp');
     background-size: cover;
     background-position: center;
     color: white;

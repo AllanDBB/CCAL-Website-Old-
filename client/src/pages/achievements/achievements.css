@@ -4,7 +4,7 @@
 
 /* Estilos para el banner principal */
 .achievements-banner {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url('../../assets/banners/Banner\ 5.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url('../../assets/banners/Banner_5.webp');
     background-size: cover;
     background-position: center;
     color: white;
@@ -20,7 +20,7 @@
 
 /* Estilos para la sección de foto */
 .photo-section {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url('../../assets/banners/Banner 6.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url('../../assets/banners/Banner_6.webp');
     background-size: cover;
     background-position: center;
     color: white;

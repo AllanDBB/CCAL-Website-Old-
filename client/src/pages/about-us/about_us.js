@@ -1,10 +1,8 @@
 import React from 'react';
 import './about_us.css';
 
-import AdditionalImage1 from '../../assets/banners/Banner 2.jpg';
-import AdditionalImage2 from '../../assets/banners/Banner 8.jpg';
-
-import Funfact from './fun_facts/fun_facts2'
+import AdditionalImage1 from '../../assets/banners/Banner_2.webp';
+import AdditionalImage2 from '../../assets/banners/Banner_8.webp';
 
 const AboutUs = () => {
   return (
