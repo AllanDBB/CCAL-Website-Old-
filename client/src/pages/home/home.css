@@ -3,10 +3,10 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 10vw; /* Adjust the width based on your design needs */
-  height: 100vh; /* Full height of the viewport */
+  width: 10vw; 
+  height: 100vh; 
   background-repeat: repeat-y;
-  background-size: auto 20%; /* Adjust the height to 100% of the sidebar */
+  background-size: auto 20%; 
   animation: scrollBackground 10s linear infinite;
   z-index: -1; 
 }
@@ -30,88 +30,37 @@ body, html {
   font-family: 'Arial', sans-serif;
 }
 
-.home-container {
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.background-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  transition: opacity 3s ease;
-}
-
-
+/* Sección principal */
 .hero-section {
   text-align: center;
   position: relative;
   overflow: hidden;
   background: none;
   color: #ecf0f1;
-  height: 100vh; /* Esto hará que ocupe toda la altura de la pantalla */
+  height: 100vh; 
   display: flex;
-  align-items: center; /* Centra el contenido verticalmente */
-  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.6) 100%), url('../../assets/banners/Banner_7.webp'); /* Imagen de fondo y degradado */
+  background-size: cover; 
+  background-position: center; 
 }
-
-
-.hero-section::before, .hero-section::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
-  transition: opacity 0.1s ease;
-  opacity: 0;
-}
-
-.hero-section.show-before::before, .hero-section.show-after::after {
-  opacity: 1;
-}
-
-.hero-section::before {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%), var(--banner-image-before); /* imagen actual */
-  opacity: 1; /* visible */
-}
-
-.hero-section::after {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%), var(--banner-image-after); /* próxima imagen */
-  opacity: 0; /* oculto */
-}
-
-.show{
-  opacity: 1;
-}
-
-
-
 
 .hero-content {
   max-width: 70%;
-  margin: 0 auto;
 }
 
 .hero-title {
   font-size: 3vw;
-  margin-bottom: 2vh;
   color: #fff;
-  margin-top: 4%;
 }
 
-.hero-description {
-  font-size: 1.2vw;
+.hero-subtitle {
+  font-size: 2vw;
   color: #ecf0f1;
 }
 
+/*Botón de inicio*/
 .HomeB {
   padding: 1em 2em;
   border: none;
@@ -153,22 +102,6 @@ body, html {
   width: 250%;
 }
 
-/* Snap Cards Section */
-
-
-
-.azul {
-  background-color: #647cbc;
-}
-
-.yellow {
-  background-color: #d3c584;
-}
-
-.azul2 {
-  background-color: #647cbc;
-}
-
 
 /* Scroll Card Container */
 
@@ -185,6 +118,7 @@ body, html {
   color: #333; /* Adjust text color */
   line-height: 1.6; /* Adjust line height as needed */
 }
+
 .scroll-snap-card-container {
   flex-direction: column;
   display: flex;
@@ -195,7 +129,6 @@ body, html {
 
 }
 
-
 .scroll-snap-card {
   height: 50vh;
   width:800px;
@@ -205,7 +138,7 @@ body, html {
   scrollbar-color: transparent transparent;
   border-radius: 2vh;
 
-  
+
   /* Webkit (Chrome, Safari) */
   &::-webkit-scrollbar {
     width: 0px;
@@ -226,21 +159,62 @@ body, html {
 }
 
 .scroll-snap-card .slide p {
-  font-size: 2vw; /* Adjusted font size for better visibility */
+  font-size: 2vw; 
   color: white;
   font-weight: 700;
 }
-/* Card Section */
 
+/*Sección de estadísticas*/
+
+.stats-section {
+  background-color: #00518a;
+  color: white;
+  padding: 5rem 0;  /* Espacio vertical */
+  text-align: center;
+  width: 100%; 
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Más columnas para adaptarse mejor */
+  gap: 2rem; /* Espacio entre estadísticas */
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.stat {
+  background: none; /* Quitamos el fondo */
+  color: #fff;   /* Texto blanco */
+  padding: 1rem;  /* Reducimos el padding */
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 3rem; /* Tamaño de fuente más pequeño */
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block; /* Para aplicar la animación */
+}
+
+.stat-label {
+  font-size: 1rem; /* Tamaño de fuente más pequeño */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+
+
+/* Card Section */
 .card-section-wrapper {
   text-align: center;
   margin-bottom: 15vh;
   margin-top: 20vh;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .card-photo-title h1 {
-  font-size: 2rem; /* Tamaño de fuente base para escritorio */
+  font-size: 2rem;
 }
 
 .card-text {
@@ -265,13 +239,13 @@ body, html {
 .card-container {
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap; /* Permite que las tarjetas se ajusten en pantallas más pequeñas */
+  flex-wrap: wrap; 
   padding: 20px;
 }
 
 .card {
   position: relative; 
-  flex-basis: 45%; /* Ajuste para que dos tarjetas quepan en una fila en pantallas grandes */
+  flex-basis: 45%; 
   border-radius: 2vw;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
@@ -322,11 +296,12 @@ body, html {
 /* CARD REDIRECTS */
 
 .card-redirect-container {
+  padding: 25px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin: 20px 0 rgba(238, 228, 228, 0.1);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   flex-wrap: wrap;
 }
 
@@ -346,12 +321,12 @@ body, html {
   margin-left: 1vw;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center content horizontally */
+  align-items: center; 
 }
 
 .card-redirect img {
-  max-width: 100%; /* Ensure the image doesn't exceed the container width */
-  max-height: 40%; /* Set a max height to prevent excessive stretching */
+  max-width: 100%; 
+  max-height: 40%;
   margin-top: 5vh;
 }
 
@@ -411,8 +386,8 @@ body, html {
 
 
 .Flip-card {
-  width: 300px; /* Fixed width */
-  height: 200px; /* Fixed height */
+  width: 300px; 
+  height: 200px; 
   perspective: 1000px;
   margin: auto;
   margin-bottom: 5vh;
@@ -453,8 +428,6 @@ body, html {
   border-radius: 2vh;
   transform: rotateY(0deg);
 }
-
-
 
 .Flip-card-front {
   --s: 84px;
@@ -511,22 +484,22 @@ body, html {
   position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden; /* Hide overflow */
+  overflow: hidden; 
   display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+  justify-content: center; 
+  align-items: center; 
   border-radius: 2vh;
   transform: rotateY(180deg);
 }
 
 .Flip-card-back img {
-  width: 100%; /* Full width of the card */
-  height: 100%; /* Full height of the card */
-  object-fit: cover; /* Cover the entire area, might crop the image */
-  position: absolute; /* Absolute positioning */
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  position: absolute; 
   top: 0;
   left: 0;
-  z-index: -1; /* Move the image to the background */
+  z-index: -1; 
 
 }
 
@@ -543,13 +516,13 @@ body, html {
 }
 
 .Flip-card-back-text:hover {
-  color: #FFD700; /* New color on hover */
+  color: #FFD700;
 }
 
 .flip-card-text-container {
-  margin-top: 1.5rem; /* Adjust the top margin as needed */
+  margin-top: 1.5rem; 
   font-family: 'Segoe UI';
-  text-align: center; /* Alineación del texto */
+  text-align: center; 
   flex-direction: column;
   display: flex;
   align-items: center;
@@ -557,16 +530,16 @@ body, html {
 
 .flip-card-text {
   max-width: 40%;
-  font-size: 1.2em; /* Tamaño de la fuente */
-  color: #333; /* Color del texto, elige uno que se adapte a tu diseño */
-  line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
+  font-size: 1.2em; 
+  color: #333; 
+  line-height: 1.6; 
   font-family: 'Segoe UI';
 }
 
 .responsive-iframe-container {
   position: relative;
   overflow: hidden;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  padding-top: 56.25%; 
   width: 100%;
 }
 
@@ -626,20 +599,20 @@ body, html {
   
   .scroll-card-paragraph {
     max-width: 90%;
-    margin: 0 auto; /* Asegura centrado horizontal */
+    margin: 0 auto; 
     padding: 1rem;
   }
   
   .scroll-card-paragraph p {
-    font-size: 1rem; /* Tamaño de letra más legible */
+    font-size: 1rem;
     color: #333;
     line-height: 1.6;
   }
   .scroll-snap-card-container {
     display: flex;
-    justify-content: center; /* Centra los elementos horizontalmente */
-    align-items: center; /* Centra los elementos verticalmente */
-    flex-direction: column; /* Alinea los elementos verticalmente para móviles */
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column;
   }
 
   .scroll-snap-card-container,
@@ -661,7 +634,7 @@ body, html {
   }
 
   .card {
-    flex-basis: 100%; /* Hace que cada tarjeta ocupe el ancho completo en móviles */
+    flex-basis: 100%;
   }
 
   .card-redirect-container {
@@ -687,7 +660,7 @@ body, html {
 
   .flip-card-text {
     max-width: 100%;
-    margin-bottom: 20px; /* Espacio entre el texto y la tarjeta en dispositivos móviles */
+    margin-bottom: 20px; 
   }
   
   
@@ -696,43 +669,42 @@ body, html {
     position: relative;
     width: 100%;
     height: 100%;
-    overflow: hidden; /* Hide overflow */
+    overflow: hidden; 
     display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+    justify-content: center; 
+    align-items: center; 
     border-radius: 2vh;
     transform: rotateY(180deg);
   }
   
   .Flip-card-back img {
-    width: 100%; /* Full width of the card */
-    height: 100%; /* Full height of the card */
-    object-fit: cover; /* Cover the entire area, might crop the image */
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
   }
 }
 
 @media only screen and (max-width: 600px) {
   .Flip-card {
-    width: 300px; /* Fixed width */
-    height: 200px; /* Fixed height */
+    width: 300px; 
+    height: 200px; 
   }
   .Flip-card-back-text {
-    top: 24%; /* Adjust as needed for this media size */
-    right: -18%; /* Adjust as needed for this media size */
-    font-size: 120%; /* Adjust font size for this media size */
+    top: 24%; 
+    right: -18%;
+    font-size: 120%; 
   }
 }
 
-/* For medium devices (tablets, 600px to 768px) */
 @media only screen and (min-width: 601px) and (max-width: 768px) {
   .Flip-card {
-    width: 300px; /* Fixed width */
-    height: 200px; /* Fixed height */
+    width: 300px;
+    height: 200px; 
   }
   .Flip-card-back-text {
-    top: 24%; /* Adjust as needed for this media size */
-    right: -18%; /* Adjust as needed for this media size */
-    font-size: 120%; /* Adjust font size for this media size */
+    top: 24%; 
+    right: -18%; 
+    font-size: 120%; 
   }
 }
 

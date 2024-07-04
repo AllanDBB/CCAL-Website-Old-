@@ -12,14 +12,12 @@
   top: 0;
   transition: transform 0.3s ease;
   transform: translateY(0);
-  
 }
 
 /* Estilo del logo */
 .logo-container img {
-  width: 50px;
+  width: 75px;
 }
-
 
 /* Contenedor de enlaces */
 .nav-links-container {
@@ -35,7 +33,7 @@
   display: flex;
   align-items: center;
   text-transform: uppercase;
-  letter-spacing: 0.5px; /* Espacio adicional entre letras */
+  letter-spacing: 0.5px;
 }
 
 /* Elementos individuales de la lista */
@@ -47,8 +45,8 @@
 .nav-link {
   text-decoration: none;
   color: white;
-  font-size: 16px;
-  padding: 8px 10px; /* Espaciado para un mejor aspecto y clicabilidad */
+  font-size: 1.15rem;
+  padding: 0.5rem 0.625rem;
 }
 
 /* Eliminar efecto al pasar el mouse sobre enlaces */
@@ -61,12 +59,11 @@
 .menu-toggle {
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: 1.5rem;
   color: white;
   cursor: pointer;
   display: none;
 }
-
 
 /* Estilos para pantallas pequeñas */
 @media screen and (max-width: 768px) {
@@ -74,23 +71,25 @@
     display: block;
   }
 
-  .navbar{
-    width: 100%;
-  }
   .nav-links-container {
     position: absolute;
+    padding-top: 15px;
     top: 100%;
     left: 0;
     right: 0;
     display: none;
     flex-direction: column;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-    transition: all 0.3s ease; /* Transición suavizada para el menú */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 1));
+    transition: all 0.3s ease;
   }
 
   .nav-links-container.expanded {
     display: flex;
-    animation: slideDown 0.5s ease forwards; /* Animación de deslizamiento hacia abajo */
+    animation: slideDown 0.5s ease forwards;
+  }
+
+  .logo-container img {
+    width: 50px;
   }
 
   .nav-links {
@@ -125,10 +124,12 @@
   }
 }
 
-  .hide-navbar {
-    transform: translateY(-100%);   
-  }
+/* Ocultar la barra de navegación */
+.hide-navbar {
+  transform: translateY(-100%);
+}
 
-  body{
-    position: relative;
-  }
+/* Asegurar que el cuerpo del documento sea relativo */
+body {
+  position: relative;
+}

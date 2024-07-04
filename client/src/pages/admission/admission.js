@@ -25,7 +25,6 @@ const Admission = () => {
                         <li><a href="https://drive.google.com/file/d/1OFwVVde8MKE7NIIcFwDOrkF-I3J4Q_Y5/view" target='_blank'  rel="noopener noreferrer" download>Instrucción proceso admisión</a></li>
                         <li><a href="https://drive.google.com/file/d/1M49vowcRjEG8sMvUcA0wT9FTsQnd9ar-/view" target='_blank'  rel="noopener noreferrer" download>Solicitud de admisión</a></li>
                         <li><a href="https://drive.google.com/file/d/1GHOGoMPbmyegpGFqKWUKdlT-ip9nEyKR/view" target='_blank'  rel="noopener noreferrer" download>Folleto de práctica</a></li>
-                        
                     </ul>
                 </div>
             </div>
