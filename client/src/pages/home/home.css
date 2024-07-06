@@ -169,7 +169,7 @@ body, html {
 .stats-section {
   background-color: #00518a;
   color: white;
-  padding: 5rem 0;  /* Espacio vertical */
+  padding: 7rem 0;  /* Espacio vertical */
   text-align: center;
   width: 100%; 
 }
@@ -353,6 +353,7 @@ body, html {
   opacity: 0;
   transition: 0.3s ease-out;
   font-size: 1em;
+  z-index: 1;
 }
 
 /* Text */
@@ -580,9 +581,12 @@ body, html {
   .hero-title {
     font-size: 8vw;
   }
-  .hero-description {
+
+  .hero-subtitle {
     font-size: 4vw;
+    color: #ecf0f1;
   }
+  
 
   .cta-button {
     padding: 10px 20px;
@@ -639,6 +643,7 @@ body, html {
 
   .card-redirect-container {
     flex-direction: column;
+    padding: 20px;
   }
   .card-redirect {
     width: 90%;

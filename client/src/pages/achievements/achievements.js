@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "./achievements.css";
 import Trophy from '../../assets/plus/trofe.png';
-import Excelence from '../../assets/plus/Excelencia.png'
+import Excelence from '../../assets/plus/School-Admission.webp'
 
 const Accordion = ({ title, children, isOpen, onClick }) => {
     return (
@@ -13,6 +13,24 @@ const Accordion = ({ title, children, isOpen, onClick }) => {
         </div>
     );
 };
+
+const Card = ({ title, description, link }) => {
+    return (
+      <div className="card-container">
+        <div className="card-image"></div> 
+        <div className="card-content">
+          <a href={link} className="card-title-link">
+            <span className="card-title">{title}</span>
+          </a>
+          <p className="card-description">{description}</p>
+          <a href={link} className="card-action">
+            Find out more
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    );
+  };
 
 
 
@@ -28,32 +46,17 @@ const Achievements = () => {
         }
     };
   
+    useEffect(() => {
+        // Scroll to the top of the page when the component mounts
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, []);
 
     return (
-        <div className="achievements-container">
+        <div className="achievements-container" id='top'>
+
             <div className="achievements-banner">
-                <h1>Logros y reconocimientos</h1>
+                <h1>LOGROS Y RECONOCIMIENTOS</h1>
                 <p>Descubre nuestras destacadas contribuciones y logros.</p>
-            </div>
-
-            <div className="section white-section">
-                <div className="white-section-content">
-                    <div className="padding-white-aja">
-                    <img src={Trophy} alt="Trofeo" className="trophy-photo"/>
-                    <h2>Éxito academico</h2>
-                    <p>El colegio Científico de Alajuela ha liderado la educación a lo largo de diferentes años,</p>
-                    <p>Obteniendo diferentes reconocimientos en olimpiadas, eventos y competencias a nivel nacional e internacional.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div className="section photo-section">
-                <div className="photo-section-text">
-                <p className="h1-photo-section">Algunas de nuestras representaciones se observan en olimpiadas de ciencias,</p>
-                <p>retos tecnológicos, mejores puntajes a universidades públicas</p>
-                <p>e incluso becas en universidades privadas y exteriores.</p>
-                </div>
-
             </div>
 
             <div className="section white-section">
@@ -98,41 +101,23 @@ Es así como del total de 156 graduados en este periodo, el 70,51% de los estudi
                         </Accordion>
                         <Accordion title="Participaciones extranjeras" isOpen={openAccordion === 5} onClick={() => handleAccordion(5)}>
                             <p>
-                            En relación a participaciones internacionales, más que un logro institucional, consideramos un privilegio tener estudiantes que conformen delegaciones representantes de Costa Rica en el extranjero, haciendo mérito a su esfuerzo, dedicación y perseverancia, viviendo experiencias enriquecedoras para la vida, conociendo culturas y creando lazos de amistad con otras personas. Según los datos del cuadro 10, en los últimos ocho años hemos tenido 35 estudiantes con dicho honor.
-
-
-
-A continuación, el detalle de las representaciones internaciones de los últimos tres cursos lectivos, haciendo énfasis a que Los eventos realizados en el curso lectivo 2021, se realizaron de manera virtual, debido a la pandemia mundial:
-
-Al revivir la historia, dentro de los logros obtenidos, destaco también que para las últimas tres ediciones del programa nacional “Antorcha”, nuestra institución ha sido el equipo campeón, combinando destrezas individuales, colectivas y de estratégica, siendo una motivación, por considerarlo un programa de tradición, para la familia y de interés educativo.
+                            El Colegio Científico de Alajuela se enorgullece de que sus estudiantes hayan representado a Costa Rica en competencias internacionales en los últimos años. En los últimos ocho años, 35 estudiantes han tenido el honor de participar en eventos como la World Robot Olympiad (WRO) 2023, Technovation Girls y el National Youth Science Camp (NYSC) virtual 2022. Estas experiencias internacionales enriquecen la vida de los estudiantes, permitiéndoles conocer otras culturas y establecer lazos de amistad a nivel global. Además, el colegio ha sido campeón en las últimas tres ediciones del programa nacional "Antorcha", combinando habilidades individuales, colectivas y estratégicas.
                             </p>
                         </Accordion>
                         <Accordion title="Becas" isOpen={openAccordion === 6} onClick={() => handleAccordion(6)}>
                             <p>
-                                
-Durante el curso lectivo 2020, tres estudiantes del Colegio Científico de Costa Rica sede Alajuela recibieron becas para estudiar en el extranjero y en universidades privadas. Uno de ellos se fue a estudiar Ingeniería Biomédica en ULACIT, Costa Rica, con la beca Opportunity Fund Education USA, y los otros dos a universidades en Estados Unidos.
-
-Los egresados del colegio han continuado su formación académica en diversas universidades internacionales, destacando en países como Estados Unidos, Alemania, Italia, Inglaterra y Emiratos Árabes. Además, cuatro exalumnos han sido becados para participar en el programa de Intercambio Global de Pregrado UGRAD, auspiciado por la Embajada de los Estados Unidos y el Gobierno estadounidense. Los beneficiados han sido Jefferson Delgado, Daniel Pérez, Andreina Quesada y German Quesada.
-
-Otros logros incluyen la participación de Sofía Rodríguez García en la primera edición de Tech Girl en West Virginia, la obtención de la Beca Colegio Científico por Keisy Chacón Rodríguez en 2022, y la representación en el National Youth Science Camp (NYSC) virtual 2022 por Kristell Riverson Barrantes y Sergio Castillo Víquez.
+                            El Colegio Científico de Alajuela ha logrado que sus estudiantes obtengan becas para estudiar en universidades privadas nacionales e internacionales. En 2020, tres estudiantes recibieron becas, uno para estudiar Ingeniería Biomédica en ULACIT y dos para estudiar en universidades de Estados Unidos. Exalumnos del colegio han sido becados en programas como el Intercambio Global de Pregrado UGRAD, auspiciado por la Embajada de los Estados Unidos. Además, estudiantes como Sofía Rodríguez García y Xiomy Gutiérrez Rodríguez han participado en programas como Tech Girl en West Virginia, y otros han obtenido la Beca Colegio Científico para continuar sus estudios.
                             </p>
                         </Accordion>
                         <Accordion title="Universidades públicas" isOpen={openAccordion === 7} onClick={() => handleAccordion(7)}>
                             <p>
-                            Uno de los indicadores de excelencia más significativos corresponde, a los promedios de admisión a las universidades estatales, especialmente los mejores promedios de admisión a la UCR y el ITCR entre los que destaco los siguientes:
-
-
-
-Reconocemos que este tipo de méritos corresponden a logros personales, pero que nos engrandecen y alegran como institución.
-
-
-
-En relación al mismo tema, para el periodo 2013-2021 se han contabilizado 34 y 34 estudiantes entre los mejores 35 puntajes de admisión a la UCR y el ITCR.
+                            Los estudiantes del Colegio Científico de Alajuela han demostrado un excelente rendimiento académico al obtener los mejores promedios de admisión en universidades estatales como la UCR y el TEC. En el período 2013-2021, 68 estudiantes se ubicaron entre los 35 mejores promedios de admisión en estas universidades, especialmente en carreras de alta demanda como Medicina, Ingeniería y Ciencias Básicas. En 2023 se obtuvo el doble puntaje perfecto en la admisión a la UCR y el TEC por los estudiantes David Araya y Natalia Orozco.
                             </p>
                         </Accordion>
                     </div>
                 </div>
             </div>
+
 
         </div>
     );

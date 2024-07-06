@@ -13,6 +13,7 @@
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
+  margin-bottom: 50px;
 }
 
 .contact-form-box {
@@ -20,15 +21,13 @@
   padding: 50px;
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 10px;
-  margin-top: 10px;
+  margin-top: 20px;
   width: 100%;
   max-width: 450px;
 }
 
 .contact-page-form h2 {
   color: #151717;
-  margin-bottom: 15px;
 }
 
 .contact-input-group {
@@ -112,13 +111,13 @@
 
 .google-map-box iframe {
   width: 100%;
-  height: 300px;
+  height: 200px;
   border-radius: 10px;
 }
 
 .text-area-form {
   width: 300px;
-  height: 100px;
+  height: 230px;
   resize: none;
 }
 
@@ -128,26 +127,50 @@
 }
 
 .contact-banner {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url('../../assets/banners/Banner_3.webp');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url('../../assets/banners/Banner_6.webp');
   background-size: cover;
   background-position: center;
   color: white;
   padding: 100px 0;
   width: 100%;
   min-height: 250px;
+  font-size: 1.5em;
 }
 
 .p-title-banner {
-  font-size: 1.2em;
+  font-size: 0.9em;
   margin-bottom: 0;
 }
 
 .h1-title-banner {
   margin-top: 1.5em;
-  font-size: 1.9em;
+  font-size: 1.5em;
   margin-bottom: 0.5em;
   font-weight: bold;
 }
+
+.white-section1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-top: 50px;
+}
+
+.admissionPicture1 img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-right: 35px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
 
 @media (min-width: 768px) {
   .contact-content {

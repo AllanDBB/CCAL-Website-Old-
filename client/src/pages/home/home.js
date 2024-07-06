@@ -7,7 +7,7 @@ import Conocenos from '../../assets/plus/Conocenos.png';
 
 const Home = () => {
   const scrollToContent = () => {
-    document.querySelector('.scroll-snap-card-container').scrollIntoView({ behavior: 'smooth' });
+    document.querySelector('.card-redirect-container').scrollIntoView({ behavior: 'smooth' });
   };
 
   const [stats, setStats] = useState([
@@ -27,15 +27,15 @@ const Home = () => {
           const intervalId = setInterval(() => {
             setCurrentNumbers(prevNumbers => prevNumbers.map((current, index) => {
               const target = stats[index].number;
-              const increment = Math.ceil(target / 100); // Ajusta la velocidad de la animación
-              return Math.min(target, current + increment); // Incrementamos hasta el valor objetivo
+              const increment = Math.ceil(target / 100);
+              return Math.min(target, current + increment); 
             }));
-          }, 10); // Intervalo de 10ms para una animación más suave
+          }, 10); 
 
-          return () => clearInterval(intervalId); // Limpiamos el intervalo al salir de la vista
+          return () => clearInterval(intervalId); 
         }
       },
-      { threshold: 0.5 } // Ajusta el umbral de visibilidad según tus necesidades
+      { threshold: 0.5 } 
     );
 
     if (statsSectionRef.current) {
@@ -87,7 +87,7 @@ const Home = () => {
           <div className="card-redirect-details">
             <p className="text-title">¿Acaso te gustaría aplicar a nuestra institución?</p>
           </div>
-          <NavLink to="/admisión" className="card-redirect-button">
+          <NavLink to="/admisión" id='..admission-banner' className="card-redirect-button">
             <button className="card-redirect-button">Más información</button>
           </NavLink>
         </div>

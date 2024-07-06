@@ -1,14 +1,20 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './about_us.css';
 
 import AdditionalImage1 from '../../assets/banners/Banner_2.webp';
 import AdditionalImage2 from '../../assets/banners/Banner_8.webp';
 
 const AboutUs = () => {
+
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   return (
-    <div className="about-us-container">
+    <div className="about-us-container" id='top'>
       <div className="about-us-banner">
-        <h1>Conócenos</h1>
+        <h1>CONÓCENOS</h1>
         <p>Descubre más sobre nuestra institución, nuestro equipo y la casita.</p>
       </div>
 
@@ -29,15 +35,6 @@ const AboutUs = () => {
         <img src={AdditionalImage2} alt="Imagen Adicional 2" className="section-image" />
       </div>
 
-{/*
-
-      <div className="text-content-fun-fact">
-        <div className="white-section-alone-fun-fact">
-            <text>Dato curiso del dia</text>
-            <fun-facts-container><Funfact/></fun-facts-container>
-        </div>
-      </div>
-  */}
     </div>
   );
 }

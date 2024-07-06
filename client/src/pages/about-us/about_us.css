@@ -4,7 +4,7 @@
 
 /* Estilos para el banner principal */
 .about-us-banner {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url('../../assets/banners/Banner_9.webp');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url('../../assets/banners/Banner_4.webp');
   background-size: cover;
   background-position: center;
   color: white;
@@ -20,7 +20,8 @@
 }
 
 .about-us-banner p{
-  font-size: 0.7em;
+  font-size: 0.9em;
+  font-weight: 500;
 }
 
 
@@ -170,6 +171,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
+
 
 
 
