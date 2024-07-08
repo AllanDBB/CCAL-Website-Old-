@@ -22,7 +22,7 @@ const AboutUs = () => {
         <div className="text-content">
           <h2>Nuestra Historia</h2>
          
-          <p>El Colegio Científico de Costa Rica en Alajuela, fundado en 2006, es una institución preuniversitaria destacada por su excelencia académica. Famoso por participar en competiciones académicas nacionales e internacionales, el colegio enfatiza las áreas STEAM, integrando habilidades blandas y duras para formar estudiantes integrales. Con 370 egresados, su enfoque educativo innovador prepara a los jóvenes para impactar positivamente en la sociedad.</p>
+          <p>El Colegio Científico de Costa Rica en Alajuela, fundado en 2006, es una institución preuniversitaria destacada por su excelencia académica. Famoso por participar en competiciones académicas nacionales e internacionales, el colegio enfatiza las áreas STEAM, integrando habilidades blandas y duras para formar estudiantes integrales. Con +420 egresados, su enfoque educativo innovador prepara a los jóvenes para impactar positivamente en la sociedad.</p>
         </div>
         <img src={AdditionalImage1} alt="Imagen Adicional 1" className="section-image" />
       </div>

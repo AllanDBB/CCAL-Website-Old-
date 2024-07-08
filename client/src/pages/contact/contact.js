@@ -3,7 +3,7 @@ import './contact.css';
 import FaFacebook from '../../assets/logos/icons8-facebook-nuevo.svg';
 import FaInstagram from '../../assets/logos/icons8-instagram.svg';
 import emailjs from 'emailjs-com';
-import Picture1 from '../../assets/plus/CIENTÍFICO-DE-ALAJUELA.webp';
+import Picture1 from '../../assets/plus/contactanos.webp';
 const Contact = () => {
 
 
@@ -66,7 +66,7 @@ const Contact = () => {
 
       <div className='white-section1'>
                 <div className='admissionPicture2'>
-                    <img src={Picture1} alt="Descripción de la imagen" style={{ width: 'auto', height: 'auto' }}/>
+                    <img src={Picture1} alt="Contactanos." style={{ width: 'auto', height: 'auto' }}/>
                 </div>
       </div>
       
